@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'backend'], function () {
+    // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
+
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
 });
