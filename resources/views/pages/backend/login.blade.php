@@ -9,9 +9,9 @@
     <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
     <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
-    <title>Login with Background Image - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <title>Login CMS ETI</title>
+    <link rel="apple-touch-icon" href="{{ asset('backend/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('backend/app-assets/images/ico/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/material-icons/material-icons.css') }}">
 
@@ -30,12 +30,12 @@
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/login-register.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/pages/login-register.css') }}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
     <!-- END: Custom CSS-->
 
 </head>
@@ -100,22 +100,22 @@
 
 
     <!-- BEGIN: Vendor JS-->
-    <script src="../../../app-assets/vendors/js/material-vendors.min.js"></script>
+    <script src="{{ asset('backend/app-assets/vendors/js/material-vendors.min.js') }}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="../../../app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"></script>
-    <script src="../../../app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
+    <script src="{{ asset('backend/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('backend/app-assets/vendors/js/forms/icheck/icheck.min.js') }}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="../../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../../app-assets/js/core/app.js"></script>
+    <script src="{{ asset('backend/app-assets/js/core/app-menu.js') }}"></script>
+    <script src="{{ asset('backend/app-assets/js/core/app.js') }}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="../../../app-assets/js/scripts/pages/material-app.js"></script>
-    <script src="../../../app-assets/js/scripts/forms/form-login-register.js"></script>
+    <script src="{{ asset('backend/app-assets/js/scripts/pages/material-app.js') }}"></script>
+    <script src="{{ asset('backend/app-assets/js/scripts/forms/form-login-register.js') }}"></script>
     <!-- END: Page JS-->
 
 </body>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'backend'], function () {
     // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
 
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
+    Route::get('/login', [UserController::class, 'login'])->name('login');
+    Route::get('/dashboard',[UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/create', [UserController::class, 'createUser'])->name('user.create');
 });
