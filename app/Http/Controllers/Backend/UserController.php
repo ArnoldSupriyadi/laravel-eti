@@ -26,4 +26,9 @@ class UserController extends Controller
     {
         return view('pages.backend.user.create');
     }
+
+    public function editUser()
+    {
+        return view('pages.backend.user.edit');
+    }
 }

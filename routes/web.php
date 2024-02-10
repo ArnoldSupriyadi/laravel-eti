@@ -25,4 +25,5 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/dashboard',[UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [UserController::class, 'createUser'])->name('user.create');
+    Route::get('/user/edit', [UserController::class, 'editUser'])->name('user.edit');
 });
