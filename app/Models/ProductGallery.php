@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Client extends Model
+class ProductGallery extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $table = 'clients';
+    protected $table = 'product_galleries';
 
     protected $fillable = [
-        'name', 'description', 'logo'
+        'product_id', 'name', 'description', 'image'
     ];
 }
