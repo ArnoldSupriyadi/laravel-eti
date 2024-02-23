@@ -5,27 +5,36 @@ namespace Database\Seeders;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 
-class RoleSeeder extends Seeder
+class PermissionSeeder extends Seeder
 {
     public function run()
     {
-        $superadminRole = Role::create([
-            'name' => 'superadmin',
+        Permission::create([
+            'name' => 'view_users',
             'guard_name' => 'web',
             'created_at' => Carbon::now()
         ]);
 
-        $adminRole = Role::create([
-            'name' => 'admin',
+        Permission::create([
+            'name' => 'create_users',
             'guard_name' => 'web',
             'created_at' => Carbon::now()
         ]);
 
-        $adminRole->givePermissionTo('view_users');
+        Permission::create([
+            'name' => 'edit_users',
+            'guard_name' => 'web',
+            'created_at' => Carbon::now()
+        ]);
+
+        Permission::create([
+            'name' => 'delete_users',
+            'guard_name' => 'web',
+            'created_at' => Carbon::now()
+        ]);
     }
 }
