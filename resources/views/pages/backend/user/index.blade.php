@@ -1,12 +1,13 @@
 @extends('layout.backend.main')
 
-@section('title', 'Data User')
+@section('title', 'User')
 
 @section('content')
     <div class="content-body">
         <!-- Table row borders end-->
         <div class="row">
             <div class="col-12">
+                <a href="{{ route('user.create') }}" class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Users</a>
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Data Users</h4>
@@ -57,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('user.create') }}" class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Users</a>
             </div>
         </div>
         <!-- Table row borders end -->
