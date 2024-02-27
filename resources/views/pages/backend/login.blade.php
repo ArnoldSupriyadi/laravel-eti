@@ -6,17 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
-    <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+    <meta name="description"
+        content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+    <meta name="keywords"
+        content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
     <meta name="author" content="PIXINVENT">
     <title>Login CMS ETI</title>
     <link rel="apple-touch-icon" href="{{ asset('backend/app-assets/images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('backend/app-assets/images/ico/favicon.ico') }}">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/material-icons/material-icons.css') }}">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/material-vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('backend/app-assets/vendors/css/material-vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/forms/icheck/icheck.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/vendors/css/forms/icheck/custom.css') }}">
     <!-- END: Vendor CSS-->
@@ -30,7 +35,8 @@
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('backend/app-assets/css/core/menu/menu-types/material-vertical-menu-modern.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/app-assets/css/pages/login-register.css') }}">
     <!-- END: Page CSS-->
 
@@ -43,7 +49,9 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern material-vertical-layout material-layout 1-column  bg-full-screen-image blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+<body
+    class="vertical-layout vertical-menu-modern material-vertical-layout material-layout 1-column  bg-full-screen-image blank-page"
+    data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-header row">
@@ -57,24 +65,36 @@
                             <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img src="{{ asset('backend/app-assets/images/logo/logo-dark.png') }}" alt="branding logo">
+                                        <img src="{{ asset('backend/app-assets/images/logo/logo-dark.png') }}"
+                                            alt="branding logo">
                                     </div>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="index.html" novalidate>
+                                        <form action="{{ route('signIn') }}" method="POST" class="form-horizontal">
+                                            @csrf
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control" id="user-name" placeholder="Your Username" required>
+                                                <input type="text" class="form-control" name="email" id="email"
+                                                    placeholder="Your Email" required>
                                                 <div class="form-control-position">
                                                     <i class="la la-user"></i>
                                                 </div>
+                                                @error('email')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </fieldset>
+
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control" id="user-password" placeholder="Enter Password" required>
+                                                <input type="password" class="form-control" name="password"
+                                                    id="password" placeholder="Enter Password" required>
                                                 <div class="form-control-position">
                                                     <i class="la la-key"></i>
                                                 </div>
+                                                @error('password')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </fieldset>
+
                                             <div class="form-group row">
                                                 <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
                                                     <fieldset>
@@ -84,7 +104,9 @@
                                                 </div>
                                                 {{-- <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div> --}}
                                             </div>
-                                            <a href="{{ route('dashboard') }}" type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> Login</a>
+
+                                            <button type="submit" class="btn btn-outline-info btn-block">
+                                                <i class="ft-unlock"></i>Login</button>
                                         </form>
                                     </div>
                                 </div>

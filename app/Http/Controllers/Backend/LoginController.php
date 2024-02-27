@@ -3,66 +3,63 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Carbon\Carbon;
+use Hash;
+use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function __construct()
+    {
+        $this->middleware('guest')->except([
+            'logout', 'dashboard'
+        ]);
+    }
+
+    public function login()
     {
         return view ('pages.backend.login');
     }
 
+    public function signIn(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($credentials))
+        {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard')
+                ->withSuccess('You have successfully logged in!');
+        }
+
+        return back()
+            ->withErrors(['email' => 'Your provided credentials do not match in our records.'])
+            ->onlyInput('email');
+    }
+
     public function dashboard()
     {
-        return view('pages.backend.dashboard');
+        if (Auth::check()) {
+
+            return view('pages.backend.dashboard');
+        }
+
+        return redirect()->route('login')->withSuccess('You are not allowed to access');
     }
 
+    public function logout(Request $request) {
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('login')
+            ->withSuccess('You have logged out successfully!');;
     }
 }
