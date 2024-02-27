@@ -5,9 +5,9 @@
                 </li> --}}
                 {{-- <li class=" navigation-header"><span data-i18n="Crypto">Crypto</span><i class="material-icons nav-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Crypto">more_horiz</i>
                 </li> --}}
-                <li class=" nav-item"><a href="crypto-transactions.html"><i class="material-icons">image</i><span class="menu-title" data-i18n="Transactions">Logo</span></a>
+                <li class=" nav-item"><a href="{{ route('logo.index') }}"><i class="material-icons">image</i><span class="menu-title" data-i18n="Transactions">Logo</span></a>
                 </li>
-                <li class=" nav-item"><a href="crypto-currency-exchange.html"><i class="material-icons">business_center</i><span class="menu-title" data-i18n="Currency Exchange">About</span></a>
+                <li class=" nav-item"><a href="{{ route('about.index') }}"><i class="material-icons">business_center</i><span class="menu-title" data-i18n="Currency Exchange">About</span></a>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="material-icons">explore</i><span class="menu-title" data-i18n="Components">Product & Services</span></a>
                     <ul class="menu-content">
@@ -17,9 +17,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="crypto-wallet.html"><i class="material-icons">collections</i><span class="menu-title" data-i18n="Wallet">Gallery</span></a>
+                <li class=" nav-item"><a href="{{ route('gallery.index') }}"><i class="material-icons">collections</i><span class="menu-title" data-i18n="Wallet">Gallery</span></a>
                 </li>
-                <li class=" nav-item"><a href="crypto-wallet.html"><i class="material-icons">perm_contact_calendar</i><span class="menu-title" data-i18n="Wallet">Contact</span></a>
+                <li class=" nav-item"><a href="{{ route('contact.index') }}"><i class="material-icons">perm_contact_calendar</i><span class="menu-title" data-i18n="Wallet">Contact</span></a>
                 </li>
                 <li class=" navigation-header"><span data-i18n="User Interface">Authentication</span><i class="material-icons nav-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="User Interface">more_horiz</i>
                 </li>

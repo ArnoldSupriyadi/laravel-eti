@@ -22,5 +22,5 @@
 <!-- END: Page CSS-->
 
 <!-- BEGIN: Custom CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('backend/') }}assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
 <!-- END: Custom CSS-->

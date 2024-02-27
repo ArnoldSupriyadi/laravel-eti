@@ -32,9 +32,6 @@
                             <form class="form">
                                 <div class="form-body">
                                     <h4 class="form-section">
-                                        <i
-                                            class="la la-eye"
-                                        ></i>
                                         About User
                                     </h4>
                                     <div class="row">
