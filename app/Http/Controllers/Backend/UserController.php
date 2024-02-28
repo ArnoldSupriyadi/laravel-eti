@@ -12,12 +12,12 @@ class UserController extends Controller
         return view('pages.backend.user.index');
     }
 
-    public function createUser()
+    public function create()
     {
         return view('pages.backend.user.create');
     }
 
-    public function editUser()
+    public function edit()
     {
         return view('pages.backend.user.edit');
     }

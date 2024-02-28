@@ -40,8 +40,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
 
         Route::get('/user', [UserController::class, 'index'])->name('user.index');
-        Route::get('/user/create', [UserController::class, 'createUser'])->name('user.create');
-        Route::get('/user/edit', [UserController::class, 'editUser'])->name('user.edit');
+        Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+        Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
     });
 
     Route::group(['prefix' => 'backend'], function () {
