@@ -69,7 +69,7 @@
             </li>
 
             <li class=" nav-item">
-                <a href="#"><i class="material-icons">supervisor_account</i>
+                <a href="{{ route('role.index') }}"><i class="material-icons">supervisor_account</i>
                     <span class="menu-title" data-i18n="User">Role</span>
                 </a>
             </li>

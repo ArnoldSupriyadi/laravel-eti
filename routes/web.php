@@ -36,13 +36,27 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
     });
 
-    Route::group(['prefix' => 'backend'], function () {
-        // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
-
-        Route::get('/user', [UserController::class, 'index'])->name('user.index');
-        Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-        Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::prefix('role')->group(function() {
+        Route::get('', [RoleController::class, 'index'])->name('role.index');
+        Route::post('create', [RoleController::class, 'create'])->name('role.create');
+        Route::get('edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
+        Route::put('update/{id}', [RoleController::class, 'update'])->name('role.update');
     });
+
+    Route::prefix('user')->group(function() {
+        Route::get('', [UserController::class, 'index'])->name('user.index');
+        Route::post('create', [UserController::class, 'create'])->name('user.create');
+        Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
+    });
+
+    // Route::group(['prefix' => 'backend'], function () {
+    //     // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
+
+    //     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    //     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    //     Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
+    // });
 
     Route::group(['prefix' => 'backend'], function () {
         Route::get('/logo', [LogoController::class, 'index'])->name('logo.index');
