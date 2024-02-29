@@ -41,7 +41,9 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->role->name }}</td>
+                                            <td>
+                                                {{-- {{ $user->roles }} --}}
+                                            </td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <a href="{{ route('user.edit', $user->id) }}"
@@ -52,17 +54,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                    {{-- <tr>
-                                        <td>1</td>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>john@example.com</td>
-                                        <td><a href="{{ route('user.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                            <a type="button"
-                                                class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
-                                        </td>
-                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>
