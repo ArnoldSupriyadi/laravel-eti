@@ -7,6 +7,13 @@
                 </li> --}}
 
             <li class=" nav-item">
+                <a href="{{ route('home.index') }}">
+                    <i class="material-icons">home</i>
+                    <span class="menu-title" data-i18n="Currency Exchange">Home</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
                 <a href="{{ route('logo.index') }}">
                     <i class="material-icons">image</i>
                     <span class="menu-title" data-i18n="Transactions">Logo</span>
@@ -21,24 +28,10 @@
             </li>
 
             <li class=" nav-item">
-                <a href="#">
+                <a href="{{ route('product.index') }}">
                     <i class="material-icons">explore</i>
                     <span class="menu-title" data-i18n="Components">Product & Services</span>
                 </a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="menu-item" href="component-alerts.html">
-                            <i class="material-icons"></i>
-                            <span data-i18n="Alerts">Defense</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="menu-item" href="component-callout.html">
-                            <i class="material-icons"></i>
-                            <span data-i18n="Callout">Commercial</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
 
             <li class=" nav-item">

@@ -38,7 +38,7 @@
                                                     type="text"
                                                     id="userinput1"
                                                     class="form-control border-primary"
-                                                    placeholder="Type"
+                                                    placeholder="Ex: john.doe@gmail.com or +62899000111"
                                                     name="name"
                                                 />
                                             </div>

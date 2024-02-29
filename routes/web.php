@@ -9,7 +9,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductCategoryController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Frontend\ClientController;
 use App\Http\Controllers\Frontend\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +31,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('product')->group(function() {
         Route::get('', [ProductController::class, 'index'])->name('product.index');
-        Route::post('create', [ProductController::class, 'create'])->name('product.create');
-        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+        Route::get('create', [ProductController::class, 'create'])->name('product.create');
+        Route::get('edit', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
     });
 
@@ -77,6 +77,11 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
         Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
         Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+    });
+
+    Route::group(['prefix' => 'backend'], function () {
+        Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+        Route::get('/home/edit', [HomeController::class, 'edit'])->name('home.edit');
     });
 
 });

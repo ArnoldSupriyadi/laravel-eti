@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Edit Gallery')
+@section('title', 'Edit Image')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <div class="card-text">
                                 <p>
-                                    Edit Gallery
+                                    Change Image
                                 </p>
                             </div>
 
@@ -28,23 +28,6 @@
                                     <h4 class="form-section">
                                         
                                     </h4>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div
-                                                class="form-group"
-                                            >
-                                                <label
-                                                    for="userinput2"
-                                                    >Category</label
-                                                >
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>commercial</option>
-                                                    <option>defense</option>
-                                                    <option>none</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="form-group">
                                         <label>Select Image</label>
@@ -58,7 +41,7 @@
                                 <div
                                     class="form-actions text-right"
                                 >
-                                    <a href="{{ route('gallery.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
+                                    <a href="{{ route('home.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
                                     <button
                                         type="submit"
                                         class="btn btn-primary"

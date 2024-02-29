@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Edit Gallery')
+@section('title', 'Edit Product')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <div class="card-text">
                                 <p>
-                                    Edit Gallery
+                                    Create Product
                                 </p>
                             </div>
 
@@ -34,14 +34,16 @@
                                                 class="form-group"
                                             >
                                                 <label
-                                                    for="userinput2"
-                                                    >Category</label
+                                                    for="userinput1"
+                                                    >Name</label
                                                 >
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>commercial</option>
-                                                    <option>defense</option>
-                                                    <option>none</option>
-                                                </select>
+                                                <input
+                                                    type="text"
+                                                    id="userinput1"
+                                                    class="form-control border-primary"
+                                                    placeholder="Name"
+                                                    name="name"
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +60,7 @@
                                 <div
                                     class="form-actions text-right"
                                 >
-                                    <a href="{{ route('gallery.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
+                                    <a href="{{ route('product.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
                                     <button
                                         type="submit"
                                         class="btn btn-primary"

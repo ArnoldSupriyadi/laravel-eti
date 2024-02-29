@@ -12,7 +12,12 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.backend.product.detail.index');
+    }
+
+    public function detailProduct()
+    {
+        
     }
 
     /**

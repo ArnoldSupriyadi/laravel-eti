@@ -33,10 +33,17 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>general</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt="" class="img-fluid" width="20%"></td>
-                                        <td><a href="{{ route('logo.edit') }}" class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Change Logo</a>
-                                            <a type="button" class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a></td>
+                                        <td>commercial</td>
+                                        <td>img<img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt="" class="img-fluid" width="20%"></td>
+                                        <td><a href="{{ route('gallery.edit') }}" class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+                                           </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>defense</td>
+                                        <td>img<img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt="" class="img-fluid" width="20%"></td>
+                                        <td><a href="{{ route('gallery.edit') }}" class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+                                            </td>
                                     </tr>
 
                                 </tbody>

@@ -9,12 +9,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4
-                            class="card-title"
-                            id="basic-layout-colored-form-control"
-                        >
-                            Gallery Add Image
-                        </h4>
                         <a class="heading-elements-toggle"
                             ><i
                                 class="la la-ellipsis-v font-medium-3"
@@ -24,13 +18,15 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
                             <div class="card-text">
-                               
+                                <p>
+                                    Create New Gallery
+                                </p>
                             </div>
 
                             <form class="form">
                                 <div class="form-body">
                                     <h4 class="form-section">
-                                        About User
+                                        
                                     </h4>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -42,8 +38,9 @@
                                                     >Category</label
                                                 >
                                                 <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Products</option>
-                                                    <option>General</option>
+                                                    <option>commercial</option>
+                                                    <option>defense</option>
+                                                    <option>none</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -56,13 +53,12 @@
                                             <span class="file-custom"></span>
                                         </label>
                                     </div>
-
                                 </div>
 
                                 <div
                                     class="form-actions text-right"
                                 >
-                                    <a href="{{ route('user.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
+                                    <a href="{{ route('gallery.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
                                     <button
                                         type="submit"
                                         class="btn btn-primary"
