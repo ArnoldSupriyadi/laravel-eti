@@ -1,90 +1,83 @@
 (function($) { "use strict";
-	
+		
 		
 	//Page cursors
-
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-        t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px", 
-		i.style.left = n.clientX + "px", 
-		i.style.top = n.clientY + "px"
-    });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
-    }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
-    }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
-    }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }
-		
-		
-	//Parallax & fade on scroll	
 	
-	function scrollBanner() {
-	  $(document).on('scroll', function(){
-		var scrollPos = $(this).scrollTop();
-		$('.parallax-fade-top').css({
-		  'top' : (scrollPos/2)+'px',
-		  'opacity' : 1-(scrollPos/300)
-		});
-		$('.parallax-top-shadow').css({
-		  'top' : (scrollPos/-2)+'px'
-		});
-		$('.parallax-top').css({
-		  'top' : (scrollPos/2.2)+'px'
-		});
-	  });    
-	}
-	scrollBanner();	
+	$(window).mousemove(function(e) { 	  
+		$(".cursor").css({
+			left: e.pageX,
+			top: e.pageY
+		})	  
+	})
+	$(".cursor-link")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active")	  
+	})		
+	//Blog page cursors with image	
+	//Blog post 1:
+	$(".cursor-link-blog-post-1")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-1")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-1")	  
+	})	
+	//Blog post 2:
+	$(".cursor-link-blog-post-2")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-2")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-2")	  
+	})	
+	//Blog post 3:
+	$(".cursor-link-blog-post-3")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-3")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-3")	  
+	})		
+	//Blog post 4:
+	$(".cursor-link-blog-post-4")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-4")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-4")	  
+	})	
+	//Blog post 5:
+	$(".cursor-link-blog-post-5")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-5")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-5")	  
+	})		
+	//Blog post 6:
+	$(".cursor-link-blog-post-6")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-6")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-6")	  
+	})		
+	//Blog post 7:
+	$(".cursor-link-blog-post-7")
+	.on("mouseenter", function() {	 
+	$('.cursor').addClass("active-blog-post-7")	  
+	})
+	.on("mouseleave", function() {	  
+	$('.cursor').removeClass("active-blog-post-7")	  
+	})
 	
 	
 	/* Scroll Animation */
 	
-	window.scrollReveal = new scrollReveal();	
-
-	
-	/* Swiper */
-	
-    var swiper = new Swiper('.swiper-container', {
-		scrollbar: {
-			el: '.swiper-scrollbar',
-			hide: false,
-			draggable: true,
-			dragSize: '19',
-		},
-		slidesPerView: 'auto',
-		resistance: true,
-		resistanceRatio: 0,
-		speed: 800,
-		autoplay: false,
-		mousewheel: true,
-		freeMode: true,
-		grabCursor: true,
-		touchStartPreventDefault: false,
-		breakpoints: {
-			// when window width is <= 1200px
-			1200: {
-				freeMode: false,
-			}
-		}		
-    });	
-	$('#hero-slider').on('mousedown touchstart', function(event) {				
-		$('body').addClass('scale-up');
-	});				
-	$('#hero-slider').on('mouseup touchend', function(event) {				
-		$('body').removeClass('scale-up');
-	});
+	window.scrollReveal = new scrollReveal();
 
 	
 	//Navigation
@@ -113,36 +106,57 @@
 		};
 
 		init();
-	}();
+	}();		
+		
+		
+	//Parallax & fade on scroll	
+	
+	function scrollBanner() {
+	  $(document).on('scroll', function(){
+		var scrollPos = $(this).scrollTop();
+		$('.parallax-fade-top').css({
+		  'top' : (scrollPos/2)+'px',
+		  'opacity' : 1-(scrollPos/300)
+		});
+		$('.parallax-fade-top-pages').css({
+		  'top' : (scrollPos/2)+'px',
+		  'opacity' : 1-(scrollPos/500)
+		});
+		$('.parallax-top').css({
+		  'top' : (scrollPos/2.2)+'px'
+		});
+	  });    
+	}
+	scrollBanner();		
 
 	
-	$(document).ready(function() {	
+	$(document).ready(function() {
+		
 		
 		//Loading page animation
 		
 		$(".animsition").animsition({	  
 			inClass               :   'fade-in-down-sm',
 			outClass              :   'fade-out-down-sm',
-			inDuration            :    400,
+			inDuration            :    600,
 			outDuration           :    400,
 			linkElement           :   '.animsition-link', 
 			// e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
 			loading               :    true,
-			loadingParentElement  :   'body',
+			loadingParentElement  :   'body', //animsition wrapper element
 			loadingClass          :   'animsition-loading',
 			unSupportCss          : [ 'animation-duration',
 									  '-webkit-animation-duration',
 									  '-o-animation-duration'
-									],			
-			overlay               :   false,			
+									],
+			//"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser. 
+			//The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			
+			overlay               :   false,
+			
 			overlayClass          :   'animsition-overlay-slide',
 			overlayParentElement  :   'body'
-		});
-		
-		
-		//Nice Select
-		
-		$('select').niceSelect();
+		});	
 
 		
 		//Scroll back to top
@@ -151,9 +165,9 @@
 		var duration = 400;
 		jQuery(window).on('scroll', function() {
 			if (jQuery(this).scrollTop() > offset) {
-				jQuery('.scroll-to-top').addClass('active-arrow');
+				jQuery('.scroll-to-top').fadeIn(duration);
 			} else {
-				jQuery('.scroll-to-top').removeClass('active-arrow');
+				jQuery('.scroll-to-top').fadeOut(duration);
 			}
 		});				
 		jQuery('.scroll-to-top').on('click', function(event) {
@@ -161,84 +175,80 @@
 			jQuery('html, body').animate({scrollTop: 0}, duration);
 			return false;
 		})
+
 		
+		/* Hero Case study images */			
 		
-		/* Hero Case Study Hover Effect */			
-		
-		$('.case-study-name:nth-child(1)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(1)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(1)').addClass("show");
 			$('.case-study-name:nth-child(1)').addClass('active');
 		})
-		$('.case-study-name:nth-child(2)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(2)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(2)').addClass("show");
 			$('.case-study-name:nth-child(2)').addClass('active');
 		})
-		$('.case-study-name:nth-child(3)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(3)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(3)').addClass("show");
 			$('.case-study-name:nth-child(3)').addClass('active');
 		})
-		$('.case-study-name:nth-child(4)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(4)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(4)').addClass("show");
 			$('.case-study-name:nth-child(4)').addClass('active');
 		})
-		$('.case-study-name:nth-child(5)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(5)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(5)').addClass("show");
 			$('.case-study-name:nth-child(5)').addClass('active');
 		})
 		
-		$('.case-study-name:nth-child(6)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(6)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(6)').addClass("show");
 			$('.case-study-name:nth-child(6)').addClass('active');
 		})
-		$('.case-study-name:nth-child(7)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(7)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(7)').addClass("show");
 			$('.case-study-name:nth-child(7)').addClass('active');
 		})
-		$('.case-study-name:nth-child(8)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(8)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(8)').addClass("show");
 			$('.case-study-name:nth-child(8)').addClass('active');
 		})
-		$('.case-study-name:nth-child(9)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(9)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(9)').addClass("show");
 			$('.case-study-name:nth-child(9)').addClass('active');
 		})
-		$('.case-study-name:nth-child(10)').on('mouseenter touchstart', function() {
+		$('.case-study-name:nth-child(10)').on('mouseenter', function() {
 			$('.case-study-name.active').removeClass('active');
 			$('.case-study-images li.show').removeClass("show");
 			$('.case-study-images li:nth-child(10)').addClass("show");
 			$('.case-study-name:nth-child(10)').addClass('active');
-		})	
-		$('.case-study-name:nth-child(1)').trigger('mouseenter')	
+		})
+	
+		$('.case-study-name:nth-child(1)').trigger('mouseenter')
+		
+				
+		//Tooltip
+
+		$(".tipped").tipper();
 		
 		
-		/* Cursor color change */	
-		
-		$('.background-dark-3').on('mouseover', function(event) {				
-			$('body').addClass('cursor-dark');
-		});				
-		$('.background-dark-3').on('mouseout', function(event) {		
-			$('body').removeClass('cursor-dark');
-		});
-			
-			
 		/* Video */
 		
 		$(".container").fitVids();
@@ -253,15 +263,10 @@
 				$(PlaceV).html('<iframe frameborder="0" height="333" src="' + videoLink + '?autoplay=1&showinfo=0" title="YouTube video player" width="547"></iframe>');
 			} else {
 				$(this).parent().wrapAll('<div class="video-wrapper">');
-				$(PlaceV).html('<iframe src="' + videoLink + '?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=1f2029" width="500" height="281" frameborder="0"></iframe>');
+				$(PlaceV).html('<iframe src="' + videoLink + '?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=c4c3ca" width="500" height="281" frameborder="0"></iframe>');
 			}
 		});	
-		$('.video-section').on('mouseover', function(event) {				
-			$('body').addClass('video-cursor');
-		});				
-		$('.video-section').on('mouseout', function(event) {		
-			$('body').removeClass('video-cursor');
-		});
+
 		
 		/* Portfolio Sorting */
 
@@ -320,8 +325,8 @@
 				reArrangeProjects();				
 			} );					
 		} )(jQuery);
-	
-					
+
+			
 	});
  
 	/* DebouncedResize Function */
@@ -354,7 +359,5 @@
 		};
 	} )(jQuery);
 
-	
-	
 	
   })(jQuery); 

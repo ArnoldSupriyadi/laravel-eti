@@ -7,5 +7,18 @@ use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('pages.frontend.home.index');
+    }
+
+    public function about()
+    {
+        return view('pages.frontend.about.index');
+    }
+
+    public function contact()
+    {
+        return view('pages.frontend.contact.index');
+    }
 }
