@@ -1,4 +1,4 @@
-{{-- <html class="no-js" lang="en">
+<html class="no-js" lang="en">
   <!--<![endif]-->
   <head>
     <!-- Basic Page Needs
@@ -45,4 +45,4 @@
     <!-- End Document
 ================================================== -->
   </body>
-</html> --}}
+</html>

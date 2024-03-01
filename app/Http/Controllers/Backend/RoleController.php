@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
     public function index()
     {
-        $roles = User::orderBy('name', 'ASC')->get();
+        $roles = Role::orderBy('name', 'ASC')->get();
 
         return view('pages.backend.role.index', ['roles' => $roles]);
     }
@@ -29,7 +29,7 @@ class RoleController extends Controller
             'name' => 'required',
         ]);
 
-        User::create([
+        Role::create([
             'name' => $request->name,
             'guard_name' => 'web',
         ]);

@@ -9,17 +9,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4
-                            class="card-title"
-                            id="basic-layout-colored-form-control"
-                        >
+                        <h4 class="card-title" id="basic-layout-colored-form-control">
                             User Profile Add
                         </h4>
-                        <a class="heading-elements-toggle"
-                            ><i
-                                class="la la-ellipsis-v font-medium-3"
-                            ></i
-                        ></a>
+                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
@@ -29,81 +22,72 @@
                                 </p>
                             </div>
 
-                            <form class="form">
+                            <form class="form" action="{{ route('user.update', $user->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+
                                 <div class="form-body">
-                                    <h4 class="form-section">
-                                        About User
-                                    </h4>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div
-                                                class="form-group"
-                                            >
-                                                <label
-                                                    for="userinput1"
-                                                    >Name</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    id="userinput1"
-                                                    class="form-control border-primary"
-                                                    placeholder="Name"
-                                                    name="name"
-                                                />
+                                            <div class="form-group">
+                                                <label for="name">Name <span style="color: red">*</span></label>
+                                                <input type="text"
+                                                    class="form-control border-primary @error('name') is-invalid @enderror"
+                                                    name="name" id="name" value="{{ old('name') }}"
+                                                    placeholder="Name" required />
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div
-                                                class="form-group"
-                                            >
-                                                <label
-                                                    for="userinput2"
-                                                    >Role</label
-                                                >
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Admin</option>
-                                                    <option>Staff</option>
+                                            <div class="form-group">
+                                                <label for="role">Role <span style="color: red">*</span></label>
+                                                <select class="form-control @error('role') is-invalid @enderror"
+                                                    name="role" id="role" required>
+                                                    @foreach ($roles as $role)
+                                                        <option value="{{ $role->id }}"
+                                                            @if ($role->id == $user->roles->id) @selected(true) @endif>
+                                                            {{ $role->name }}
+                                                        </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="userinput5"
-                                            >Email</label
-                                        >
-                                        <input
-                                            class="form-control border-primary"
-                                            type="email"
-                                            placeholder="email"
-                                            id="userinput5"
-                                        />
+                                        <label for="email">Email <span style="color: red">*</span></label>
+                                        <input class="form-control border-primary @error('email') is-invalid @enderror"
+                                            type="email" name="email" id="email" value="{{ old('email') }}"
+                                            placeholder="Email" required />
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="userinput6"
-                                            >Password</label
-                                        >
-                                        <input
-                                            class="form-control border-primary"
-                                            type="password"
-                                            placeholder="Entry Password"
-                                            id="userinput6"
-                                        />
+                                        <label for="password">Password <span style="color: red">*</span></label>
+                                        <input class="form-control border-primary @error('password') is-invalid @enderror"
+                                            type="password" placeholder="Password" id="password"
+                                            value="{{ old('password') }}" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone <span style="color: red">*</span></label>
+                                        <input class="form-control border-primary @error('phone') is-invalid @enderror"
+                                            type="number" name="phone" id="phone" value="{{ old('phone') }}"
+                                            placeholder="Phone" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="address">Address <span style="color: red">*</span></label>
+                                        <input class="form-control border-primary @error('address') is-invalid @enderror"
+                                            type="text" name="address" id="address" value="{{ old('address') }}"
+                                            placeholder="Address" required />
                                     </div>
                                 </div>
 
-                                <div
-                                    class="form-actions text-right"
-                                >
-                                    <a href="{{ route('user.index') }}" class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
-                                    <button
-                                        type="submit"
-                                        class="btn btn-primary"
-                                    >
-                                        <i
-                                            class="la la-check-square-o"
-                                        ></i>
+                                <div class="form-actions text-right">
+                                    <a href="{{ route('user.index') }}" class="btn btn-warning mr-1"><i
+                                            class="ft-x"></i>Cancel</a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="la la-check-square-o"></i>
                                         Save
                                     </button>
                                 </div>

@@ -21,9 +21,6 @@
                         </div>
                     </div>
                     <div class="card-content collapse show">
-                        <div class="card-body card-dashboard">
-                            <p class="card-text">Data users at eti</p>
-                        </div>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
@@ -42,7 +39,9 @@
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
-                                                {{-- {{ $user->roles }} --}}
+                                                @if ($user->role_id != null)
+                                                    {{ \Spatie\Permission\Models\Role::where('id', $user->role_id)->first()->name }}
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">

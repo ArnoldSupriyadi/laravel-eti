@@ -7,7 +7,7 @@
                 </li> --}}
 
             <li class=" nav-item">
-                <a href="{{ route('home.index') }}">
+                <a href="{{ route('home') }}">
                     <i class="material-icons">home</i>
                     <span class="menu-title" data-i18n="Currency Exchange">Home</span>
                 </a>

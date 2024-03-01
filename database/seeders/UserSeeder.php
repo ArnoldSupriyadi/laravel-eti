@@ -17,7 +17,8 @@ class UserSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'superadmin@gmail.com',
             'password' => Hash::make('123'),
-            'is_active' => 1,
+            'phone' => 123721532223,
+            'address' => 'Pasuruan',
             'created_at' => Carbon::now(),
         ]);
         DB::table('users')->insert([
@@ -25,7 +26,8 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
-            'is_active' => 1,
+            'phone' => 123721532233,
+            'address' => 'Jakarta',
             'created_at' => Carbon::now(),
         ]);
     }

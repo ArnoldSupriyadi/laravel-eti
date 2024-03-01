@@ -15,6 +15,12 @@ use App\Http\Controllers\Frontend\LandingController;
 use App\Http\Controllers\Frontend\SettingController;
 use Illuminate\Support\Facades\Route;
 
+// Frontend
+Route::controller(LandingController::class)->group(function(){
+    Route::get('/', 'index')->name('home');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/contact', 'contact')->name('contact');
+});
 
 Route::controller(LoginController::class)->group(function() {
     Route::get('/login', 'login')->name('login');
@@ -23,15 +29,7 @@ Route::controller(LoginController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
-// Frontend Contorller
-Route::controller(LandingController::class)->group(function(){
-    Route::get('/', 'index')->name('home');
-    Route::get('/about', 'about')->name('about');
-    Route::get('/contact', 'contact')->name('contact');
-});
-
-
-// End of Frontend Controller
+// Auth
 Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::prefix('category')->group(function() {
         Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
@@ -49,16 +47,20 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('role')->group(function() {
         Route::get('', [RoleController::class, 'index'])->name('role.index');
-        Route::post('create', [RoleController::class, 'create'])->name('role.create');
+        Route::get('create', [RoleController::class, 'create'])->name('role.create');
+        Route::post('store', [RoleController::class, 'store'])->name('role.store');
         Route::get('edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
         Route::put('update/{id}', [RoleController::class, 'update'])->name('role.update');
+        Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('penjualan.destroy');
     });
 
     Route::prefix('user')->group(function() {
         Route::get('', [UserController::class, 'index'])->name('user.index');
-        Route::post('create', [UserController::class, 'create'])->name('user.create');
+        Route::get('create', [UserController::class, 'create'])->name('user.create');
+        Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('penjualan.destroy');
     });
 
     // Route::group(['prefix' => 'backend'], function () {
@@ -90,10 +92,10 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
     });
 
-    Route::group(['prefix' => 'backend'], function () {
-        Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-        Route::get('/home/edit', [HomeController::class, 'edit'])->name('home.edit');
-    });
+    // Route::group(['prefix' => 'backend'], function () {
+    //     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+    //     Route::get('/home/edit', [HomeController::class, 'edit'])->name('home.edit');
+    // });
 
 });
 

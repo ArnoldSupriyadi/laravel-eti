@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -28,15 +28,21 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'role' => 'required',
+            'name' => 'required|max:50',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required',
+            'phone' => 'required|max:15',
+            'address' => 'required',
         ]);
 
         User::create([
+            'role_id' => $request->role,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'address' => $request->address,
         ]);
 
         return redirect()->route('user.index')->with(['success' => 'Data berhasil disimpan!']);
@@ -53,18 +59,47 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'role' => 'required',
+            'name' => 'required|max:50',
             'email' => 'required|email:dns',
+            'password' => 'required',
+            'phone' => 'required|max:15',
+            'address' => 'required',
         ]);
 
         $user = User::findOrFail($id);
 
         $user->update([
+            'role_id' => $request->role,
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
         ]);
 
         return redirect()->route('user.index')->with(['success' => 'Data berhasil diubah!']);
+    }
+
+    public function updatePassword(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'email' => 'required|email:dns',
+            'password' => 'required',
+            'password_confirm' => 'required',
+        ]);
+
+        $user = User::findOrFail($id);
+
+        if ($request->password == $request->password_confirm) {
+            $user->update([
+                'password' => Hash::make($request->password),
+            ]);
+
+            return redirect()->route('user.index')->with(['success' => 'Password berhasil diubah!']);
+
+        } else {
+            return redirect()->route('user.index')->with(['error' => 'Password gagal diubah!']);
+        }
     }
 
     public function destroy(string $id)
