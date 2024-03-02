@@ -130,9 +130,9 @@ mark{
 .relative {
     position: relative;
 }
-.over-hide{
+/* .over-hide{
 	overflow: hidden;
-}
+} */
 .full-height {
 	height: 100vh;
 }

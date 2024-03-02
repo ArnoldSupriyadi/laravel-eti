@@ -17,6 +17,26 @@ class LandingController extends Controller
         return view('pages.frontend.about.index');
     }
 
+    public function products()
+    {
+        return view('pages.frontend.product.index');
+    }
+
+    public function productsCategory()
+    {
+        return view('pages.frontend.product.category');
+    }
+
+    public function detailProduct()
+    {
+        return view('pages.frontend.product.detail');
+    }
+
+    public function gallery()
+    {
+        return view('pages.frontend.gallery.index');
+    }
+
     public function contact()
     {
         return view('pages.frontend.contact.index');

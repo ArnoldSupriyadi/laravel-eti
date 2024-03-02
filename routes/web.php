@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend
 Route::controller(LandingController::class)->group(function(){
-    Route::get('/', 'index')->name('home');
+    Route::get('/', 'index')->name('landing');
     Route::get('/about', 'about')->name('about');
+    Route::get('/products', 'products')->name('products');
+    Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
+    Route::get('/productsDetail', 'detailProduct')->name('productsDetail');
+    Route::get('/gallery', 'gallery')->name('gallery');
     Route::get('/contact', 'contact')->name('contact');
 });
 
@@ -72,6 +76,11 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     // });
 
     Route::group(['prefix' => 'backend'], function () {
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
+        Route::get('/home/edit', [HomeController::class, 'edit'])->name('home.edit');
+    });
+
+    Route::group(['prefix' => 'backend'], function () {
         Route::get('/logo', [LogoController::class, 'index'])->name('logo.index');
         Route::get('/logo/edit', [LogoController::class, 'edit'])->name('logo.edit');
     });
@@ -91,11 +100,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
         Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
     });
-
-    // Route::group(['prefix' => 'backend'], function () {
-    //     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
-    //     Route::get('/home/edit', [HomeController::class, 'edit'])->name('home.edit');
-    // });
 
 });
 

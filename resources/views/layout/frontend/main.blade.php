@@ -39,6 +39,7 @@
     <!-- CONTENT -->
       @yield('content')
     <!-- END OF CONTENT -->
+    
     <!-- JAVASCRIPT
     ================================================== -->
     @include('layout.frontend.scripts')

@@ -1,80 +1,15 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]>
-<!-->
-<html class="no-js" lang="en">
-  <!--<![endif]-->
-  <head>
-    <!-- Basic Page Needs
-	================================================== -->
-    <meta charset="utf-8" />
-    <title>About | ETI</title>
-    <meta name="description" content="Professional Creative Template" />
-    <meta name="author" content="IG Design" />
-    <meta name="keywords" content="ig design, website, design, html5, css3, jquery, creative, clean, animated, portfolio, blog, one-page, multi-page, corporate, business," />
-    <meta property="og:title" content="Professional Creative Template" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:width" content="470" />
-    <meta property="og:image:height" content="246" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="Professional Creative Template" />
-    <meta name="twitter:card" content="" />
-    <meta name="twitter:site" content="https://twitter.com/IvanGrozdic" />
-    <meta name="twitter:domain" content="http://ivang-design.com/" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Professional Creative Template" />
-    <meta name="twitter:image" content="http://ivang-design.com/" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- Mobile Specific Metas
-	================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="theme-color" content="#212121" />
-    <meta name="msapplication-navbutton-color" content="#212121" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#212121" />
+@extends('layout.frontend.main')
 
-    @include('layout.frontend.style')
-    
-  </head>
-  <body>
-    <!-- Page preloader wrap
-	================================================== -->
+@section('title', 'About')
 
-    <div class="animsition">
+@section('content')
+   <div class="animsition">
       <!-- Nav and Logo
 		================================================== -->
+      @include('layout.frontend.header')
 
-      <header class="cd-header">
-        <div class="header-wrapper">
-          <div class="logo-wrap">
-            <a href="index.html" class="cursor-link animsition-link"><img src="img/eti-logo-white.png" alt="eti indonesia" class="img-fluid" /></a>
-          </div>
-          <div class="nav-but-wrap">
-            <div class="menu-icon cursor-link">
-              <span class="menu-icon__line menu-icon__line-left"></span>
-              <span class="menu-icon__line"></span>
-              <span class="menu-icon__line menu-icon__line-right"></span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="nav">
-        <div class="nav__content">
-          <ul class="nav__list">
-            <li class="nav__list-item"><a href="index.html" class="cursor-link animsition-link">home</a></li>
-            <li class="nav__list-item"><a href="about.html" class="cursor-link animsition-link">about</a></li>
-            <li class="nav__list-item"><a href="productService.html" class="cursor-link animsition-link">products</a></li>
-            <li class="nav__list-item"><a href="gallery.html" class="cursor-link animsition-link">gallery</a></li>
-            <li class="nav__list-item"><a href="contact.html" class="cursor-link animsition-link">contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Primary Page Layout
-		================================================== -->
-
+      @include('layout.frontend.navbar')
+      
       <div class="section padding-page-top padding-bottom over-hide background-dark-2">
         <div class="container">
           <div class="row">
@@ -264,12 +199,6 @@
 
       <div class="cursor cursor-shadow"></div>
       <div class="cursor cursor-dot"></div>
+      
     </div>
-
-    <!-- JAVASCRIPT
-    ================================================== -->
-    @include('layout.frontend.scripts')
-    <!-- End Document
-================================================== -->
-  </body>
-</html>
+@endsection
