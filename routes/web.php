@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\CompanyProfileController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\LoginController;
@@ -40,6 +41,14 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('create', [ProductCategoryController::class, 'create'])->name('category.create');
         Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
         Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
+    });
+
+    // Company Profile
+    Route::prefix('compro')->group(function() {
+        Route::get('', [CompanyProfileController::class, 'index'])->name('compro.index');
+        Route::post('create', [CompanyProfileController::class, 'create'])->name('compro.create');
+        Route::get('edit/{id}', [CompanyProfileController::class, 'edit'])->name('compro.edit');
+        Route::put('update/{id}', [CompanyProfileController::class, 'update'])->name('compro.update');
     });
 
     Route::prefix('product')->group(function() {

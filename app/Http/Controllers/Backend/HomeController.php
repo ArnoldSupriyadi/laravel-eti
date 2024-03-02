@@ -12,7 +12,7 @@ class HomeController extends Controller
         return view('pages.backend.home.index');
     }
 
-    public function edit()
+    public function edit(string $id)
     {
         return view('pages.backend.home.edit');
     }

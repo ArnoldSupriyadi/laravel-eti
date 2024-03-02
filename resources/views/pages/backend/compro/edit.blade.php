@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Edit Role')
+@section('title', 'Edit Company Profile')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -10,19 +10,14 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-colored-form-control">
-                            Role Edit
+                            Company Profile Edit
                         </h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <div class="card-text">
-                                <p>
-                                    Role edit data
-                                </p>
-                            </div>
 
-                            <form class="form" action="{{ route('role.update', $role->id) }}" method="POST"
+                            <form class="form" action="{{ route('compro.update', $profile->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -34,9 +29,24 @@
                                                 <label for="name">Name <span style="color: red">*</span></label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
-                                                    name="name" id="name" value="{{ $role->name }}"
+                                                    name="name" id="name" value="{{ $profile->name }}"
                                                     placeholder="Name" required />
                                                 @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="description">Description <span
+                                                        style="color: red">*</span></label>
+                                                <input type="text"
+                                                    class="form-control border-primary @error('description') is-invalid @enderror"
+                                                    name="description" id="description" value="{{ $profile->description }}"
+                                                    placeholder="Description" required />
+
+                                                @error('description')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
                                             </div>
@@ -45,7 +55,7 @@
                                 </div>
 
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('role.index') }}" class="btn btn-warning mr-1"><i
+                                    <a href="{{ route('compro.index') }}" class="btn btn-warning mr-1"><i
                                             class="ft-x"></i>Cancel</a>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="la la-check-square-o"></i>

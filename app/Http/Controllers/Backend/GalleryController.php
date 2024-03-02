@@ -12,7 +12,7 @@ class GalleryController extends Controller
         return view('pages.backend.gallery.index');
     }
 
-    public function edit()
+    public function edit(string $id)
     {
         return view('pages.backend.gallery.edit');
     }

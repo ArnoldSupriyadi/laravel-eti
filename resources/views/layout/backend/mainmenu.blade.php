@@ -48,6 +48,7 @@
                 </a>
             </li>
 
+            {{-- Authentication NavbarHeader --}}
             <li class=" navigation-header">
                 <span data-i18n="User Interface">Authentication</span>
                 <i class="material-icons nav-menu-icon" data-toggle="tooltip" data-placement="right"
@@ -64,6 +65,14 @@
             <li class=" nav-item">
                 <a href="{{ route('role.index') }}"><i class="material-icons">supervisor_account</i>
                     <span class="menu-title" data-i18n="User">Role</span>
+                </a>
+            </li>
+
+            {{-- Setting NavbarHeader --}}
+            <li class=" nav-item">
+                <a href="{{ route('compro.index') }}">
+                    <i class="material-icons">person</i>
+                    <span class="menu-title" data-i18n="User">Company Profile</span>
                 </a>
             </li>
 
