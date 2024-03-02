@@ -47,13 +47,13 @@ class RoleController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
-            'nama' => 'required',
+            'name' => 'required',
         ]);
 
         $role = Role::findOrFail($id);
 
         $role->update([
-            'nama' => $request->nama,
+            'name' => $request->name,
             'guard_name' => 'web',
         ]);
 

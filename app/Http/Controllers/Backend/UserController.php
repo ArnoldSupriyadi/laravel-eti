@@ -62,7 +62,6 @@ class UserController extends Controller
             'role' => 'required',
             'name' => 'required|max:50',
             'email' => 'required|email:dns',
-            'password' => 'required',
             'phone' => 'required|max:15',
             'address' => 'required',
         ]);

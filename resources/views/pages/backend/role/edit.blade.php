@@ -36,6 +36,9 @@
                                                     class="form-control border-primary @error('nama') is-invalid @enderror"
                                                     name="name" id="name" value="{{ $role->name }}"
                                                     placeholder="Name" required />
+                                                @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>

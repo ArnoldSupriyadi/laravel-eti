@@ -34,22 +34,29 @@
                                                 <label for="name">Name <span style="color: red">*</span></label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
-                                                    name="name" id="name" value="{{ old('name') }}"
+                                                    name="name" id="name" value="{{ $user->name }}"
                                                     placeholder="Name" required />
+                                                @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
+
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="role">Role <span style="color: red">*</span></label>
                                                 <select class="form-control @error('role') is-invalid @enderror"
                                                     name="role" id="role" required>
                                                     @foreach ($roles as $role)
-                                                        <option value="{{ $role->id }}"
-                                                            @if ($role->id == $user->roles->id) @selected(true) @endif>
+                                                        <option value="{{ $user->role_id }}"
+                                                            @if ($role->id == $user->role_id) @selected(true) @endif>
                                                             {{ $role->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('role')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -57,29 +64,31 @@
                                     <div class="form-group">
                                         <label for="email">Email <span style="color: red">*</span></label>
                                         <input class="form-control border-primary @error('email') is-invalid @enderror"
-                                            type="email" name="email" id="email" value="{{ old('email') }}"
+                                            type="email" name="email" id="email" value="{{ $user->email }}"
                                             placeholder="Email" required />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password">Password <span style="color: red">*</span></label>
-                                        <input class="form-control border-primary @error('password') is-invalid @enderror"
-                                            type="password" placeholder="Password" id="password"
-                                            value="{{ old('password') }}" required />
+                                        @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label for="phone">Phone <span style="color: red">*</span></label>
                                         <input class="form-control border-primary @error('phone') is-invalid @enderror"
-                                            type="number" name="phone" id="phone" value="{{ old('phone') }}"
+                                            type="number" name="phone" id="phone" value="{{ $user->phone }}"
                                             placeholder="Phone" required />
+                                        @error('phone')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label for="address">Address <span style="color: red">*</span></label>
                                         <input class="form-control border-primary @error('address') is-invalid @enderror"
-                                            type="text" name="address" id="address" value="{{ old('address') }}"
+                                            type="text" name="address" id="address" value="{{ $user->address }}"
                                             placeholder="Address" required />
+                                        @error('address')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 

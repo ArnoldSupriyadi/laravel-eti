@@ -35,19 +35,27 @@
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
                                                     name="name" id="name" value="{{ old('name') }}"
                                                     placeholder="Name" required />
+                                                @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
+
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="role">Role <span style="color: red">*</span></label>
                                                 <select class="form-control @error('role') is-invalid @enderror"
                                                     name="role" id="role" required>
+                                                    <option selected disabled>Pilih role...</option>
                                                     @foreach ($roles as $role)
                                                         <option value="{{ $role->id }}">
                                                             {{ $role->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('role')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -57,13 +65,19 @@
                                         <input class="form-control border-primary @error('email') is-invalid @enderror"
                                             type="email" name="email" id="email" value="{{ old('email') }}"
                                             placeholder="Email" required />
+                                        @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label for="password">Password <span style="color: red">*</span></label>
                                         <input class="form-control border-primary @error('password') is-invalid @enderror"
-                                            type="password" placeholder="Password" id="password"
-                                            value="{{ old('password') }}" required />
+                                            type="password" name="password" id="password" value="{{ old('password') }}"
+                                            placeholder="Password" required />
+                                        @error('password')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
@@ -71,6 +85,9 @@
                                         <input class="form-control border-primary @error('phone') is-invalid @enderror"
                                             type="number" name="phone" id="phone" value="{{ old('phone') }}"
                                             placeholder="Phone" required />
+                                        @error('phone')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
@@ -78,6 +95,9 @@
                                         <input class="form-control border-primary @error('address') is-invalid @enderror"
                                             type="text" name="address" id="address" value="{{ old('address') }}"
                                             placeholder="Address" required />
+                                        @error('address')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
