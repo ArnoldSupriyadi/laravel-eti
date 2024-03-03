@@ -74,7 +74,7 @@
             </div>
           </a> -->
 
-          <a href="" class="cursor-link" data-fancybox="gallery">
+          <a href="{{ asset('frontend/img/gallery/Condorz_4.jpg') }}" class="cursor-link" data-fancybox="gallery">
             <div class="portfolio-box defense">
               <img src="{{ asset('frontend/img/gallery/Condorz_4.jpg') }}" alt="" />
               <div class="portfolio-mask"></div>
