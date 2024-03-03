@@ -22,6 +22,7 @@ Route::controller(LandingController::class)->group(function(){
     Route::get('/about', 'about')->name('about');
     Route::get('/products', 'products')->name('products');
     Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
+    Route::get('/productsCategory2', 'productsCategory2')->name('productsCategory2');
     Route::get('/productsDetail', 'detailProduct')->name('productsDetail');
     Route::get('/gallery', 'gallery')->name('gallery');
     Route::get('/contact', 'contact')->name('contact');

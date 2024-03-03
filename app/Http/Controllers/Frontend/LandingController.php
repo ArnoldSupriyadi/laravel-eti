@@ -27,6 +27,11 @@ class LandingController extends Controller
         return view('pages.frontend.product.category');
     }
 
+     public function productsCategory2()
+    {
+        return view('pages.frontend.product.category2');
+    }
+
     public function detailProduct()
     {
         return view('pages.frontend.product.detail');

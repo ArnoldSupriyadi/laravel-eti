@@ -25,7 +25,7 @@
           </ul>
           <ul class="case-study-images">
             <li>
-              <div class="img-hero-background" style="background-image: url('img/photo-home-1.jpg')"></div>
+              <div class="img-hero-background" style="background-image: url('frontend/img/photo-home-1.jpg')"></div>
               <div class="dark-over-hero"></div>
               <div class="hero-number-back">1</div>
               <div class="hero-number">1</div>
@@ -33,23 +33,14 @@
               <div class="case-study-title">eti profile</div>
             </li>
             <li>
-              <div class="img-hero-background" style="background-image: url('img/photo-home-2.jpg')"></div>
+              <div class="img-hero-background" style="background-image: url('frontend/img/photo-home-2.jpg')"></div>
               <div class="hero-number-back">2</div>
               <div class="hero-number">2</div>
               <div class="case-study-title">Commercial & Defense</div>
             </li>
           </ul>
-          <div class="social-wrap">
-            language
-            <ul>
-              <li>
-                <a href="index-1.html" class="cursor-link"><img src="img/icons8-indonesia-96.png" alt="indonesia" class="img-fluid" /></a>
-              </li>
-              <li>
-                <a href="index-1.html" class="cursor-link"><img src="img/icons8-great-britain-96.png" alt="indonesia" class="img-fluid" /></a>
-              </li>
-            </ul>
-          </div>
+          
+          @include('layout.frontend.languagehome')
         </div>
 
         <!-- Page cursor

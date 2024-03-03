@@ -32,11 +32,11 @@
           <div class="row justify-content-center">
             <div class="col-md-6 text-center">
               <img src="{{ asset('frontend/img/defense-cover-img.jpg') }}" class="cursor-more img-fluid" alt="" />
-              <a href="{{ route('productsDetail') }}" class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">More Defense</a>
+              <a href="{{ route('productsCategory') }}" class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">More Defense</a>
             </div>
             <div class="col-md-6 mt-4 mt-md-0">
               <img src="{{ asset('frontend/img/commercial-cover-img.jpg') }}" class="cursor-more img-fluid" alt="" />
-              <a href="{{ route('productsDetail') }}" class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">More Commercial</a>
+              <a href="{{ route('productsCategory2') }}" class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">More Commercial</a>
             </div>
             <div class="section clearfix"></div>
             <div class="col-md-8 padding-top-bottom text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
@@ -50,29 +50,8 @@
         </div>
       </div>
 
-      <div class="section padding-top-bottom-small background-black">
-        <div class="container-fluid px-5">
-          <div class="row">
-            <div class="col-md-6 footer text-center text-md-left">
-              <p>2024 © ETI Indonesia</p>
-            </div>
-            <div class="col-md-6 mt-4 mt-md-0 text-center">
-              <div class="social-wrap on-footer">
-                language
-                <ul>
-                  <li>
-                    <a href="index-1.html" class="cursor-link"><img src="img/icons8-indonesia-96.png" alt="indonesia" class="img-fluid" /></a>
-                  </li>
-                  <li>
-                    <a href="index-1.html" class="cursor-link"><img src="img/icons8-great-britain-96.png" alt="indonesia" class="img-fluid" /></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      @include('layout.frontend.language')
+      
       <div class="scroll-to-top cursor-link"></div>
 
       <!-- Page cursor

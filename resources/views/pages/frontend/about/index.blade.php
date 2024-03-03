@@ -39,7 +39,7 @@
             <div class="section clearfix"></div>
             <div class="col-md-12 padding-top-bottom">
               <div class="img-wrap">
-                <img src="img/aboutus.jpg" alt="eti" class="img-fluid" />
+                <img src="{{ asset('frontend/img/aboutus.jpg') }}" alt="eti" class="img-fluid" />
               </div>
             </div>
             <div class="col-md-12 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
@@ -112,13 +112,13 @@
           </div>
           <div class="row">
             <div class="col-md-4 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/logo-tekno-white.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/logo-tekno-white.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-4 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/suneast-white.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/suneast-white.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-4 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/gtp-white.png" alt="teknosolusi" class="img-fluid" width="60%" />
+              <img src="{{ asset('frontend/img/gtp-white.png') }}" alt="teknosolusi" class="img-fluid" width="60%" />
             </div>
           </div>
         </div>
@@ -134,22 +134,22 @@
           </div>
           <div class="row">
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image2.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image2.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image3.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image3.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image4.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image4.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image5.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image5.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
             <div class="col-md-2 text-center mt-5 mt-md-4" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-              <img src="img/product-specalization/image6.png" alt="teknosolusi" class="img-fluid" />
+              <img src="{{ asset('frontend/img/product-specalization/image6.png') }}" alt="teknosolusi" class="img-fluid" />
             </div>
           </div>
         </div>
@@ -169,28 +169,7 @@
         </div>
       </div>
 
-      <div class="section padding-top-bottom-small background-black">
-        <div class="container-fluid px-5">
-          <div class="row">
-            <div class="col-md-6 footer text-center text-md-left">
-              <p>2024 © ETI Indonesia</p>
-            </div>
-            <div class="col-md-6 mt-4 mt-md-0 text-center">
-              <div class="social-wrap on-footer">
-                language
-                <ul>
-                  <li>
-                    <a href="index-1.html" class="cursor-link"><img src="img/icons8-indonesia-96.png" alt="indonesia" class="img-fluid" /></a>
-                  </li>
-                  <li>
-                    <a href="index-1.html" class="cursor-link"><img src="img/icons8-great-britain-96.png" alt="indonesia" class="img-fluid" /></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @include('layout.frontend.language')
 
       <div class="scroll-to-top cursor-link"></div>
 
