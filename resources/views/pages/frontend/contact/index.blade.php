@@ -218,7 +218,7 @@
       </div>
 
       <div class="section padding-top-bottom-big over-hide">
-        <div class="parallax" style="background-image: url('img/map.jpg')"></div>
+        <div class="parallax" style="background-image: url('frontend/img/map.jpg')"></div>
         <div class="dark-over-pages"></div>
 
         <div class="section z-bigger">
