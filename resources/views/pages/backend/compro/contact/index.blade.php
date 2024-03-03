@@ -14,7 +14,7 @@
                         <h4 class="card-title">Data Contact</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
-
+                            <p><a href="https://create.wa.link/" target="_blank">Untuk Perubahan Link Whatsapp Klik Disini</a></p>
                         </div>
                     </div>
                     <div class="card-content collapse show">
