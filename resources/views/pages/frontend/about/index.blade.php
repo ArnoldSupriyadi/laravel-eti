@@ -159,7 +159,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-7 text-center">
-              <a href="contact.html" class="cursor-link animsition-link">
+              <a href="{{ route('contact') }}" class="cursor-link animsition-link">
                 <div class="project-link-wrap">
                   <p>let's talk</p>
                 </div>

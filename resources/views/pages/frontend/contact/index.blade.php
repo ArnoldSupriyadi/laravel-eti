@@ -70,7 +70,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-              <a href="admin@etindonesia.id" class="cursor-link">
+              <a href="mailto:admin@etindonesia.id" class="cursor-link">
                 <div class="project-link-wrap on-contact">
                   <p>admin@etindonesia.id</p>
                 </div>
