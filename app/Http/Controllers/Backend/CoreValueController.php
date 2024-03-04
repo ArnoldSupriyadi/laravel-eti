@@ -25,14 +25,14 @@ class CoreValueController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('coreValue.index')->with(['success' => 'Data berhasil disimpan!']);
+        return redirect()->route('about.index')->with(['success' => 'Data berhasil disimpan!']);
     }
 
     public function edit(string $id)
     {
         $coreValue = CoreValue::findOrFail($id);
 
-        return view('pages.backend.compro.edit', compact('coreValue'));
+        return view('pages.backend.compro.coreValue.edit', compact('coreValue'));
     }
 
     public function update(Request $request, string $id)
@@ -49,7 +49,7 @@ class CoreValueController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('coreValue.index')->with(['success' => 'Data berhasil diubah!']);
+        return redirect()->route('about.index')->with(['success' => 'Data berhasil diubah!']);
     }
 
     public function destroy(string $id)
@@ -57,6 +57,6 @@ class CoreValueController extends Controller
         $coreValue = CoreValue::findOrFail($id);
         $coreValue->delete();
 
-        return redirect()->route('coreValue.index')->with(['success' => 'Data berhasil dihapus!']);
+        return redirect()->route('about.index')->with(['success' => 'Data berhasil dihapus!']);
     }
 }
