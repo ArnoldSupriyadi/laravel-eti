@@ -138,25 +138,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>VISION</td>
-                                        <td>Leading the way as a security solution provider</td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>MISION</td>
-                                        <td>Build quality infrastructure and effective scope of work. deliver quality, fast,
-                                            economical and reliable products and services.</td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                        </td>
-                                    </tr>
-
+                                    @foreach ($visionMissions as $visionMission)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $visionMission->name }}</td>
+                                            <td>{{ $visionMission->description }}</td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="{{ route('compro.edit', $visionMission->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -194,6 +190,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($coreValues as $coreValue)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $coreValue->name }}</td>
+                                            <td>{{ $coreValue->description }}</td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="{{ route('coreValue.edit', $coreValue->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     <tr>
                                         <td>1</td>
                                         <td>CUSTOMER FOCUSED</td>
@@ -283,35 +294,29 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>Description</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>nama image</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                class="img-fluid" width="20%"></td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                            <a type="button"
-                                                class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>nama image</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                class="img-fluid" width="20%"></td>
-                                        <td><a href="#"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                            <a type="button"
-                                                class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
-                                        </td>
-                                    </tr>
-
+                                    @foreach ($clients as $client)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $client->name }}</td>
+                                            <td>{{ $client->description }}</td>
+                                            <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
+                                                    class="img-fluid" width="20%"></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="{{ route('compro.edit', $client->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -350,29 +355,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>nama image</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                class="img-fluid" width="20%"></td>
-                                        <td><a href="{{ route('logo.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                            <a type="button"
-                                                class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>nama image</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                class="img-fluid" width="20%"></td>
-                                        <td><a href="{{ route('logo.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                            <a type="button"
-                                                class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
-                                        </td>
-                                    </tr>
-
+                                    @foreach ($productCategories as $category)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $category->name }}</td>
+                                            <td>{{ $category->description }}</td>
+                                            <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
+                                                    class="img-fluid" width="20%"></td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="{{ route('compro.edit', $category->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

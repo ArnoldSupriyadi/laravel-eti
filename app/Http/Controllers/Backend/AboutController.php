@@ -23,8 +23,7 @@ class AboutController extends Controller
             ->orWhere('name', 'legal_name')
             ->get();
 
-        $visionMission = CompanyProfile::orderBy('name', 'ASC')
-            ->where('name', 'vision')
+        $visionMissions = CompanyProfile::where('name', 'vision')
             ->orWhere('name', 'mission')
             ->get();
 
@@ -44,7 +43,7 @@ class AboutController extends Controller
         [
             'profiles' => $profiles,
             'abouts' => $abouts,
-            'visionMission' => $visionMission,
+            'visionMissions' => $visionMissions,
             'aboutImage' => $aboutImage,
             'coreValues' => $coreValues,
             'clients' => $clients,

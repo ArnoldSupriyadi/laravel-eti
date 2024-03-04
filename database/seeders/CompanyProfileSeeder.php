@@ -31,13 +31,15 @@ class CompanyProfileSeeder extends Seeder
 
         DB::table('company_profiles')->insert([
             'name' => 'vision',
-            'description' => 'Menjadi terdepan dalam menjadi penyedia solusi keamanan.',
+            'description' => 'Leading the way as a security solution provider.',
+            // 'description' => 'Menjadi terdepan dalam menjadi penyedia solusi keamanan.',
             'created_at' => Carbon::now()
         ]);
 
         DB::table('company_profiles')->insert([
             'name' => 'mission',
-            'description' => 'Membangun infrastruktur yang berkualitas dan lingkup pekerjaan yang effektif. Memberikan produk dan jasa yang berkualitas, cepat, hemat dan handal.',
+            'description' => 'Build quality infrastructure and effective scope of work. deliver quality, fast, economical and reliable products and services.',
+            // 'description' => 'Membangun infrastruktur yang berkualitas dan lingkup pekerjaan yang effektif. Memberikan produk dan jasa yang berkualitas, cepat, hemat dan handal.',
             'created_at' => Carbon::now()
         ]);
 
