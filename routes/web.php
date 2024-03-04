@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\CompanyProfileController;
+use App\Http\Controllers\Backend\CoreValueController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\LoginController;
@@ -50,6 +51,13 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('create', [CompanyProfileController::class, 'create'])->name('compro.create');
         Route::get('edit/{id}', [CompanyProfileController::class, 'edit'])->name('compro.edit');
         Route::put('update/{id}', [CompanyProfileController::class, 'update'])->name('compro.update');
+    });
+
+    // Core Value
+    Route::prefix('coreValue')->group(function() {
+        Route::post('create', [CoreValueController::class, 'create'])->name('coreValue.create');
+        Route::get('edit/{id}', [CoreValueController::class, 'edit'])->name('coreValue.edit');
+        Route::put('update/{id}', [CoreValueController::class, 'update'])->name('coreValue.update');
     });
 
     Route::prefix('product')->group(function() {

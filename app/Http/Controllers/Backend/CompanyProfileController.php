@@ -17,21 +17,19 @@ class CompanyProfileController extends Controller
 
     public function create()
     {
-        $profiles = CompanyProfile::all();
-
-        return view('pages.backend.compro.create',
-        ['profiles' => $profiles]);
+        return view('pages.backend.compro.create');
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
+            'description' => 'required',
         ]);
 
         CompanyProfile::create([
             'name' => $request->name,
-            'guard_name' => 'web',
+            'description' => $request->description,
         ]);
 
         return redirect()->route('compro.index')->with(['success' => 'Data berhasil disimpan!']);
