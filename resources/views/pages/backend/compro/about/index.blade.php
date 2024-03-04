@@ -29,30 +29,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>about us</td>
-                                        <td><a href="{{ route('logo.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">EDIT</a>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Four Technologies Indonesia</td>
-                                        <td><a href="{{ route('logo.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">EDIT</a>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            established in 2014, we are an international technology company engaged in
-                                            various programs, especially in the field of defense and security. We develop
-                                            and supply products and systems for defense, security and commercial
-                                            applications. defense, security and also apply to commercial needs.
-                                        </td>
-                                        <td><a href="{{ route('logo.edit') }}"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">EDIT</a>
-                                    </tr>
-
+                                    @foreach ($abouts as $about)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $about->name }}</td>
+                                            <td>{{ $about->description }}</td>
+                                            <td>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <a href="{{ route('compro.edit', $about->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

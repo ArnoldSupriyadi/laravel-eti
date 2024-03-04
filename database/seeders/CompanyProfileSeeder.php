@@ -13,7 +13,8 @@ class CompanyProfileSeeder extends Seeder
     {
         DB::table('company_profiles')->insert([
             'name' => 'name',
-            'description' => 'Empat Teknologi Indonesia',
+            'description' => 'Four Technologies Indonesia',
+            // 'description' => 'Empat Teknologi Indonesia',
             'created_at' => Carbon::now()
         ]);
 
@@ -75,7 +76,14 @@ class CompanyProfileSeeder extends Seeder
 
         DB::table('company_profiles')->insert([
             'name' => 'about',
-            'description' => 'PT Empat Teknologi Indonesia berdiri di Tahun 2014, Kami adalah perusahaan teknologi Internasional yang bergerak dalam berbagai program, terutama dibidang pertahanan dan keamanan. Kami mengembangkan dan memasok produk dan sistem untuk kebutuhan pertahanan, keamanan dan juga aplikasikan untuk kebutuhan komersil.',
+            'description' => 'Established in 2014, we are an international technology company engaged in various programs, especially in the field of defense and security. We develop and supply products and systems for defense, security and commercial applications. defense, security and also apply to commercial needs.',
+            // 'description' => 'PT Empat Teknologi Indonesia berdiri di Tahun 2014, Kami adalah perusahaan teknologi Internasional yang bergerak dalam berbagai program, terutama dibidang pertahanan dan keamanan. Kami mengembangkan dan memasok produk dan sistem untuk kebutuhan pertahanan, keamanan dan juga aplikasikan untuk kebutuhan komersil.',
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'logo',
+            'description' => 'logo.png',
             'created_at' => Carbon::now()
         ]);
     }
