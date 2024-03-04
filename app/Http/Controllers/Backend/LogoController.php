@@ -11,7 +11,7 @@ class LogoController extends Controller
     public function index()
     {
         $profiles = CompanyProfile::orderBy('name', 'ASC')
-        ->where('name', 'logo')->get();
+            ->where('name', 'logo')->get();
 
         return view('pages.backend.logo.index',
         [

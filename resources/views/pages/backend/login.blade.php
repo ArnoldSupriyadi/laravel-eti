@@ -65,8 +65,8 @@
                             <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <img src="{{ asset('backend/app-assets/images/logo/logo-dark.png') }}"
-                                            alt="branding logo">
+                                        <img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" width="30%"
+                                            height="30%" alt="branding logo">
                                     </div>
                                 </div>
                                 <div class="card-content">

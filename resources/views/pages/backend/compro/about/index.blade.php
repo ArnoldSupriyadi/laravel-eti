@@ -93,7 +93,9 @@
                                         <td>1</td>
                                         <td class="text-center"><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}"
                                                 alt="" class="img-fluid" width="30%"></td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td>
+                                            {{-- <a href="#" --}}
+                                            <a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
 
@@ -140,7 +142,7 @@
                                         <td>1</td>
                                         <td>VISION</td>
                                         <td>Leading the way as a security solution provider</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
 
@@ -150,7 +152,7 @@
                                         <td>MISION</td>
                                         <td>Build quality infrastructure and effective scope of work. deliver quality, fast,
                                             economical and reliable products and services.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -198,7 +200,7 @@
                                         <td>We adapt to our customers' needs and respond to them with affordable,
                                             operationally proven, comprehensive solutions that offer qualitative performance
                                             advantages.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -208,7 +210,7 @@
                                         <td>Great people are key to achieving our vision. We employ a workforce that is
                                             motivated, team-minded, and create a dynamic atmosphere where employees can
                                             thrive and reach their highest potential. their highest potential.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -217,7 +219,7 @@
                                         <td>INNOVATION AND CREATIVITY</td>
                                         <td>We foster an environment that nurtures innovation, creativity and leardership.
                                         </td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -226,7 +228,7 @@
                                         <td>TEAMWORK AND SYNERGY</td>
                                         <td>Personal interactions and mutual trust form the basis for achieving our goals.
                                             In our complex world, cooperation and teamwork lead to synergy.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -235,7 +237,7 @@
                                         <td>RESPONSIBILITY AND ACCOUNTABILITY</td>
                                         <td>We are committed to the success of our company through personal responsibility
                                             and leadership.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -243,7 +245,7 @@
                                         <td>6</td>
                                         <td>HONESTY AND ETHICS</td>
                                         <td>Honesty, respect and integrity are the key principles that guide us.</td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                         </td>
                                     </tr>
@@ -291,7 +293,7 @@
                                         <td>nama image</td>
                                         <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
                                                 class="img-fluid" width="20%"></td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                             <a type="button"
                                                 class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
@@ -303,7 +305,7 @@
                                         <td>nama image</td>
                                         <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
                                                 class="img-fluid" width="20%"></td>
-                                        <td><a href="{{ route('user.edit') }}"
+                                        <td><a href="#"
                                                 class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
                                             <a type="button"
                                                 class="btn btn-danger square btn-min-width mr-1 mb-1 waves-effect waves-light white">Delete</a>
