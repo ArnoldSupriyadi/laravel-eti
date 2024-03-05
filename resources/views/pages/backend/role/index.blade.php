@@ -9,8 +9,8 @@
         <!-- Table row borders end-->
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('role.create') }}"
-                    class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Roles</a>
+                {{-- <a href="{{ route('role.create') }}"
+                    class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Roles</a> --}}
 
                 <div class="card">
                     <div class="card-header">
