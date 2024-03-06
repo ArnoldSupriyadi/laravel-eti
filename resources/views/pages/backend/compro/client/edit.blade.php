@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Edit Company Profile')
+@section('title', 'Edit Client')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-colored-form-control">
-                            Company Profile Edit
+                            Client Edit
                         </h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('compro.index') }}" class="btn btn-warning mr-1"><i
+                                    <a href="{{ route('about.index') }}" class="btn btn-warning mr-1"><i
                                             class="ft-x"></i>Cancel</a>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="la la-check-square-o"></i>

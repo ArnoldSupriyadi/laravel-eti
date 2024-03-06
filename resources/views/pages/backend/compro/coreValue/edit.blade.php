@@ -31,6 +31,7 @@
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
                                                     name="name" id="name" value="{{ $coreValue->name }}"
                                                     placeholder="Name" required />
+
                                                 @error('name')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -43,8 +44,9 @@
                                                         style="color: red">*</span></label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('description') is-invalid @enderror"
-                                                    name="description" id="description" value="{{ $coreValue->description }}"
-                                                    placeholder="Description" required />
+                                                    name="description" id="description"
+                                                    value="{{ $coreValue->description }}" placeholder="Description"
+                                                    required />
 
                                                 @error('description')
                                                     <div class="invalid-feedback">{{ $message }}</div>

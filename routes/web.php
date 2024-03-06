@@ -20,13 +20,13 @@ use Illuminate\Support\Facades\Route;
 // Frontend
 Route::controller(LandingController::class)->group(function(){
     Route::get('/', 'index')->name('landing');
-    Route::get('/about', 'about')->name('about');
+    Route::get('/about-us', 'about')->name('about');
     Route::get('/products', 'products')->name('products');
     Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
     Route::get('/productsCategory2', 'productsCategory2')->name('productsCategory2');
     Route::get('/productsDetail', 'detailProduct')->name('productsDetail');
-    Route::get('/gallery', 'gallery')->name('gallery');
-    Route::get('/contact', 'contact')->name('contact');
+    Route::get('/galleries', 'gallery')->name('gallery');
+    Route::get('/contacts', 'contact')->name('contact');
 });
 
 Route::controller(LoginController::class)->group(function() {
@@ -38,6 +38,12 @@ Route::controller(LoginController::class)->group(function() {
 
 // Auth
 Route::middleware(['auth', 'auth.session'])->group(function () {
+    Route::prefix('about')->group(function() {
+        Route::get('', [AboutController::class, 'index'])->name('about.index');
+        Route::get('edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+        Route::put('update/{id}', [AboutController::class, 'update'])->name('about.update');
+    });
+
     Route::prefix('category')->group(function() {
         Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
         Route::post('create', [ProductCategoryController::class, 'create'])->name('category.create');
@@ -101,11 +107,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::group(['prefix' => 'backend'], function () {
         Route::get('/logo', [LogoController::class, 'index'])->name('logo.index');
         Route::get('/logo/edit', [LogoController::class, 'edit'])->name('logo.edit');
-    });
-
-    Route::group(['prefix' => 'backend'], function () {
-        Route::get('/about', [AboutController::class, 'index'])->name('about.index');
-        Route::get('/about/edit', [AboutController::class, 'edit'])->name('about.edit');
     });
 
     Route::group(['prefix' => 'backend'], function () {

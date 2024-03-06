@@ -35,6 +35,7 @@
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
                                                     name="name" id="name" value="{{ old('name') }}"
                                                     placeholder="Name" required />
+
                                                 @error('name')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -53,6 +54,7 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+
                                                 @error('role')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -65,6 +67,7 @@
                                         <input class="form-control border-primary @error('email') is-invalid @enderror"
                                             type="email" name="email" id="email" value="{{ old('email') }}"
                                             placeholder="Email" required />
+
                                         @error('email')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -75,6 +78,7 @@
                                         <input class="form-control border-primary @error('password') is-invalid @enderror"
                                             type="password" name="password" id="password" value="{{ old('password') }}"
                                             placeholder="Password" required />
+
                                         @error('password')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -85,6 +89,7 @@
                                         <input class="form-control border-primary @error('phone') is-invalid @enderror"
                                             type="number" name="phone" id="phone" value="{{ old('phone') }}"
                                             placeholder="Phone" required />
+
                                         @error('phone')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -95,6 +100,7 @@
                                         <input class="form-control border-primary @error('address') is-invalid @enderror"
                                             type="text" name="address" id="address" value="{{ old('address') }}"
                                             placeholder="Address" required />
+
                                         @error('address')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
