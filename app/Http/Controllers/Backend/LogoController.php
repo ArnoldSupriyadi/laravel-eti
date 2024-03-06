@@ -26,4 +26,23 @@ class LogoController extends Controller
         return view('pages.backend.compro.logo.edit', compact('logo'));
     }
 
+    public function update(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'logo' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
+        ]);
+
+        $fileName = 'logo'.'.'.$request->logo->extension();
+        $profile = CompanyProfile::findOrFail($id);
+
+        $profile->update([
+            'logo' => $fileName,
+        ]);
+
+        $destinationPath = 'frontend/img/logo/';
+        $request->logo->move(public_path($destinationPath), $fileName);
+
+        return redirect()->route('logo.index')->with(['success' => 'Logo has been updated!']);
+    }
+
 }

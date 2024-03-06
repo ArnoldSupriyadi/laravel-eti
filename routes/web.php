@@ -106,7 +106,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::group(['prefix' => 'backend'], function () {
         Route::get('/logo', [LogoController::class, 'index'])->name('logo.index');
-        Route::get('/logo/edit', [LogoController::class, 'edit'])->name('logo.edit');
+        Route::get('/logo/edit/{id}', [LogoController::class, 'edit'])->name('logo.edit');
+        Route::put('/logo/update/{id}', [LogoController::class, 'update'])->name('logo.update');
     });
 
     Route::group(['prefix' => 'backend'], function () {
