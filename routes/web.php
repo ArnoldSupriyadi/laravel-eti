@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\CompanyProfileController;
 use App\Http\Controllers\Backend\CoreValueController;
 use App\Http\Controllers\Backend\ContactController;
@@ -12,7 +13,6 @@ use App\Http\Controllers\Backend\ProductCategoryController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\HomeController;
-use App\Http\Controllers\Frontend\ClientController;
 use App\Http\Controllers\Frontend\LandingController;
 use App\Http\Controllers\Frontend\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -46,17 +46,31 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('category')->group(function() {
         Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
-        Route::post('create', [ProductCategoryController::class, 'create'])->name('category.create');
+        Route::get('create', [ProductCategoryController::class, 'create'])->name('category.create');
+        Route::post('store', [ProductCategoryController::class, 'store'])->name('client.store');
         Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
         Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
+        Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
+    });
+
+    Route::prefix('client')->group(function() {
+        Route::get('create', [ClientController::class, 'create'])->name('client.create');
+        Route::post('store', [ClientController::class, 'store'])->name('client.store');
+        Route::get('edit/{id}', [ClientController::class, 'edit'])->name('client.edit');
+        Route::get('editLogo/{id}', [ClientController::class, 'editLogo'])->name('client.editLogo');
+        Route::put('update/{id}', [ClientController::class, 'update'])->name('client.update');
+        Route::put('updateLogo/{id}', [ClientController::class, 'updateLogo'])->name('client.updateLogo');
+        Route::delete('destroy/{id}', [ClientController::class, 'destroy'])->name('client.destroy');
     });
 
     // Company Profile
     Route::prefix('compro')->group(function() {
         Route::get('', [CompanyProfileController::class, 'index'])->name('compro.index');
-        Route::post('create', [CompanyProfileController::class, 'create'])->name('compro.create');
+        Route::get('create', [CompanyProfileController::class, 'create'])->name('compro.create');
+        Route::post('store', [CompanyProfileController::class, 'store'])->name('compro.store');
         Route::get('edit/{id}', [CompanyProfileController::class, 'edit'])->name('compro.edit');
         Route::put('update/{id}', [CompanyProfileController::class, 'update'])->name('compro.update');
+        Route::delete('destroy/{id}', [CompanyProfileController::class, 'destroy'])->name('compro.destroy');
     });
 
     // Core Value
@@ -64,6 +78,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('create', [CoreValueController::class, 'create'])->name('coreValue.create');
         Route::get('edit/{id}', [CoreValueController::class, 'edit'])->name('coreValue.edit');
         Route::put('update/{id}', [CoreValueController::class, 'update'])->name('coreValue.update');
+        Route::delete('destroy/{id}', [CoreValueController::class, 'destroy'])->name('coreValue.destroy');
     });
 
     Route::prefix('product')->group(function() {
@@ -71,6 +86,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('create', [ProductController::class, 'create'])->name('product.create');
         Route::get('edit', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
 
     Route::prefix('role')->group(function() {
@@ -79,7 +95,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('store', [RoleController::class, 'store'])->name('role.store');
         Route::get('edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
         Route::put('update/{id}', [RoleController::class, 'update'])->name('role.update');
-        Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('penjualan.destroy');
+        Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
     });
 
     Route::prefix('user')->group(function() {
@@ -88,16 +104,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
-        Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('penjualan.destroy');
+        Route::delete('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
     });
-
-    // Route::group(['prefix' => 'backend'], function () {
-    //     // Rute-rute yang akan diterapkan properti 'prefix' dan 'middleware' di sini
-
-    //     Route::get('/user', [UserController::class, 'index'])->name('user.index');
-    //     Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-    //     Route::get('/user/edit', [UserController::class, 'edit'])->name('user.edit');
-    // });
 
     Route::group(['prefix' => 'backend'], function () {
         Route::get('/home', [HomeController::class, 'index'])->name('home');

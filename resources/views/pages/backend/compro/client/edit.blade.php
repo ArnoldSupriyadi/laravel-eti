@@ -12,12 +12,14 @@
                         <h4 class="card-title" id="basic-layout-colored-form-control">
                             Client Edit
                         </h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        <a class="heading-elements-toggle">
+                            <i class="la la-ellipsis-v font-medium-3"></i>
+                        </a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('compro.update', $profile->id) }}" method="POST"
+                            <form class="form" action="{{ route('client.update', $client->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -29,7 +31,7 @@
                                                 <label for="name">Name <span style="color: red">*</span></label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('name') is-invalid @enderror"
-                                                    name="name" id="name" value="{{ $profile->name }}"
+                                                    name="name" id="name" value="{{ $client->name }}"
                                                     placeholder="Name" required />
 
                                                 @error('name')
@@ -44,7 +46,7 @@
                                                         style="color: red">*</span></label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('description') is-invalid @enderror"
-                                                    name="description" id="description" value="{{ $profile->description }}"
+                                                    name="description" id="description" value="{{ $client->description }}"
                                                     placeholder="Description" required />
 
                                                 @error('description')

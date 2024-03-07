@@ -17,7 +17,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('client.updateLogo', $profile->id) }}" method="POST"
+                            <form class="form" action="{{ route('client.updateLogo', $client->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
