@@ -97,10 +97,10 @@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
-                                                    <fieldset>
+                                                    {{-- <fieldset>
                                                         <input type="checkbox" id="remember-me" class="chk-remember">
                                                         <label for="remember-me"> Remember Me</label>
-                                                    </fieldset>
+                                                    </fieldset> --}}
                                                 </div>
                                                 {{-- <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div> --}}
                                             </div>
