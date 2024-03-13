@@ -12,11 +12,11 @@ class ProductCategory extends Model
     protected $table = 'product_categories';
 
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'product_id', 'image'
     ];
 
-    public function products()
+    public function product()
     {
-        return $this->hasMany(Product::class, 'category_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
