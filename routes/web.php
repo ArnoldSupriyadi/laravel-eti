@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductCategoryController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Frontend\LandingController;
@@ -38,6 +39,7 @@ Route::controller(LoginController::class)->group(function() {
 
 // Auth
 Route::middleware(['auth', 'auth.session'])->group(function () {
+
     Route::prefix('about')->group(function() {
         Route::get('', [AboutController::class, 'index'])->name('about.index');
         Route::get('edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
@@ -47,7 +49,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::prefix('category')->group(function() {
         Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
         Route::get('create', [ProductCategoryController::class, 'create'])->name('category.create');
-        Route::post('store', [ProductCategoryController::class, 'store'])->name('client.store');
+        Route::post('store', [ProductCategoryController::class, 'store'])->name('category.store');
         Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
         Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
         Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
@@ -84,7 +86,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::prefix('product')->group(function() {
         Route::get('', [ProductController::class, 'index'])->name('product.index');
         Route::get('create', [ProductController::class, 'create'])->name('product.create');
-        Route::get('edit', [ProductController::class, 'edit'])->name('product.edit');
+        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
@@ -96,6 +98,15 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
         Route::put('update/{id}', [RoleController::class, 'update'])->name('role.update');
         Route::delete('destroy/{id}', [RoleController::class, 'destroy'])->name('role.destroy');
+    });
+
+    Route::prefix('service')->group(function() {
+        Route::get('', [ServiceController::class, 'index'])->name('service.index');
+        Route::get('create', [ServiceController::class, 'create'])->name('service.create');
+        Route::post('store', [ServiceController::class, 'store'])->name('service.store');
+        Route::get('edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
+        Route::put('update/{id}', [ServiceController::class, 'update'])->name('service.update');
+        Route::delete('destroy/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
     });
 
     Route::prefix('user')->group(function() {
