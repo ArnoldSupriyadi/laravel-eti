@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade');
             $table->string('name', 100);
+            $table->double('price')->default(0);
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->timestamps();
