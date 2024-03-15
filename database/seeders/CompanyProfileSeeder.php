@@ -92,5 +92,11 @@ class CompanyProfileSeeder extends Seeder
             'description' => 'about_img.png',
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'product_description',
+            'description' => 'We are proud to introduce our superior range of products and services designed to meet your needs with the highest quality. With our dedication to innovation and excellence, we are committed to providing a satisfying experience for every customer.',
+            'created_at' => Carbon::now()
+        ]);
     }
 }

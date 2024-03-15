@@ -12,7 +12,10 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('name', 'ASC')->get();
 
-        return view('pages.backend.product.index', ['products' => $products]);
+        return view('pages.backend.product.index',
+        [
+            'products' => $products,
+        ]);
     }
 
     public function create()

@@ -9,11 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductGallery extends Model
 {
     use HasFactory, SoftDeletes;
-
     protected $table = 'product_galleries';
 
     protected $fillable = [
-        'product_id', 'name', 'description', 'image'
+        'category_id', 'name', 'price', 'description', 'image'
     ];
 
     public function category()
