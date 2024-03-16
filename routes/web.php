@@ -51,7 +51,9 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('create', [ProductCategoryController::class, 'create'])->name('category.create');
         Route::post('store', [ProductCategoryController::class, 'store'])->name('category.store');
         Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
+        Route::get('editImage/{id}', [ProductCategoryController::class, 'editImage'])->name('category.editImage');
         Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
+        Route::put('updateImage/{id}', [ProductCategoryController::class, 'updateImage'])->name('category.updateImage');
         Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
     });
 
@@ -87,7 +89,9 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('', [ProductController::class, 'index'])->name('product.index');
         Route::get('create', [ProductController::class, 'create'])->name('product.create');
         Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+        Route::get('editImage/{id}', [ProductController::class, 'editImage'])->name('product.editImage');
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::put('updateImage/{id}', [ProductController::class, 'updateImage'])->name('product.updateImage');
         Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
 

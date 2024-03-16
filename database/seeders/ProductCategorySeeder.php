@@ -15,7 +15,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 1,
             'name' => 'Soldier Supplies',
             'description' => '',
-            'image' => 'perbekalan-prajurit.jpg',
+            'image' => 'category1.jpg',
+            // 'image' => 'perbekalan-prajurit.jpg',
             'created_at' => Carbon::now(),
         ]);
 
@@ -23,7 +24,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 1,
             'name' => 'Technology And Information',
             'description' => '',
-            'image' => 'teknologi-informasi.jpg',
+            'image' => 'category2.jpg',
+            // 'image' => 'teknologi-informasi.jpg',
             'created_at' => Carbon::now(),
         ]);
 
@@ -31,7 +33,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 1,
             'name' => 'Modified Vehichels',
             'description' => '',
-            'image' => 'kendaraan-modifikasi.jpg',
+            'image' => 'category3.jpg',
+            // 'image' => 'kendaraan-modifikasi.jpg',
             'created_at' => Carbon::now(),
         ]);
 
@@ -39,7 +42,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 2,
             'name' => 'Internet Of Things',
             'description' => '',
-            'image' => 'iot.jpg',
+            'image' => 'category4.jpg',
+            // 'image' => 'iot.jpg',
             'created_at' => Carbon::now(),
         ]);
 
@@ -47,7 +51,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 2,
             'name' => 'Application And Program',
             'description' => '',
-            'image' => 'application-program.jpg',
+            'image' => 'category5.jpg',
+            // 'image' => 'application-program.jpg',
             'created_at' => Carbon::now(),
         ]);
 
@@ -55,7 +60,8 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 2,
             'name' => 'Fivto STB',
             'description' => '',
-            'image' => 'fivto-stb.jpg',
+            'image' => 'category6.jpg',
+            // 'image' => 'fivto-stb.jpg',
             'created_at' => Carbon::now(),
         ]);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\CompanyProfile;
 use App\Models\CoreValue;
+use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class AboutController extends Controller
 
         $coreValues = CoreValue::orderBy('name', 'ASC')->get();
         $clients = Client::all();
-        $productCategories = ProductCategory::all();
+        $products = Product::all();
 
         return view('pages.backend.compro.about.index',
         [
@@ -47,7 +48,7 @@ class AboutController extends Controller
             'aboutImage' => $aboutImage,
             'coreValues' => $coreValues,
             'clients' => $clients,
-            'productCategories' => $productCategories,
+            'products' => $products,
         ]);
     }
 

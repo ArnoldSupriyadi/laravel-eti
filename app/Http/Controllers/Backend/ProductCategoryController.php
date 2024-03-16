@@ -59,6 +59,13 @@ class ProductCategoryController extends Controller
         return view('pages.backend.category.edit', compact('category', 'products'));
     }
 
+    public function editImage(string $id)
+    {
+        $category = ProductCategory::findOrFail($id);
+
+        return view('pages.backend.category.editImage', compact('category'));
+    }
+
     public function update(Request $request, string $id)
     {
         $this->validate($request, [
@@ -74,6 +81,25 @@ class ProductCategoryController extends Controller
         ]);
 
         return redirect()->route('category.index')->with(['success' => 'Data berhasil diubah!']);
+    }
+
+    public function updateImage(Request $request, string $id)
+    {
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
+        ]);
+
+        $fileName = 'category'.$id.'.'.$request->image->extension();
+        $category = ProductCategory::findOrFail($id);
+
+        $category->update([
+            'image' => $fileName,
+        ]);
+
+        $destinationPath = 'frontend/img/categories/';
+        $request->image->move(public_path($destinationPath), $fileName);
+
+        return redirect()->route('category.index')->with(['success' => 'Product Category Image has been updated!']);
     }
 
     public function destroy(string $id)

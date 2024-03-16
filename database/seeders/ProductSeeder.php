@@ -14,13 +14,15 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name' => 'Defense',
             'description' => '',
-            'image' => 'defense-cover-img.jpg',
+            'image' => 'product1.jpg',
+            // 'image' => 'defense-cover-img.jpg',
             'created_at' => Carbon::now(),
         ]);
         DB::table('products')->insert([
             'name' => 'Commercial',
             'description' => '',
-            'image' => 'commercial-cover-img.jpg',
+            'image' => 'product2.jpg',
+            // 'image' => 'commercial-cover-img.jpg',
             'created_at' => Carbon::now(),
         ]);
     }

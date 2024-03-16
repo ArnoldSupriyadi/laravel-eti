@@ -298,18 +298,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($productCategories as $category)
+                                    @foreach ($products as $product)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>{{ $category->description }}</td>
-                                            <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                    class="img-fluid" width="20%"></td>
+                                            <td>{{ $product->name }}</td>
+                                            <td>{{ $product->description }}</td>
+                                            <td><img src="{{ asset('frontend/img/products/' . $product->image) }}"
+                                                    alt="" class="img-fluid" width="20%"></td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <a href="{{ route('compro.edit', $category->id) }}"
+                                                    <a href="{{ route('compro.edit', $product->id) }}"
                                                         class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                         Edit
+                                                    </a>
+                                                    <a href="{{ route('product.editImage', $product->id) }}"
+                                                        class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
+                                                        Edit Image
                                                     </a>
                                                 </div>
                                             </td>
