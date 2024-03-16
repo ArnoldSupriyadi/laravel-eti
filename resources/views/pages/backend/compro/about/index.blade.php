@@ -82,8 +82,8 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td class="text-center"><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}"
-                                                alt="" class="img-fluid" width="30%"></td>
+                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
+                                                class="img-fluid" width="30%"></td>
                                         <td>
                                             {{-- <a href="#" --}}
                                             <a href="#"
@@ -292,6 +292,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
