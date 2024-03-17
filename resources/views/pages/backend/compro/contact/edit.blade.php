@@ -27,12 +27,27 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="description">Description <span
-                                                        style="color: red">*</span></label>
-                                                <input type="text"
-                                                    class="form-control border-primary @error('description') is-invalid @enderror"
-                                                    name="description" id="description" value="{{ $profile->description }}"
-                                                    placeholder="Description" required />
+                                                @if ($profile->name == 'phone')
+                                                    <label for="description">Phone <span style="color: red">*</span></label>
+                                                    <input type="number"
+                                                        class="form-control border-primary @error('description') is-invalid @enderror"
+                                                        name="description" id="description"
+                                                        value="{{ $profile->description }}" placeholder="Phone" required />
+                                                @elseif ($profile->name != 'email')
+                                                    <label for="description">Description <span
+                                                            style="color: red">*</span></label>
+                                                    <input type="text"
+                                                        class="form-control border-primary @error('description') is-invalid @enderror"
+                                                        name="description" id="description"
+                                                        value="{{ $profile->description }}" placeholder="Description"
+                                                        required />
+                                                @else
+                                                    <label for="description">Email <span style="color: red">*</span></label>
+                                                    <input type="email"
+                                                        class="form-control border-primary @error('description') is-invalid @enderror"
+                                                        name="description" id="description"
+                                                        value="{{ $profile->description }}" placeholder="Email" required />
+                                                @endif
 
                                                 @error('description')
                                                     <div class="invalid-feedback">{{ $message }}</div>

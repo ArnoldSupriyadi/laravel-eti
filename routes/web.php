@@ -139,7 +139,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::group(['prefix' => 'backend'], function () {
         Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-        Route::get('/contact/edit', [ContactController::class, 'edit'])->name('contact.edit');
+        Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
+        Route::put('/contact/update/{id}', [ContactController::class, 'update'])->name('contact.update');
     });
 
     Route::group(['prefix' => 'backend'], function () {

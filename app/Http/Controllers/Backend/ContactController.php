@@ -26,7 +26,8 @@ class ContactController extends Controller
 
     public function edit(string $id)
     {
-        return view('pages.backend.compro.contact.edit');
+        $profile = CompanyProfile::findOrFail($id);
+        return view('pages.backend.compro.contact.edit', compact('profile'));
     }
 
     public function update(Request $request, string $id)
