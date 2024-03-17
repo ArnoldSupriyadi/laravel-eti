@@ -193,7 +193,7 @@
                                             <td>{{ $visionMission->description }}</td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <a href="{{ route('compro.edit', $visionMission->id) }}"
+                                                    <a href="{{ route('about.edit', $visionMission->id) }}"
                                                         class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                         Edit
                                                     </a>
@@ -298,9 +298,10 @@
                                             <td>{{ $client->name }}</td>
                                             <td>{{ $client->description }}</td>
                                             <td>
-                                                <a href="{{ asset('frontend/img/clients/' . $client->logo) }}" target="_blank">
+                                                <a href="{{ asset('frontend/img/clients/' . $client->logo) }}"
+                                                    target="_blank">
                                                     <img src="{{ asset('frontend/img/clients/' . $client->logo) }}"
-                                                    alt="" class="img-fluid" width="20%">
+                                                        alt="" class="img-fluid" width="20%">
                                                 </a>
                                             </td>
                                             <td>
