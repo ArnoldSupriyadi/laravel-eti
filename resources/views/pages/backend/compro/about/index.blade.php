@@ -12,8 +12,9 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">About website at eti</h3>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-
+                        <a class="heading-elements-toggle">
+                            <i class="la la-ellipsis-v font-medium-3"></i>
+                        </a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body card-dashboard">
@@ -60,11 +61,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">About image</h3>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                        <div class="heading-elements">
-
-                        </div>
+                        <h3 class="card-title">About Image</h3>
+                        <a class="heading-elements-toggle">
+                            <i class="la la-ellipsis-v font-medium-3"></i>
+                        </a>
+                        <div class="heading-elements"></div>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body card-dashboard">
@@ -80,18 +81,74 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($aboutImages as $aboutImage)
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <a href="{{ asset('frontend/img/abouts/' . $aboutImage->description) }}"
+                                                    target="_blank">
+                                                    <img src="{{ asset('frontend/img/abouts/' . $aboutImage->description) }}"
+                                                        alt="" class="img-fluid" width="30%">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('about.editAboutImage', $aboutImage->id) }}"
+                                                    class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Table row borders end -->
+    </div>
+
+    <div class="content-body">
+        <!-- Table row borders end-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Product & Service Image</h3>
+                        <a class="heading-elements-toggle">
+                            <i class="la la-ellipsis-v font-medium-3"></i>
+                        </a>
+                        <div class="heading-elements"></div>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-body card-dashboard">
+                            <p class="card-text"></p>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
                                     <tr>
-                                        <td>1</td>
-                                        <td><img src="{{ asset('frontend/img/Logo_ETI_New.png') }}" alt=""
-                                                class="img-fluid" width="30%"></td>
-                                        <td>
-                                            {{-- <a href="#" --}}
-                                            <a href="#"
-                                                class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
-                                        </td>
-
+                                        <th>No</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
                                     </tr>
-
+                                </thead>
+                                <tbody>
+                                    @foreach ($productImages as $productImage)
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <a href="{{ asset('frontend/img/abouts/' . $productImage->description) }}"
+                                                    target="_blank">
+                                                    <img src="{{ asset('frontend/img/abouts/' . $productImage->description) }}"
+                                                        alt="" class="img-fluid" width="30%">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('about.editProductImage', $productImage->id) }}"
+                                                    class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

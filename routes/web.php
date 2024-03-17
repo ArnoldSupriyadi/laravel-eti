@@ -43,7 +43,11 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     Route::prefix('about')->group(function() {
         Route::get('', [AboutController::class, 'index'])->name('about.index');
         Route::get('edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+        Route::get('editAboutImage/{id}', [AboutController::class, 'editAboutImage'])->name('about.editAboutImage');
+        Route::get('editProductImage/{id}', [AboutController::class, 'editProductImage'])->name('about.editProductImage');
         Route::put('update/{id}', [AboutController::class, 'update'])->name('about.update');
+        Route::put('updateAboutImage/{id}', [AboutController::class, 'updateAboutImage'])->name('about.updateAboutImage');
+        Route::put('updateProductImage/{id}', [AboutController::class, 'updateProductImage'])->name('about.updateProductImage');
     });
 
     Route::prefix('category')->group(function() {
