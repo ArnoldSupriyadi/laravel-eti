@@ -17,7 +17,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('product.store') }}" method="POST"
+                            <form class="form" action="{{ route('about.storeProduct') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
 
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('about.index') }}" class="btn btn-warning mr-1"><i
+                                    <a href="{{ route('product.index') }}" class="btn btn-warning mr-1"><i
                                             class="ft-x"></i>Cancel</a>
                                     <button type="submit" class="btn btn-primary">
                                         <i class="la la-check-square-o"></i>

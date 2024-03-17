@@ -337,7 +337,7 @@
                         <h3 class="card-title">Product Specialization</h3>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
-                            <a href="{{ route('user.create') }}"
+                            <a href="{{ route('product.create') }}"
                                 class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Add Product
                                 Specialization</a>
                         </div>
@@ -372,7 +372,7 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <a href="{{ route('compro.edit', $product->id) }}"
+                                                    <a href="{{ route('product.edit', $product->id) }}"
                                                         class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                         Edit
                                                     </a>

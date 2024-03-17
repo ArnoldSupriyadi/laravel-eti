@@ -9,6 +9,7 @@ use App\Models\CoreValue;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {

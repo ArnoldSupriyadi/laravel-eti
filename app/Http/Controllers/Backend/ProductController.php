@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -49,7 +51,7 @@ class ProductController extends Controller
             $request->image->move(public_path($destinationPath), $fileName);
         }
 
-        return redirect()->route('product.index')->with(['success' => 'Data berhasil disimpan!']);
+        return redirect()->route('about.index')->with(['success' => 'Product berhasil disimpan!']);
     }
 
     public function edit(string $id)
@@ -80,7 +82,7 @@ class ProductController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('product.index')->with(['success' => 'Data berhasil diubah!']);
+        return redirect()->route('about.index')->with(['success' => 'Data berhasil diubah!']);
     }
 
     public function updateImage(Request $request, string $id)
@@ -99,7 +101,7 @@ class ProductController extends Controller
         $destinationPath = 'frontend/img/products/';
         $request->image->move(public_path($destinationPath), $fileName);
 
-        return redirect()->route('product.index')->with(['success' => 'Product Image has been updated!']);
+        return redirect()->route('about.index')->with(['success' => 'Product Image has been updated!']);
     }
 
     public function destroy(string $id)
@@ -107,6 +109,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->route('product.index')->with(['success' => 'Data berhasil dihapus!']);
+        return redirect()->route('about.index')->with(['success' => 'Data berhasil dihapus!']);
     }
 }
