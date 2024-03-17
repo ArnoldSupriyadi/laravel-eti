@@ -298,8 +298,10 @@
                                             <td>{{ $client->name }}</td>
                                             <td>{{ $client->description }}</td>
                                             <td>
-                                                <img src="{{ asset('frontend/img/clients/' . $client->logo) }}"
+                                                <a href="{{ asset('frontend/img/clients/' . $client->logo) }}" target="_blank">
+                                                    <img src="{{ asset('frontend/img/clients/' . $client->logo) }}"
                                                     alt="" class="img-fluid" width="20%">
+                                                </a>
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
@@ -360,8 +362,13 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->description }}</td>
-                                            <td><img src="{{ asset('frontend/img/products/' . $product->image) }}"
-                                                    alt="" class="img-fluid" width="20%"></td>
+                                            <td>
+                                                <a href="{{ asset('frontend/img/products/' . $product->image) }}"
+                                                    target="_blank">
+                                                    <img src="{{ asset('frontend/img/products/' . $product->image) }}"
+                                                        alt="" class="img-fluid" width="20%">
+                                                </a>
+                                            </td>
                                             <td>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <a href="{{ route('compro.edit', $product->id) }}"
