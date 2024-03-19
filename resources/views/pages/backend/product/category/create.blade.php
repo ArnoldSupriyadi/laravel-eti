@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Add Product Specialization')
+@section('title', 'Add Product Category')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -10,20 +10,31 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-colored-form-control">
-                            Product Specialization Add
+                            Product Category Add
                         </h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('about.storeProduct') }}" method="POST"
+                            <form class="form" action="{{ route('category.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label for="name">Name <span style="color: red">*</span></label>
+                                        <label for="name">Product Name</label>
+                                        <input type="text" class="form-control" value="{{ $product->name }}" readonly />
+                                        <input type="hidden" name="product" id="product" value="{{ $product->id }}"
+                                            readonly>
+                                    </div>
+                                </div>
+
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label for="name">Product Category Name
+                                            <span style="color: red">*</span>
+                                        </label>
                                         <input type="text"
                                             class="form-control border-primary @error('name') is-invalid @enderror"
                                             name="name" id="name" value="{{ old('name') }}" placeholder="Name"

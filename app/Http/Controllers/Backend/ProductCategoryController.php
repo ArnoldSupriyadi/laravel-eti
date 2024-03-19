@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductCategoryController extends Controller
 {
@@ -16,29 +17,41 @@ class ProductCategoryController extends Controller
         return view('pages.backend.product.index', ['categories' => $categories]);
     }
 
-    public function create()
+    public function create(string $id)
     {
-        $products = Product::orderBy('name', 'ASC')->get();
+        $product = Product::findOrFail($id);
 
-        return view('pages.backend.product.create',
-        [
-            'products' => $products
-        ]);
+        return view('pages.backend.product.category.create', compact('product'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
+            'product' => 'required',
             'name' => 'required',
             'description' => 'nullable',
         ]);
 
         ProductCategory::create([
+            'product_id' => $request->product,
             'name' => $request->name,
             'description' => $request->description,
         ]);
 
-        return redirect()->route('category.index')->with(['success' => 'Data berhasil disimpan!']);
+        if($request->hasFile('image')) {
+            $idImage = ProductCategory::latest()->first()->id;
+
+            $fileName = 'category'.$idImage.'.'.$request->image->extension();
+            $destinationPath = 'frontend/img/categories/';
+
+            DB::table('product_categories')
+                ->where('id', $idImage)
+                ->update(['image' => $fileName]);
+
+            $request->image->move(public_path($destinationPath), $fileName);
+        }
+
+        return redirect()->route('product.index')->with(['success' => 'Product Category berhasil disimpan!']);
     }
 
     public function detailProduct(string $id)
@@ -53,17 +66,16 @@ class ProductCategoryController extends Controller
 
     public function edit(string $id)
     {
-        $products = Product::orderBy('name', 'ASC')->get();
         $category = ProductCategory::findOrFail($id);
 
-        return view('pages.backend.category.edit', compact('category', 'products'));
+        return view('pages.backend.product.category.edit', compact('category'));
     }
 
     public function editImage(string $id)
     {
         $category = ProductCategory::findOrFail($id);
 
-        return view('pages.backend.category.editImage', compact('category'));
+        return view('pages.backend.product.category.editImage', compact('category'));
     }
 
     public function update(Request $request, string $id)
@@ -80,7 +92,7 @@ class ProductCategoryController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('category.index')->with(['success' => 'Data berhasil diubah!']);
+        return redirect()->route('product.index')->with(['success' => 'Data berhasil diubah!']);
     }
 
     public function updateImage(Request $request, string $id)
@@ -99,7 +111,7 @@ class ProductCategoryController extends Controller
         $destinationPath = 'frontend/img/categories/';
         $request->image->move(public_path($destinationPath), $fileName);
 
-        return redirect()->route('category.index')->with(['success' => 'Product Category Image has been updated!']);
+        return redirect()->route('product.index')->with(['success' => 'Product Category Image has been updated!']);
     }
 
     public function destroy(string $id)
@@ -107,6 +119,6 @@ class ProductCategoryController extends Controller
         $category = ProductCategory::findOrFail($id);
         $category->delete();
 
-        return redirect()->route('category.index')->with(['success' => 'Data berhasil dihapus!']);
+        return redirect()->route('product.index')->with(['success' => 'Data berhasil dihapus!']);
     }
 }

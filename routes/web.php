@@ -52,7 +52,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::group(['prefix' => 'backend/category'], function () {
         Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
-        Route::get('create', [ProductCategoryController::class, 'create'])->name('category.create');
+        Route::get('create/{id}', [ProductCategoryController::class, 'create'])->name('category.create');
         Route::post('store', [ProductCategoryController::class, 'store'])->name('category.store');
         Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
         Route::get('editImage/{id}', [ProductCategoryController::class, 'editImage'])->name('category.editImage');

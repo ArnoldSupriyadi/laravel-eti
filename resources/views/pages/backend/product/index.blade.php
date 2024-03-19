@@ -15,7 +15,7 @@
                             <h4 class="card-title">{{ $product->name }} Page</h4>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
-                                <a href="{{ route('product.create') }}"
+                                <a href="{{ route('category.create', $product->id) }}"
                                     class="btn btn-warning btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">create
                                     new at {{ Str::lower($product->name) }}</a>
                             </div>
@@ -45,8 +45,13 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $category->name }}</td>
-                                                <td><img src="{{ asset('frontend/img/categories/' . $category->image) }}"
-                                                        alt="" class="img-fluid" width="20%" height="20%"></td>
+                                                <td>
+                                                    <a href="{{ asset('frontend/img/categories/' . $category->image) }}"
+                                                        target="_blank">
+                                                        <img src="{{ asset('frontend/img/categories/' . $category->image) }}"
+                                                            alt="" class="img-fluid" width="20%" height="20%">
+                                                    </a>
+                                                </td>
                                                 <td>{{ $category->description }}</td>
                                                 <td>
                                                     <a href="{{ route('category.edit', $category->id) }}"
