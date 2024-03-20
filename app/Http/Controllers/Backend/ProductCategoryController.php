@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ProductGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -114,9 +115,15 @@ class ProductCategoryController extends Controller
         return redirect()->route('product.index')->with(['success' => 'Product Category Image has been updated!']);
     }
 
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         $category = ProductCategory::findOrFail($id);
+        $checkGallery = ProductGallery::where('category_id', $id)->exists();
+
+        if ($checkGallery) {
+            $gallery = ProductGallery::where('category_id', $id)->delete();
+        }
+
         $category->delete();
 
         return redirect()->route('product.index')->with(['success' => 'Data berhasil dihapus!']);

@@ -53,6 +53,7 @@
                                             <td>
                                                 <a href="{{ route('productGallery.edit', $gallery->id) }}"
                                                     class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+
                                                 <a href="{{ route('productGallery.editImage', $gallery->id) }}"
                                                     class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                     Edit Image

@@ -56,12 +56,18 @@
                                                 <td>
                                                     <a href="{{ route('category.edit', $category->id) }}"
                                                         class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
+
                                                     <a href="{{ route('category.editImage', $category->id) }}"
                                                         class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                         Edit Image
                                                     </a>
-                                                    <a href="#"
-                                                        class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Delete</a>
+
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light delete_confirm"
+                                                        id="delete_confirm{{ $category->id }}"
+                                                        data-id="{{ $category->id }}">
+                                                        Delete</button>
+
                                                     <a href="{{ route('productGallery.index', $category->id) }}"
                                                         class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show
                                                         Detail</a>
@@ -79,3 +85,48 @@
         </div>
     @endforeach
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('body').on('click', '.delete_confirm', function() {
+                let idItem = $(this).data('id');
+
+                Swal.fire({
+                    title: 'Konfirmasi Hapus',
+                    text: "Anda yakin ingin menghapusnya?",
+                    icon: 'warning',
+                    data: idItem,
+                    showCancelButton: true,
+                    confirmButtonColor: '#10bd9d',
+                    cancelButtonColor: '#ca2062',
+                    confirmButtonText: 'Ya, Dihapus !'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            method: 'GET',
+                            url: "{{ route('category.destroy', ':id') }}"
+                                .replace(':id', idItem),
+                            data: {
+                                _token: '{{ csrf_token() }}',
+                                id: idItem,
+                            },
+                            success: function(data) {
+                                window.location.reload();
+                                Swal.fire(
+                                    'Berhasil!',
+                                    'Kategori Produk berhasil dihapus',
+                                    'success'
+                                )
+                            },
+                            error: function(error) {
+                                Swal.fire('Error', 'Gagal menghapus', 'error');
+                                // Handle error
+                            }
+                        });
+                    }
+                })
+            });
+        });
+    </script>
+@endpush

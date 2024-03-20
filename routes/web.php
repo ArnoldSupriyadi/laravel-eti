@@ -89,7 +89,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('editImage/{id}', [ProductController::class, 'editImage'])->name('product.editImage');
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::put('updateImage/{id}', [ProductController::class, 'updateImage'])->name('product.updateImage');
-        Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+        Route::get('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
 
     // Product Category
@@ -101,7 +101,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('editImage/{id}', [ProductCategoryController::class, 'editImage'])->name('category.editImage');
         Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
         Route::put('updateImage/{id}', [ProductCategoryController::class, 'updateImage'])->name('category.updateImage');
-        Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
+        Route::get('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
     });
 
     // Product Gallery

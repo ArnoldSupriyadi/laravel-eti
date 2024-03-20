@@ -104,9 +104,15 @@ class ProductController extends Controller
         return redirect()->route('about.index')->with(['success' => 'Product Image has been updated!']);
     }
 
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         $product = Product::findOrFail($id);
+        $checkCategory = ProductCategory::where('product_id', $id)->exists();
+
+        if ($checkCategory) {
+            $gallery = ProductCategory::where('product_id', $id)->delete();
+        }
+
         $product->delete();
 
         return redirect()->route('about.index')->with(['success' => 'Data berhasil dihapus!']);
