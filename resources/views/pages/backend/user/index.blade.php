@@ -9,8 +9,10 @@
         <!-- Table row borders end-->
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('user.create') }}"
-                    class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Users</a>
+                @if (Auth::user()->role->name == 'superadmin')
+                    <a href="{{ route('user.create') }}"
+                        class="btn btn-info btn-min-width mr-1 mb-1 waves-effect waves-light">Create Users</a>
+                @endif
 
                 <div class="card">
                     <div class="card-header">

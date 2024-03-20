@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -19,10 +20,14 @@ class UserController extends Controller
 
     public function create()
     {
-        $roles = Role::all();
+        if (Auth::user()->role->name == 'superadmin') {
+            $roles = Role::all();
 
-        return view('pages.backend.user.create',
-        ['roles' => $roles]);
+            return view('pages.backend.user.create',
+            ['roles' => $roles]);
+        } else {
+            return redirect()->route('user.index')->with(['error' => 'Mohon maaf hanya diizinkan untuk Superadmin!']);
+        }
     }
 
     public function store(Request $request)
