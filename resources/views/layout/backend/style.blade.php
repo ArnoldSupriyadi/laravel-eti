@@ -28,3 +28,8 @@
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/style.css') }}">
 <!-- END: Custom CSS-->
+
+<!-- BEGIN: Sweetalert2 CSS-->
+<link rel="stylesheet" type="text/css"
+    href="{{ asset('backend/app-assets/data/sweetalert2/dist/sweetalert2.min.css') }}">
+<!-- END: Sweetalert2 CSS-->

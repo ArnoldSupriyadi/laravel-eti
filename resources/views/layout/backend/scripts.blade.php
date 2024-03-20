@@ -16,3 +16,9 @@
 <script src="{{ asset('backend/app-assets/js/scripts/pages/material-app.js') }}"></script>
 <script src="{{ asset('backend/app-assets/js/scripts/pages/dashboard-crypto.js') }}"></script>
 <!-- END: Page JS-->
+
+<!-- BEGIN: Sweetalert2 JS-->
+<script src="{{ asset('backend/app-assets/data/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+<!-- END: Sweetalert2 JS-->
+
+@stack('scripts')
