@@ -50,7 +50,22 @@ class LandingController extends Controller
 
     public function products()
     {
-        return view('pages.frontend.product.index');
+        $productDescription = CompanyProfile::where('name', 'product_description')->first()->description;
+        $products = Product::all();
+
+        return view('pages.frontend.product.index',
+        [
+            'productDescription' => $productDescription,
+            'products' => $products
+        ]);
+    }
+
+    public function productCategory(string $id)
+    {
+        $product = Product::findOrFail($id);
+        $categories = ProductCategory::where('product_id', $id)->get();
+
+        return view('pages.frontend.product.productCategory', compact('product', 'categories'));
     }
 
     public function productsCategory()
@@ -61,6 +76,12 @@ class LandingController extends Controller
      public function productsCategory2()
     {
         return view('pages.frontend.product.category2');
+    }
+
+    public function productDetail(string $id)
+    {
+        $category = ProductCategory::findOrFail($id);
+        return view('pages.frontend.product.productDetail', compact('category'));
     }
 
     public function detailProduct()
@@ -75,6 +96,15 @@ class LandingController extends Controller
 
     public function contact()
     {
-        return view('pages.frontend.contact.index');
+        $email = CompanyProfile::where('name', 'email')->first()->description;
+        $phone = CompanyProfile::where('name', 'phone')->first()->description;
+        $address = CompanyProfile::where('name', 'address_one')->first()->description;
+
+        return view('pages.frontend.contact.index',
+        [
+            'email' => $email,
+            'phone' => $phone,
+            'address' => $address,
+        ]);
     }
 }
