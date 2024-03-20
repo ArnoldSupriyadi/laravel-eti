@@ -113,7 +113,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('editImage/{id}', [ProductGalleryController::class, 'editImage'])->name('productGallery.editImage');
         Route::put('update/{id}', [ProductGalleryController::class, 'update'])->name('productGallery.update');
         Route::put('updateImage/{id}', [ProductGalleryController::class, 'updateImage'])->name('productGallery.updateImage');
-        Route::delete('destroy/{id}', [ProductGalleryController::class, 'destroy'])->name('productGallery.destroy');
+        Route::get('destroy/{id}', [ProductGalleryController::class, 'destroy'])->name('productGallery.destroy');
     });
 
     Route::group(['prefix' => 'backend/role'], function () {

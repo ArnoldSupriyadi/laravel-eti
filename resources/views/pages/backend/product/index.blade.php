@@ -62,7 +62,7 @@
                                                     </a>
                                                     <a href="#"
                                                         class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Delete</a>
-                                                    <a href="{{ route('category.index') }}"
+                                                    <a href="{{ route('productGallery.index', $category->id) }}"
                                                         class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show
                                                         Detail</a>
                                                 </td>

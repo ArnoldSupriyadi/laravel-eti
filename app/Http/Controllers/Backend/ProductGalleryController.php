@@ -14,7 +14,7 @@ class ProductGalleryController extends Controller
     public function index(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $galleries = ProductGallery::orderBy('name', 'ASC')->get();
+        $galleries = ProductGallery::where('category_id', $id)->orderBy('name', 'ASC')->get();
 
         return view('pages.backend.product.gallery.index',
         [
@@ -25,9 +25,9 @@ class ProductGalleryController extends Controller
 
     public function create(string $id)
     {
-        $product = Product::findOrFail($id);
+        $category = ProductCategory::findOrFail($id);
 
-        return view('pages.backend.product.gallery.category.create', compact('product'));
+        return view('pages.backend.product.gallery.create', compact('category'));
     }
 
     public function store(Request $request)
@@ -65,21 +65,21 @@ class ProductGalleryController extends Controller
             $request->image->move(public_path($destinationPath), $fileName);
         }
 
-        return redirect()->route('product.index')->with(['success' => 'Product Gallery berhasil disimpan!']);
+        return redirect()->route('productGallery.index', $request->category)->with(['success' => 'Product Gallery berhasil disimpan!']);
     }
 
     public function edit(string $id)
     {
         $gallery = ProductGallery::findOrFail($id);
 
-        return view('pages.backend.product.gallery.gallery.edit', compact('gallery'));
+        return view('pages.backend.product.gallery.edit', compact('gallery'));
     }
 
     public function editImage(string $id)
     {
         $gallery = ProductGallery::findOrFail($id);
 
-        return view('pages.backend.product.gallery.gallery.editImage', compact('gallery'));
+        return view('pages.backend.product.gallery.editImage', compact('gallery'));
     }
 
     public function update(Request $request, string $id)
@@ -96,15 +96,15 @@ class ProductGalleryController extends Controller
             $price = $request->price;
         }
 
-        $category = ProductGallery::findOrFail($id);
+        $gallery = ProductGallery::findOrFail($id);
 
-        $category->update([
+        $gallery->update([
             'name' => $request->name,
             'price' => $price,
             'description' => $request->description,
         ]);
 
-        return redirect()->route('product.index')->with(['success' => 'Product Gallery berhasil diubah!']);
+        return redirect()->route('productGallery.index', $gallery->category_id)->with(['success' => 'Product Gallery berhasil diubah!']);
     }
 
     public function updateImage(Request $request, string $id)
@@ -123,14 +123,14 @@ class ProductGalleryController extends Controller
         $destinationPath = 'frontend/img/galleries/';
         $request->image->move(public_path($destinationPath), $fileName);
 
-        return redirect()->route('product.index')->with(['success' => 'Product Gallery Image has been updated!']);
+        return redirect()->route('productGallery.index', $gallery->category_id)->with(['success' => 'Product Gallery Image has been updated!']);
     }
 
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         $gallery = ProductGallery::findOrFail($id);
         $gallery->delete();
 
-        return redirect()->route('product.index')->with(['success' => 'Data berhasil dihapus!']);
+        return redirect()->route('productGallery.index', $gallery->category_id)->with(['success' => 'Gallery berhasil dihapus!']);
     }
 }
