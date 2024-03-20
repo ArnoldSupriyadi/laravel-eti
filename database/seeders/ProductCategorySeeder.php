@@ -14,7 +14,7 @@ class ProductCategorySeeder extends Seeder
         DB::table('product_categories')->insert([
             'product_id' => 1,
             'name' => 'Soldier Supplies',
-            'description' => '',
+            'description' => 'Explore our extensive catalog of soldier supplies, meticulously curated to meet the rigorous demands of military life. From durable combat uniforms and footwear engineered for performance to advanced tactical gear designed for optimal functionality, our products are crafted with precision and tested for reliability in the field.',
             'image' => 'category1.jpg',
             // 'image' => 'perbekalan-prajurit.jpg',
             'created_at' => Carbon::now(),

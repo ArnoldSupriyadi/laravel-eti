@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\LogoController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductCategoryController;
+use App\Http\Controllers\Backend\ProductGalleryController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\UserController;
@@ -50,17 +51,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::put('updateProductImage/{id}', [AboutController::class, 'updateProductImage'])->name('about.updateProductImage');
     });
 
-    Route::group(['prefix' => 'backend/category'], function () {
-        Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
-        Route::get('create/{id}', [ProductCategoryController::class, 'create'])->name('category.create');
-        Route::post('store', [ProductCategoryController::class, 'store'])->name('category.store');
-        Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
-        Route::get('editImage/{id}', [ProductCategoryController::class, 'editImage'])->name('category.editImage');
-        Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
-        Route::put('updateImage/{id}', [ProductCategoryController::class, 'updateImage'])->name('category.updateImage');
-        Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
-    });
-
     // Client
     Route::group(['prefix' => 'backend/client'], function () {
         Route::get('create', [ClientController::class, 'create'])->name('client.create');
@@ -90,6 +80,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::delete('destroy/{id}', [CoreValueController::class, 'destroy'])->name('coreValue.destroy');
     });
 
+    // Product
     Route::group(['prefix' => 'backend/product'], function () {
         Route::get('', [ProductController::class, 'index'])->name('product.index');
         Route::get('create', [ProductController::class, 'create'])->name('product.create');
@@ -99,6 +90,30 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::put('update/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::put('updateImage/{id}', [ProductController::class, 'updateImage'])->name('product.updateImage');
         Route::delete('destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    });
+
+    // Product Category
+    Route::group(['prefix' => 'backend/category'], function () {
+        Route::get('', [ProductCategoryController::class, 'index'])->name('category.index');
+        Route::get('create/{id}', [ProductCategoryController::class, 'create'])->name('category.create');
+        Route::post('store', [ProductCategoryController::class, 'store'])->name('category.store');
+        Route::get('edit/{id}', [ProductCategoryController::class, 'edit'])->name('category.edit');
+        Route::get('editImage/{id}', [ProductCategoryController::class, 'editImage'])->name('category.editImage');
+        Route::put('update/{id}', [ProductCategoryController::class, 'update'])->name('category.update');
+        Route::put('updateImage/{id}', [ProductCategoryController::class, 'updateImage'])->name('category.updateImage');
+        Route::delete('destroy/{id}', [ProductCategoryController::class, 'destroy'])->name('category.destroy');
+    });
+
+    // Product Gallery
+    Route::group(['prefix' => 'backend/productGallery'], function () {
+        Route::get('{id}', [ProductGalleryController::class, 'index'])->name('productGallery.index');
+        Route::get('create/{id}', [ProductGalleryController::class, 'create'])->name('productGallery.create');
+        Route::post('store', [ProductGalleryController::class, 'store'])->name('productGallery.store');
+        Route::get('edit/{id}', [ProductGalleryController::class, 'edit'])->name('productGallery.edit');
+        Route::get('editImage/{id}', [ProductGalleryController::class, 'editImage'])->name('productGallery.editImage');
+        Route::put('update/{id}', [ProductGalleryController::class, 'update'])->name('productGallery.update');
+        Route::put('updateImage/{id}', [ProductGalleryController::class, 'updateImage'])->name('productGallery.updateImage');
+        Route::delete('destroy/{id}', [ProductGalleryController::class, 'destroy'])->name('productGallery.destroy');
     });
 
     Route::group(['prefix' => 'backend/role'], function () {
