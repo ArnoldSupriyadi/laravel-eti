@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\LogoController;
+use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductCategoryController;
 use App\Http\Controllers\Backend\ProductGalleryController;
@@ -81,6 +83,30 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('edit/{id}', [CoreValueController::class, 'edit'])->name('coreValue.edit');
         Route::put('update/{id}', [CoreValueController::class, 'update'])->name('coreValue.update');
         Route::delete('destroy/{id}', [CoreValueController::class, 'destroy'])->name('coreValue.destroy');
+    });
+
+    // News
+    Route::group(['prefix' => 'backend/news'], function () {
+        Route::get('', [NewsController::class, 'index'])->name('news.index');
+        Route::get('create/{id}', [NewsController::class, 'create'])->name('news.create');
+        Route::post('store', [NewsController::class, 'store'])->name('news.store');
+        Route::get('edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+        Route::get('editImage/{id}', [NewsController::class, 'editImage'])->name('news.editImage');
+        Route::put('update/{id}', [NewsController::class, 'update'])->name('news.update');
+        Route::put('updateImage/{id}', [NewsController::class, 'updateImage'])->name('news.updateImage');
+        Route::get('destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    });
+
+    // Portfolio
+    Route::group(['prefix' => 'backend/portfolio'], function () {
+        Route::get('', [PortfolioController::class, 'index'])->name('portfolio.index');
+        Route::get('create/{id}', [PortfolioController::class, 'create'])->name('portfolio.create');
+        Route::post('store', [PortfolioController::class, 'store'])->name('portfolio.store');
+        Route::get('edit/{id}', [PortfolioController::class, 'edit'])->name('portfolio.edit');
+        Route::get('editImage/{id}', [PortfolioController::class, 'editImage'])->name('portfolio.editImage');
+        Route::put('update/{id}', [PortfolioController::class, 'update'])->name('portfolio.update');
+        Route::put('updateImage/{id}', [PortfolioController::class, 'updateImage'])->name('portfolio.updateImage');
+        Route::get('destroy/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.destroy');
     });
 
     // Product
