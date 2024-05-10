@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Models\News;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -52,6 +53,13 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with(['success' => 'News berhasil disimpan!']);
     }
 
+    public function show(string $id)
+    {
+        $news = News::findOrFail($id);
+
+        return view('pages.backend.news.show', compact('news'));
+    }
+
     public function edit(string $id)
     {
         $news = News::findOrFail($id);
@@ -80,7 +88,7 @@ class NewsController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('news.index')->with(['success' => 'News has been updated!']);
+        return redirect()->route('news.show', $id)->with(['success' => 'News has been updated!']);
     }
 
     public function updateImage(Request $request, string $id)
@@ -105,7 +113,7 @@ class NewsController extends Controller
         $news->update(['image' => $fileName]);
         $request->image->move(public_path($destinationPath), $fileName);
 
-        return redirect()->route('news.index')->with(['success' => 'News Image has been updated!']);
+        return redirect()->route('news.show', $id)->with(['success' => 'News Image has been updated!']);
     }
 
     public function destroy(string $id, Request $request)

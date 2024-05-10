@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -54,6 +55,13 @@ class PortfolioController extends Controller
         return redirect()->route('portfolio.index')->with(['success' => 'Portfolio berhasil disimpan!']);
     }
 
+    public function show(string $id)
+    {
+        $portfolio = Portfolio::findOrFail($id);
+
+        return view('pages.backend.portfolio.show', compact('portfolio'));
+    }
+
     public function edit(string $id)
     {
         $portfolio = Portfolio::findOrFail($id);
@@ -84,7 +92,7 @@ class PortfolioController extends Controller
             'description_two' => $request->description_two,
         ]);
 
-        return redirect()->route('portfolio.index')->with(['success' => 'Portfolio has been updated!']);
+        return redirect()->route('portfolio.show', $id)->with(['success' => 'Portfolio has been updated!']);
     }
 
     public function updateImage(Request $request, string $id)
@@ -109,7 +117,7 @@ class PortfolioController extends Controller
         $portfolio->update(['image' => $fileName]);
         $request->image->move(public_path($destinationPath), $fileName);
 
-        return redirect()->route('portfolio.index')->with(['success' => 'Portfolio has been updated!']);
+        return redirect()->route('portfolio.show', $id)->with(['success' => 'Portfolio has been updated!']);
     }
 
     public function destroy(string $id, Request $request)

@@ -88,8 +88,9 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     // News
     Route::group(['prefix' => 'backend/news'], function () {
         Route::get('', [NewsController::class, 'index'])->name('news.index');
-        Route::get('create/{id}', [NewsController::class, 'create'])->name('news.create');
+        Route::get('create', [NewsController::class, 'create'])->name('news.create');
         Route::post('store', [NewsController::class, 'store'])->name('news.store');
+        Route::get('show/{id}', [NewsController::class, 'show'])->name('news.show');
         Route::get('edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
         Route::get('editImage/{id}', [NewsController::class, 'editImage'])->name('news.editImage');
         Route::put('update/{id}', [NewsController::class, 'update'])->name('news.update');
@@ -100,8 +101,9 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     // Portfolio
     Route::group(['prefix' => 'backend/portfolio'], function () {
         Route::get('', [PortfolioController::class, 'index'])->name('portfolio.index');
-        Route::get('create/{id}', [PortfolioController::class, 'create'])->name('portfolio.create');
+        Route::get('create', [PortfolioController::class, 'create'])->name('portfolio.create');
         Route::post('store', [PortfolioController::class, 'store'])->name('portfolio.store');
+        Route::get('show/{id}', [PortfolioController::class, 'show'])->name('portfolio.show');
         Route::get('edit/{id}', [PortfolioController::class, 'edit'])->name('portfolio.edit');
         Route::get('editImage/{id}', [PortfolioController::class, 'editImage'])->name('portfolio.editImage');
         Route::put('update/{id}', [PortfolioController::class, 'update'])->name('portfolio.update');
