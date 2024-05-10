@@ -21,4 +21,8 @@
 <script src="{{ asset('backend/app-assets/data/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 <!-- END: Sweetalert2 JS-->
 
+<!-- BEGIN: Ckeditor 5 -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<!-- END: Ckeditor 5 -->
+
 @stack('scripts')

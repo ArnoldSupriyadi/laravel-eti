@@ -42,6 +42,20 @@
             </li>
 
             <li class=" nav-item">
+                <a href="{{ route('news.index') }}">
+                    <i class="material-icons">collections</i>
+                    <span class="menu-title" data-i18n="Wallet">News</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
+                <a href="{{ route('portfolio.index') }}">
+                    <i class="material-icons">collections</i>
+                    <span class="menu-title" data-i18n="Wallet">Portfolio</span>
+                </a>
+            </li>
+
+            <li class=" nav-item">
                 <a href="{{ route('contact.index') }}">
                     <i class="material-icons">perm_contact_calendar</i>
                     <span class="menu-title" data-i18n="Wallet">Contact</span>
