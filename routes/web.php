@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Frontend\LandingController;
 use App\Http\Controllers\Frontend\SettingController;
+use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
 // Frontend
@@ -43,6 +44,8 @@ Route::controller(LoginController::class)->group(function() {
     Route::post('/logout', 'logout')->name('logout');
 });
 
+Route::get('lang/home', [LangController::class, 'index']);
+Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
 // Auth
 Route::middleware(['auth', 'auth.session'])->group(function () {
 

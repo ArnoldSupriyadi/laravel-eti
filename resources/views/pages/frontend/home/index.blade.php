@@ -16,7 +16,8 @@
         <div class="section full-height over-hide background-dark-2">
             <!-- <div class="case-study-name-title">eti</div> -->
             <ul class="case-study-wrapper">
-                <li class="case-study-name"><span>About ETI</span> <a href="{{ route('about') }}"
+                <li class="case-study-name"><span>
+                    {{ __('messages.title') }}</span> <a href="{{ route('about') }}"
                         class="cursor-link animsition-link">explore</a></li>
                 <li class="case-study-name"><span>Product & Service</span> <a href="{{ route('products') }}"
                         class="cursor-link animsition-link">explore</a></li>
