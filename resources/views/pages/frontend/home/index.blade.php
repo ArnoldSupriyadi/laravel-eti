@@ -5,26 +5,29 @@
 @section('content')
     <div class="animsition">
         <!-- Nav and Logo
-          ================================================== -->
+                ================================================== -->
         @include('layout.frontend.header')
 
         @include('layout.frontend.navbar')
 
         <!-- Primary Page Layout
-              ================================================== -->
+                ================================================== -->
 
         <div class="section full-height over-hide background-dark-2">
             <!-- <div class="case-study-name-title">eti</div> -->
             <ul class="case-study-wrapper">
-                <li class="case-study-name"><span>
-                    {{ __('messages.title') }}</span> <a href="{{ route('about') }}"
-                        class="cursor-link animsition-link">explore</a></li>
-                <li class="case-study-name"><span>Product & Service</span> <a href="{{ route('products') }}"
-                        class="cursor-link animsition-link">explore</a></li>
+                <li class="case-study-name">
+                    <span>{{ __('messages.about_us') }}</span>
+                    <a href="{{ route('about') }}" class="cursor-link animsition-link">{{ __('messages.explore') }}</a>
+                </li>
+                <li class="case-study-name">
+                    <span>{{ __('messages.menu_product') }}</span>
+                    <a href="{{ route('products') }}" class="cursor-link animsition-link">{{ __('messages.explore') }}</a>
+                </li>
                 <!-- <li class="case-study-name"><span>Cioccolati</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li>
-                    <li class="case-study-name"><span>Maybach</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li>
-                    <li class="case-study-name"><span>Anwis Stuttgart</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li>
-                    <li class="case-study-name"><span>Brand Center</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li> -->
+                        <li class="case-study-name"><span>Maybach</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li>
+                        <li class="case-study-name"><span>Anwis Stuttgart</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li>
+                        <li class="case-study-name"><span>Brand Center</span> <a href="project.html" class="cursor-link animsition-link">explore</a></li> -->
             </ul>
             <ul class="case-study-images">
                 <li>
@@ -51,7 +54,7 @@
         </div>
 
         <!-- Page cursor
-              ================================================== -->
+                ================================================== -->
 
         <div class="cursor cursor-shadow"></div>
         <div class="cursor cursor-dot"></div>

@@ -4,8 +4,7 @@
 
 @section('content')
     <div class="animsition">
-        <!-- Nav and Logo
-                          ================================================== -->
+        <!-- Nav and Logo -->
         @include('layout.frontend.header')
 
         @include('layout.frontend.navbar')
@@ -14,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 section-title-wrap text-center parallax-fade-top">
-                        <h3 class="mb-5">about us</h3>
+                        <h3 class="mb-5">{{ __('messages.about_us') }}</h3>
                         <!-- <h1>Four Technologies<br />Indonesia</h1> -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
                             class="bi bi-building" viewBox="0 0 16 16" style="color: #ffffff">
@@ -43,23 +42,25 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <h3 class="mb-2">VISION</h3>
-                        <p class="mb-0 pb-0">{{ $vision }}</p>
+                        <h3 class="mb-2">{{ __('messages.vision') }}</h3>
+                        <p class="mb-0 pb-0">{{ __('messages.vision_val') }}</p>
+                        {{-- <p class="mb-0 pb-0">{{ $vision }}</p> --}}
                     </div>
                     <div class="col-md-12 text-center mt-5 mt-md-4"
                         data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <h3 class="mb-2">MISION</h3>
-                        <p class="mb-0 pb-0">{{ $mission }}</p>
+                        <h3 class="mb-2">{{ __('messages.mission') }}</h3>
+                        <p class="mb-0 pb-0">{{ __('messages.mission_val') }}</p>
+                        {{-- <p class="mb-0 pb-0">{{ $mission }}</p> --}}
                     </div>
-                    <!-- <div class="section clearfix"></div>
-                                    <div class="col-md-4 text-center mt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                      <h5 class="mb-3">campaigns</h5>
-                                      <p class="mb-0 pb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                                    </div>
-                                    <div class="col-md-4 text-center mt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                      <h5 class="mb-3">web design</h5>
-                                      <p class="mb-0 pb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                                    </div> -->
+                    {{-- <div class="section clearfix"></div>
+                    <div class="col-md-4 text-center mt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                        <h5 class="mb-3">campaigns</h5>
+                        <p class="mb-0 pb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                    </div>
+                    <div class="col-md-4 text-center mt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                        <h5 class="mb-3">web design</h5>
+                        <p class="mb-0 pb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -68,7 +69,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <p class="mb-0 pb-0 lead-q"><em>"Company Core Value"</em></p>
+                        <p class="mb-0 pb-0 lead-q"><em>"{{ __('messages.comp_core_value') }}"</em></p>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -118,7 +119,7 @@
                 <div class="row justify-content-center">
                     <div class="section clearfix"></div>
                     <div class="col-md-12 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <h3 class="mb-2 mt-5"><b>WORK PARTNERS</b></h3>
+                        <h3 class="mb-2 mt-5"><b>{{ __('messages.work_partners') }}</b></h3>
                         <p class="mb-0 pb-0">Leading the way as a security solution provider</p>
                     </div>
                 </div>
@@ -145,7 +146,7 @@
                 <div class="row justify-content-center">
                     <div class="section clearfix"></div>
                     <div class="col-md-12 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <h3 class="mb-2 mt-5"><b>PRODUCT SPECIALIZATION</b></h3>
+                        <h3 class="mb-2 mt-5"><b>{{ __('messages.product_spec') }}</b></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -189,7 +190,7 @@
                     <div class="col-md-7 text-center">
                         <a href="{{ route('contact') }}" class="cursor-link animsition-link">
                             <div class="project-link-wrap">
-                                <p>let's talk</p>
+                                <p>{{ __('messages.lets_talk') }}</p>
                             </div>
                         </a>
                     </div>
@@ -197,13 +198,12 @@
             </div>
         </div>
 
-        @include('layout.frontend.language')
+        {{-- @include('layout.frontend.language') --}}
+        @include('layout.frontend.languagehome')
 
         <div class="scroll-to-top cursor-link"></div>
 
-        <!-- Page cursor
-                         ================================================== -->
-
+        <!-- Page cursor -->
         <div class="cursor cursor-shadow"></div>
         <div class="cursor cursor-dot"></div>
 

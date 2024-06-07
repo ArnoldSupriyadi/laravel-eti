@@ -1,16 +1,16 @@
 <div class="social-wrap">
     language
-    {{-- <ul>
-        <li>
-
+    <ul id="change_bahasa">
+        <li data-lang="en" class="{{ session()->get('locale') == 'en' ? 'selected' : '' }}">
+            <a href="#" class="cursor-link">
+                <img src="{{ asset('frontend/img/icons8-great-britain-96.png') }}" alt="indonesia" class="img-fluid" />
+            </a>
         </li>
-        <li>
-
+        <li data-lang="id" class="{{ session()->get('locale') == 'id' ? 'selected' : '' }}">
+            <a href="#" class="cursor-link">
+                <img src="{{ asset('frontend/img/icons8-indonesia-96.png') }}" alt="indonesia" class="img-fluid" />
+            </a>
         </li>
-    </ul> --}}
-    <ul class="form-control" id="change_bahasa">
-        <li data-lang="en" class="{{ session()->get('locale') == 'en' ? 'selected' : '' }}"><a href="#" class="cursor-link"><img src="{{ asset('frontend/img/icons8-great-britain-96.png') }}" alt="indonesia" class="img-fluid" /></a></li>
-        <li data-lang="id" class="{{ session()->get('locale') == 'id' ? 'selected' : '' }}"><a href="#" class="cursor-link"><img src="{{ asset('frontend/img/icons8-indonesia-96.png') }}" alt="indonesia" class="img-fluid" /></a></li>
     </ul>
 
     <script type="text/javascript">
@@ -28,7 +28,7 @@
 </div>
 
 @push('scripts')
-<script type="text/javascript">
+    <script type="text/javascript">
         // Define the URL to which the request should be sent
         var url = "{{ route('changeLang') }}";
 
@@ -36,6 +36,6 @@
         $("#change_bahasa").change(function() {
             // Redirect to the URL with the selected language
             window.location.href = url + "?lang=" + $(this).val();
-            });
+        });
     </script>
 @endpush
