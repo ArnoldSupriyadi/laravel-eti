@@ -1,21 +1,61 @@
 <?php
+use App\Models\Client;
+use App\Models\CoreValue;
+use App\Models\CompanyProfile;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\ProductGallery;
+use App\Models\User;
 
-
+$about = CompanyProfile::where('name', 'about')->first()->description_indo;
+$aboutImage = CompanyProfile::where('name', 'about_image2')->first()->description_indo;
+$vision = CompanyProfile::where('name', 'vision')->first()->description_indo;
+$mission = CompanyProfile::where('name', 'mission')->first()->description_indo;
+$product = CompanyProfile::where('name', 'product_description')->first()->description_indo;
+$coreValues = CoreValue::all();
+$clients = Client::all();
 
 return [
     'menu_about' => 'Tentang ETI',
     'menu_product' => 'Produk & Layanan',
+    'language' => 'bahasa',
+    'eti_profile' => 'eti profil',
+    'commercial_defense' => 'Komersial & Pertahanan',
     'explore' => 'jelajahi',
-    'menu_product' => 'Produk & Layanan',
+    // ==========================
+    // mainmenu
+    'mainmenu_home' => 'beranda',
+    'mainmenu_about' => 'tentang',
+    'mainmenu_products' => 'produk',
+    'mainmenu_gallery' => 'galeri',
+    'mainmenu_contact' => 'kontak',
+    // ==========================
+    // about page
     'about_us' => 'Tentang Kami',
     'vision' => 'VISI',
     'mission' => 'MISI',
     'work_partners' => 'MITRA KERJA',
     'product_spec' => 'SPESIALISASI PRODUK',
     'comp_core_value' => 'Nilai Inti Perusahaan',
-    //about page value
-    'about_val' => 'PT Empat Teknologi Indonesia berdiri di Tahun 2014, Kami adalah perusahaan teknologi Internasional yang bergerak dalam berbagai program, terutama dibidang pertahanan dan keamanan. Kami mengembangkan dan memasok produk dan sistem untuk kebutuhan pertahanan, keamanan dan juga aplikasikan untuk kebutuhan komersil',
-    'vision_val' => 'Menjadi terdepan dalam menjadi penyedia solusi keamanan',
-    'mission_val' => 'Membangun infrastruktur yang berkualitas dan lingkup pekerjaan yang effektif. Memberikan produk dan jasa yang berkualitas, cepat, hemat dan handal',
-
+    'lets_talk' => "mari berdiskusi",
+    // about page - value
+    'about_val' => $about,
+    'vision_val' => $vision,
+    'mission_val' => $mission,
+    // ==========================
+    //products page
+    'product_service' => 'Produk & Layanan',
+    'more' => 'Selengkapnya',
+    //products page - value
+    'product_service_val' => $product,
+    // ==========================
+    //contact page
+    'head_contact' => 'hubungi kami',
+    'sub_contact' => 'selalu siap bekerja',
+    'at' => 'di',
+    'find_map' => 'temukan kami di peta',
+    // ==========================
+    //gallery page
+    'head_gallery' => 'kami melakukan sihir',
+    'sub_gallery' => 'kejar minat Anda',
 ];

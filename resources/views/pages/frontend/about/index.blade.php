@@ -32,7 +32,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 text-center">
                         <p class="mb-0 pb-0 lead">
-                            {{ $about }}
+                            {{ __('messages.about_val') }}
                         </p>
                     </div>
                     <div class="section clearfix"></div>
@@ -69,13 +69,17 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <p class="mb-0 pb-0 lead-q"><em>"{{ __('messages.comp_core_value') }}"</em></p>
+                        <p class="mb-0 pb-0 lead-q">
+                            <em>"{{ __('messages.comp_core_value') }}"</em>
+                        </p>
                     </div>
                 </div>
                 <div class="row mt-4">
                     @foreach ($coreValues as $core)
                         <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                            <h6 class="mb-0 pb-0 lead-q"><em>{{ $core->name }}</em></h6>
+                            <h6 class="mb-0 pb-0 lead-q">
+                                <em>{{ $core->name }}</em>
+                            </h6>
                             <p class="mt-2">{{ $core->description }}</p>
                         </div>
                     @endforeach
@@ -198,7 +202,6 @@
             </div>
         </div>
 
-        {{-- @include('layout.frontend.language') --}}
         @include('layout.frontend.languagehome')
 
         <div class="scroll-to-top cursor-link"></div>

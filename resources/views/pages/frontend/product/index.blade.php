@@ -9,7 +9,7 @@
         @include('layout.frontend.navbar')
 
         <!-- Primary Page Layout
-                      ================================================== -->
+                                                      ================================================== -->
 
         <div class="section big-55-height over-hide">
             <div class="parallax parallax-top" style="background-image: url('img/product-service-cover.jpg')"></div>
@@ -19,8 +19,8 @@
                 <div class="container z-bigger">
                     <div class="row">
                         <div class="col-12 section-title-wrap text-center parallax-fade-top-pages">
-                            <p>ETI indonesia</p>
-                            <h1>Product Services</h1>
+                            <p>ETI Indonesia</p>
+                            <h1>{{ __('messages.product_service') }}</h1>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,8 @@
                             <img src="{{ asset('frontend/img/products/' . $product->image) }}" class="cursor-more img-fluid"
                                 alt="" />
                             <a href="{{ route('productCategory', $product->id) }}"
-                                class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">More {{ $product->name }}</a>
+                                class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">
+                                {{ __('messages.more') }} {{ $product->name }}</a>
                         </div>
                     @endforeach
 
@@ -56,7 +57,7 @@
                     <div class="col-md-8 padding-top-bottom text-center"
                         data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                         <p class="mb-0 pb-0 lead">
-                            {{ $productDescription }}
+                            {{ __('messages.product_service_val') }}
                         </p>
                     </div>
                     <div class="section clearfix"></div>
@@ -64,13 +65,11 @@
             </div>
         </div>
 
-        @include('layout.frontend.language')
+        @include('layout.frontend.languagehome')
 
         <div class="scroll-to-top cursor-link"></div>
 
-        <!-- Page cursor
-                     ================================================== -->
-
+        <!-- Page cursor -->
         <div class="cursor cursor-shadow"></div>
         <div class="cursor cursor-dot"></div>
 

@@ -8,9 +8,7 @@
 
         @include('layout.frontend.navbar')
 
-        <!-- Primary Page Layout
-                                                  ================================================== -->
-
+        <!-- Primary Page Layout -->
         <div class="section padding-page-top padding-bottom over-hide background-dark-2">
             <div class="container">
                 <div class="row">
@@ -44,12 +42,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div id="portfolio-filter" class="portfolio-filter">
-                            <!-- <ul id="filter">
-                                    <li><a href="#" class="current cursor-link" data-filter="*" title="">all</a></li>
-                                    <li><a href="#" class="cursor-link" data-filter=".branding" title="">branding</a></li>
-                                    <li><a href="#" class="cursor-link" data-filter=".photo" title="">photo</a></li>
-                                    <li><a href="#" class="cursor-link" data-filter=".motion" title="">motion</a></li>
-                                </ul> -->
+                            {{-- <ul id="filter">
+                                <li><a href="#" class="current cursor-link" data-filter="*" title="">all</a>
+                                </li>
+                                <li><a href="#" class="cursor-link" data-filter=".branding"
+                                        title="">branding</a></li>
+                                <li><a href="#" class="cursor-link" data-filter=".photo" title="">photo</a></li>
+                                <li><a href="#" class="cursor-link" data-filter=".motion" title="">motion</a>
+                                </li>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -73,14 +74,12 @@
         <div class="scroll-to-top cursor-link"></div>
 
         {{-- Language --}}
-        @include('layout.frontend.language')
+        @include('layout.frontend.languagehome')
         {{-- End of Language --}}
 
         <div class="scroll-to-top cursor-link"></div>
 
-        <!-- Page cursor
-                                                 ================================================== -->
-
+        <!-- Page cursor -->
         <div class="cursor cursor-shadow"></div>
         <div class="cursor cursor-dot"></div>
 

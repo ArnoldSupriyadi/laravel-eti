@@ -1,5 +1,5 @@
 <div class="social-wrap">
-    language
+    {{ __('messages.language') }}
     <ul id="change_bahasa">
         <li data-lang="en" class="{{ session()->get('locale') == 'en' ? 'selected' : '' }}">
             <a href="#" class="cursor-link">
