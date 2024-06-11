@@ -58,4 +58,7 @@ return [
     //gallery page
     'head_gallery' => 'kami melakukan sihir',
     'sub_gallery' => 'kejar minat Anda',
+    'all' => 'semua',
+    'commercial' => 'komersial',
+    'defense' => 'pertahanan',
 ];

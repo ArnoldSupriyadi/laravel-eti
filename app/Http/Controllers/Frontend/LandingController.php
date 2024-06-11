@@ -11,6 +11,7 @@ use App\Models\ProductCategory;
 use App\Models\ProductGallery;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 

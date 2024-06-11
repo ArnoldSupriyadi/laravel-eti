@@ -57,5 +57,8 @@ return [
     // ==========================
     //gallery page
     'head_gallery' => 'we do magic',
-    'sub_gallery' => 'chase your passion'
+    'sub_gallery' => 'chase your passion',
+    'all' => 'all',
+    'commercial' => 'commercial',
+    'defense' => 'defense',
 ];

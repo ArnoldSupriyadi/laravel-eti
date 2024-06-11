@@ -49,7 +49,9 @@
                         style="background-image: url('frontend/img/abouts/{{ $productImage }}')"></div>
                     <div class="hero-number-back">2</div>
                     <div class="hero-number">2</div>
-                    <div class="case-study-title">{{ __('messages.commercial_defense') }}</div>
+                    <div class="case-study-title">
+                        {{ __('messages.commercial_defense') }}
+                    </div>
                 </li>
             </ul>
 

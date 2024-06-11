@@ -27,11 +27,20 @@
                     <div class="col-md-12">
                         <div id="portfolio-filter" class="portfolio-filter">
                             <ul id="filter">
-                                <li><a href="#" class="current cursor-link" data-filter="*" title="">all</a>
+                                <li>
+                                    <a href="#" class="current cursor-link" data-filter="*" title="">
+                                        {{ __('messages.all') }}
+                                    </a>
                                 </li>
-                                <li><a href="#" class="cursor-link" data-filter=".commercial"
-                                        title="">commercial</a></li>
-                                <li><a href="#" class="cursor-link" data-filter=".defense" title="">defense</a>
+                                <li>
+                                    <a href="#" class="cursor-link" data-filter=".commercial" title="">
+                                        {{ __('messages.commercial') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="cursor-link" data-filter=".defense" title="">
+                                        {{ __('messages.defense') }}
+                                    </a>
                                 </li>
                                 <!-- <li><a href="#" class="cursor-link" data-filter=".motion" title="">motion</a></li> -->
                             </ul>
