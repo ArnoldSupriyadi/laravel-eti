@@ -12,6 +12,6 @@ class CompanyProfile extends Model
     protected $table = 'company_profiles';
 
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'description_indo'
     ];
 }
