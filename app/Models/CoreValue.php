@@ -12,6 +12,9 @@ class CoreValue extends Model
     protected $table = 'core_values';
 
     protected $fillable = [
-        'name', 'description'
+        'name',
+        'description',
+        'nama',
+        'deskripsi'
     ];
 }

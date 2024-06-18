@@ -124,7 +124,7 @@
                     <div class="section clearfix"></div>
                     <div class="col-md-12 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                         <h3 class="mb-2 mt-5"><b>{{ __('messages.work_partners') }}</b></h3>
-                        <p class="mb-0 pb-0">Leading the way as a security solution provider</p>
+                        <p class="mb-0 pb-0">{{ __('messages.vision_val') }}</p>
                     </div>
                 </div>
                 <div class="row">

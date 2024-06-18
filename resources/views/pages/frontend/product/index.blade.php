@@ -8,9 +8,7 @@
 
         @include('layout.frontend.navbar')
 
-        <!-- Primary Page Layout
-                                                      ================================================== -->
-
+        <!-- Primary Page Layout -->
         <div class="section big-55-height over-hide">
             <div class="parallax parallax-top" style="background-image: url('img/product-service-cover.jpg')"></div>
             <div class="dark-over-pages"></div>
