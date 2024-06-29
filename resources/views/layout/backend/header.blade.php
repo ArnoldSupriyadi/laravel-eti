@@ -10,8 +10,8 @@
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="{{ route('dashboard') }}">
                         <img class="brand-logo" src="{{ asset('frontend/img/Logo_ETI_New_white.png') }}"
-                            alt="branding logo">
-                        <h3 class="brand-text">ETI</h3>
+                            alt="branding logo" style="width: 25%">
+                        {{-- <h3 class="brand-text">ETI</h3> --}}
                         {{-- <img
                             class="brand-logo" alt="modern admin logo"
                             src="{{ asset('backend/app-assets/images/logo/logo.png') }}">
