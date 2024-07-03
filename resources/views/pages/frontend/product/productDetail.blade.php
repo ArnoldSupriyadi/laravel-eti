@@ -5,7 +5,7 @@
 @section('content')
     <div class="animsition">
         <!-- Nav and Logo -->
-        @include('layout.frontend.header')
+        @include('layout.frontend.header-putih')
 
         @include('layout.frontend.navbar')
 

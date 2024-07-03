@@ -5,88 +5,93 @@
 @section('content')
     <div class="animsition">
         <!-- Nav and Logo -->
-        @include('layout.frontend.header')
+        @include('layout.frontend.header-putih')
 
         @include('layout.frontend.navbar')
 
         <!-- Primary Page Layout -->
         <div class="section padding-page-top padding-bottom over-hide background-dark-2">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 section-title-wrap text-center parallax-fade-top">
-                        <p>
-                            {{ __('messages.head_contact') }}
-                        </p>
-                        <h1>{{ __('messages.sub_contact') }}</h1>
-                    </div>
+              <div class="row">
+                <div class="col-12 section-title-wrap text-center parallax-fade-top">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16" style="color: #ffffff">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"
+                    />
+                  </svg>
+                  <h1 class="mt-5" id="contact">CONTACT US</h1>
                 </div>
+              </div>
             </div>
         </div>
-
+    
         <div class="section padding-bottom-big over-hide background-dark-2">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-4 ajax-form">
-                        <a href="mailto:admin@etindonesia.id" class="btn btn-contact-custom cursor-link p-3">
-                            Email {{ __('messages.at') }} {{ $email }}</a>
-                    </div>
-                    <div class="col-md-4 mt-4 mt-md-0 ajax-form">
-                        <a href="https://wa.link/rv6ozz" class="btn btn-contact-custom cursor-link p-3">
-                            Whatsapp {{ __('messages.at') }} +{{ $phone }}</a>
-                    </div>
-                    {{-- <div class="section clearfix"></div>
-                    <div class="col-md-8 mt-4 ajax-form">
-                        <textarea class="cursor-link" name="message" placeholder="Tell Us Everything"></textarea>
-                    </div> --}}
+                <div class="col-md-4 ajax-form">
+                    <a href="mailto:admin@etindonesia.id" class="btn btn-contact-custom cursor-link p-3">Email at admin@etindonesia.id</a>
+                </div>
+                <div class="col-md-4 mt-4 mt-md-0 ajax-form">
+                    <a href="https://wa.link/pti8jc" class="btn btn-contact-custom cursor-link p-3">Whatsapp at +6283898876509</a>
+                </div>
+                <!-- <div class="section clearfix"></div>
+                <div class="col-md-8 mt-4 ajax-form">
+                    <textarea class="cursor-link" name="message" placeholder="Tell Us Everything"></textarea>
+                </div> -->
                 </div>
             </div>
         </div>
 
         <div class="section padding-top-bottom-big over-hide">
-            <div class="parallax" style="background-image: url('frontend/img/map.jpg')"></div>
+            <div class="parallax" style="background-image: url('{{ asset('frontend/img/map.jpg') }}')"></div>
             <div class="dark-over-pages"></div>
 
             <div class="section z-bigger">
                 <div class="container z-bigger">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                            <h5>{{ $address }}</h5>
-                            {{-- <h5>Office 8 Building, floor 18<br />Jl Senopati no 18 SCBD, Jakarta 12910</h5> --}}
-                        </div>
-                        <div class="section clearfix"></div>
-                        <div class="col-md-7 mt-5 text-center"
-                            data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                            <a href="https://www.google.com/maps/place/vOffice+-+Office+8+(Virtual+Office+%7C+Serviced+Office+%7C+Meeting+Room)/@-6.2284484,106.8044165,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f145491b7017:0x6e654c3d9fa174e0!8m2!3d-6.2284537!4d106.8069914!16s/g/1pty4j6ms"
-                                class="contact-link cursor-link" target="_blank">
-                                {{ __('messages.find_map') }}
-                            </a>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                    <h5>Office 8 Building, Level 18<br />JI. Senopati No 18 Jakarta 12910 - Indonesia</h5>
                     </div>
+                    <div class="section clearfix"></div>
+                    <div class="col-md-7 mt-4 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                    <a href="https://maps.app.goo.gl/HR1DCsjiupb4JjM46" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    </div>
+                    <div class="col-md-7 text-center pt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                    <h5>Jl. Pendidikan No. 17 <br />Cilandak, Jakarta 12320</h5>
+                    </div>
+                    <div class="section clearfix"></div>
+                    <div class="col-md-7 mt-4 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                    <a href="https://maps.app.goo.gl/uES3t16z9WNRPbcp6" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
 
         <div class="section padding-top-bottom-big over-hide background-dark">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-12 text-center">
-                        <a href="mailto:admin@etindonesia.id" class="cursor-link">
-                            <div class="project-link-wrap on-contact">
-                                <p>{{ $email }}</p>
-                            </div>
-                        </a>
-                    </div>
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <a href="mailto:admin@etindonesia.id" class="cursor-link">
+                <div class="project-link-wrap on-contact">
+                    <p>admin@etindonesia.id</p>
                 </div>
+                </a>
             </div>
+            </div>
+        </div>
         </div>
 
         @include('layout.frontend.languagehome')
 
         <div class="scroll-to-top cursor-link"></div>
+        <div class="cursor cursor-shadow"></div>
+        <div class="cursor cursor-dot"></div>
+        
     </div>
 
     <!-- Page cursor -->
-    <div class="cursor cursor-shadow"></div>
-    <div class="cursor cursor-dot"></div>
+        <div class="cursor cursor-shadow"></div>
+        <div class="cursor cursor-dot"></div>
     </div>
 @endsection

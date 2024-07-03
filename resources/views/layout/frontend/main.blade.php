@@ -32,7 +32,7 @@
 
     @include('layout.frontend.style')
   </head>
-  <body class="over-hide">
+  <body class="{{ request()->routeIs('landing') ? 'over-hide' : '' }}">
     <!-- Page preloader wrap
 	================================================== -->
 
