@@ -28,113 +28,32 @@
 
         <div class="section padding-top-bottom-big over-hide background-dark-2">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <a href="img/cover-product1.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/cover-product1.jpg') }}" class="cursor-more"
-                                    alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <a href="img/cover-product2.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/cover-product2.jpg') }}" class="cursor-more"
-                                    alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section clearfix"></div>
-                    <!-- <div class="col-md-8 padding-top-bottom text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                                    <p class="mb-0 pb-0 lead">
-                                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                                                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                                                    </p>
-                                                </div> -->
-                    <div class="section clearfix"></div>
-
-                    <!-- <div class="section clearfix padding-top"></div> -->
-                    <!-- <div class="col-md-4 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                                        <h5 class="mb-3">art direction</h5>
-                                                        <p class="mb-0 pb-0">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                                                    </div>
-                                                    <div class="col-md-4 text-center mt-4 mt-md-0" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                                        <h5 class="mb-3">cinematography</h5>
-                                                        <p class="mb-0 pb-0">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                                                    </div>
-                                                    <div class="col-md-4 text-center mt-4 mt-md-0" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                                                        <h5 class="mb-3">advertising</h5>
-                                                        <p class="mb-0 pb-0">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-                                                    </div> -->
-                    <!-- <div class="section clearfix padding-bottom"></div> -->
+    
+              <div class="row mt-4">
+                <div class="col-md-4">
+                  <img src="{{ asset('frontend/img/battle-dress-uniform/BDU-COVER.png') }}" class="img-fluid" alt="" />
                 </div>
+                <div class="col-md-8 pt-4">
+                  <div class="flex-grow-1 ms-1">
+                    <h6 id="soldier-supplies-title">SOLDIER SUPPLIES – BATTLE FIELD UNIFORM & PROTECTION</h6>
+                    <p id="soldier-supplies-content">ETI is the nation's son who will contribute to the needs of the forces with his ability to complete military operations. As much as possible, in line with military strategy expectations and the needs of its users.
+    
+                      Your mission is our mission, your protection choice is our responsibility.
+                      
+                      By producing comfortable tactical gear apparel while still prioritizing military defense standards specifically.</p>
+                    <!-- <ul>
+                      <li>This is some content from a media component. You can replace this with any content and adjust it as needed.</li>
+                      <li>This is some content from a media component. You can replace this with any content and adjust it as needed.</li>
+                      <li>This is some content from a media component. You can replace this with any content and adjust it as needed.</li>
+                      <li>This is some content from a media component. You can replace this with any content and adjust it as needed.</li>
+                      <li>This is some content from a media component. You can replace this with any content and adjust it as needed.</li>
+                    </ul> -->
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            {{-- <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-md-12" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <div class="img-wrap">
-                            <img src="img/portfolio/project/3.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 padding-top-bottom text-center"
-                        data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                        <p class="mb-0 pb-0 lead">
-                            {{ $category->description }}
-                        </p>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="img-wrap" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                            <img src="{{ asset('frontend/img/Bulletproof_vest_5.jpg') }}" alt="" />
-                        </div>
-                    </div>
-
-                    <div class="section clearfix mt-2"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mt-5 mt-md-5">
-                        <a href="img/defense1.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/defense1.jpg') }}" class="cursor-more" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 mt-5 mt-md-5">
-                        <a href="img/defense2.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/defense2.jpg') }}" class="cursor-more" alt="" />
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6 mt-5 mt-md-5">
-                        <a href="img/defense3.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/defense3.jpg') }}" class="cursor-more" alt="" />
-                                {{-- <h6 class="mt-3" style="font-size: 14px">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic nulla impedit aperiam sunt
-                                    odit sapiente, maiores aspernatur provident inventore reprehenderit dolorem perspiciatis
-                                    delectus! Officiis, asperiores magni sunt
-                                    suscipit doloremque adipisci!
-                                </h6> --}}
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-6 mt-5 mt-md-5">
-                        <a href="img/defense4.jpg" class="cursor-link" data-fancybox="gallery">
-                            <div class="img-wrap">
-                                <img src="{{ asset('frontend/img/defense4.jpg') }}" class="cursor-more" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div>
 
         {{-- Language --}}
         @include('layout.frontend.languagehome')

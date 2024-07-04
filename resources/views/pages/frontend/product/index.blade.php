@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="animsition">
-        @include('layout.frontend.header')
+        @include('layout.frontend.header-putih')
 
         @include('layout.frontend.navbar')
 
