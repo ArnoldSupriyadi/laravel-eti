@@ -42,7 +42,7 @@
                 </li>
                 <li class="case-study-name">
                     <!-- Yang ini Contact ya mas nanda -->
-                    <span>{{ __('messages.menu_product') }}</span>
+                    <span>{{ __('messages.menu_contact') }}</span>
                     <a href="{{ route('contact') }}" class="cursor-link animsition-link">
                         {{ __('messages.explore') }}
                     </a>

@@ -18,6 +18,7 @@ $clients = Client::all();
 return [
     'menu_about' => 'Tentang ETI',
     'menu_product' => 'Produk & Layanan',
+    'menu_contact' => 'Hubungi Kami',
     'language' => 'bahasa',
     'eti_profile' => 'eti profil',
     'commercial_defense' => 'Komersial & Pertahanan',

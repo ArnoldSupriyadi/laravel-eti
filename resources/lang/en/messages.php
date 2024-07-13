@@ -18,6 +18,7 @@ $clients = Client::all();
 return [
     'menu_about' => 'About ETI',
     'menu_product' => 'Product & Service',
+    'menu_contact' => 'Contact Us',
     'language' => 'language',
     'eti_profile' => 'eti profile',
     'commercial_defense' => 'eti profile',
