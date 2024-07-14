@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductCategoryController;
 use App\Http\Controllers\Backend\ProductGalleryController;
+use App\Http\Controllers\Backend\ProductTypeController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\UserController;
@@ -150,6 +151,18 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('destroy/{id}', [ProductGalleryController::class, 'destroy'])->name('productGallery.destroy');
     });
 
+    // Product Type
+    Route::group(['prefix' => 'backend/productType'], function () {
+        Route::get('', [ProductTypeController::class, 'index'])->name('productType.index');
+        Route::get('create', [ProductTypeController::class, 'create'])->name('productType.create');
+        Route::post('store', [ProductTypeController::class, 'store'])->name('productType.store');
+        Route::get('edit/{id}', [ProductTypeController::class, 'edit'])->name('productType.edit');
+        Route::get('editImage/{id}', [ProductTypeController::class, 'editImage'])->name('productType.editImage');
+        Route::put('update/{id}', [ProductTypeController::class, 'update'])->name('productType.update');
+        Route::put('updateImage/{id}', [ProductTypeController::class, 'updateImage'])->name('productType.updateImage');
+        Route::get('destroy/{id}', [ProductTypeController::class, 'destroy'])->name('productType.destroy');
+    });
+
     Route::group(['prefix' => 'backend/role'], function () {
         Route::get('', [RoleController::class, 'index'])->name('role.index');
         Route::get('create', [RoleController::class, 'create'])->name('role.create');
@@ -185,10 +198,15 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::put('/contact/update/{id}', [ContactController::class, 'update'])->name('contact.update');
     });
 
-    Route::group(['prefix' => 'backend'], function () {
-        Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
-        Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
-        Route::get('/gallery/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::group(['prefix' => 'backend/gallery'], function () {
+        Route::get('', [GalleryController::class, 'index'])->name('gallery.index');
+        Route::get('create', [GalleryController::class, 'create'])->name('gallery.create');
+        Route::post('store', [GalleryController::class, 'store'])->name('gallery.store');
+        Route::get('edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+        Route::get('editImage/{id}', [GalleryController::class, 'editImage'])->name('gallery.editImage');
+        Route::put('update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+        Route::put('updateImage/{id}', [GalleryController::class, 'updateImage'])->name('gallery.updateImage');
+        Route::get('destroy/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
     });
 
 });
