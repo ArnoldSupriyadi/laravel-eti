@@ -33,7 +33,6 @@ class ProductTypeController extends Controller
     public function store(Request $request, string $id)
     {
         $this->validate($request, [
-            'category' => 'required',
             'name' => 'required',
             'price' => 'nullable',
             'description' => 'nullable',
@@ -48,7 +47,7 @@ class ProductTypeController extends Controller
         }
 
         ProductType::create([
-            'category_id' => $request->category,
+            'category_id' => $id,
             'name' => $request->name,
             'price' => $price,
             'description' => $request->description,
@@ -60,7 +59,7 @@ class ProductTypeController extends Controller
             $idImage = ProductType::latest()->first()->id;
 
             $fileName = 'productType'.$idImage.'.'.$request->image->extension();
-            $destinationPath = 'frontend/img/product/types/';
+            $destinationPath = 'frontend/img/products/types/';
 
             DB::table('product_types')
                 ->where('id', $idImage)
@@ -135,7 +134,7 @@ class ProductTypeController extends Controller
             'image' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/product/types/';
+        $destinationPath = 'frontend/img/products/types/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('productType.index', $productType->category_id)->with(['success' => 'Product Type Image has been updated!']);

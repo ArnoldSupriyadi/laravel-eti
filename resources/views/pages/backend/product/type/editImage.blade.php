@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Edit Product Gallery Image')
+@section('title', 'Edit Product Type Image')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -10,14 +10,14 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-colored-form-control">
-                            Product Gallery Image Edit
+                            Product Type Image Edit
                         </h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('productGallery.updateImage', $gallery->id) }}"
+                            <form class="form" action="{{ route('productType.updateImage', $productType->id) }}"
                                 method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('productGallery.index', $gallery->category_id) }}"
+                                    <a href="{{ route('productType.index', $productType->category_id) }}"
                                         class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
 
                                     <button type="submit" class="btn btn-primary">
