@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('price')->default(0);
             $table->text('image')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
