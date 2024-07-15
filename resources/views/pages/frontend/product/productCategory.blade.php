@@ -62,7 +62,7 @@
                         data-title="{{ $category->name }}"
                         data-tipper-options='{"direction":"top","follow":"true","margin":30}'>
                         <div class="portfolio-box photo">
-                            <img src="{{ asset('frontend/img/categories/' . $category->image) }}" alt="" />
+                            <img src="{{ asset('frontend/img/products/categories/' . $category->image) }}" alt="" />
                             <div class="portfolio-mask"></div>
                             <h5 class="mt-2">{{ $category->name }}</h5>
                         </div>
