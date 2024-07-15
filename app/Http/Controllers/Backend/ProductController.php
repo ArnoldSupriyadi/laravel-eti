@@ -73,6 +73,8 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'nullable',
+            'nama' => 'nullable',
+            'deskripsi' => 'nullable',
         ]);
 
         $product = Product::findOrFail($id);
@@ -80,6 +82,8 @@ class ProductController extends Controller
         $product->update([
             'name' => $request->name,
             'description' => $request->description,
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
         ]);
 
         return redirect()->route('about.index')->with(['success' => 'Data berhasil diubah!']);
