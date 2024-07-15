@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use App\Models\ProductGallery;
+use App\Models\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +43,7 @@ class ProductCategoryController extends Controller
             $idImage = ProductCategory::latest()->first()->id;
 
             $fileName = 'category'.$idImage.'.'.$request->image->extension();
-            $destinationPath = 'frontend/img/categories/';
+            $destinationPath = 'frontend/img/products/categories/';
 
             DB::table('product_categories')
                 ->where('id', $idImage)
@@ -109,7 +109,7 @@ class ProductCategoryController extends Controller
             'image' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/categories/';
+        $destinationPath = 'frontend/img/products/categories/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('product.index')->with(['success' => 'Product Category Image has been updated!']);
@@ -118,10 +118,10 @@ class ProductCategoryController extends Controller
     public function destroy(string $id, Request $request)
     {
         $category = ProductCategory::findOrFail($id);
-        $checkGallery = ProductGallery::where('category_id', $id)->exists();
+        $checkGallery = ProductType::where('category_id', $id)->exists();
 
         if ($checkGallery) {
-            $gallery = ProductGallery::where('category_id', $id)->delete();
+            $gallery = ProductType::where('category_id', $id)->delete();
         }
 
         $category->delete();
