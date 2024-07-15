@@ -38,7 +38,7 @@
                                     <tbody>
                                         @php
                                             $categories = \App\Models\ProductCategory::where('product_id', $product->id)
-                                                ->orderBy('name', 'ASC')
+                                                ->orderBy('id', 'ASC')
                                                 ->get();
                                         @endphp
                                         @foreach ($categories as $category)

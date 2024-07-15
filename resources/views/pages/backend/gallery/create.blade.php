@@ -62,7 +62,7 @@
                                         <label for="description">Description</label>
                                         <input type="text" name="description" id="description"
                                             class="form-control @error('description') is-invalid @enderror"
-                                            value="{{ old('description') }}" placeholder="Subject" required />
+                                            value="{{ old('description') }}" placeholder="Description" />
 
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
