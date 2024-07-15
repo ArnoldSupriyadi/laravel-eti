@@ -107,9 +107,9 @@
         <!-- Table row borders end -->
     </div>
 
-    <div class="content-body">
-        <!-- Table row borders end-->
-        <div class="row">
+    {{-- <div class="content-body"> --}}
+    <!-- Table row borders end-->
+    {{-- <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -155,9 +155,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Table row borders end -->
-    </div>
+        </div> --}}
+    <!-- Table row borders end -->
+    {{-- </div> --}}
 
     <div class="content-body">
         <!-- Table row borders end-->

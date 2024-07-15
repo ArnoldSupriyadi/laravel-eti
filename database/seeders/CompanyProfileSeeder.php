@@ -94,14 +94,7 @@ class CompanyProfileSeeder extends Seeder
 
         DB::table('company_profiles')->insert([
             'name' => 'about_image',
-            'description' => 'about_img.jpg',
-            'description_indo' => '',
-            'created_at' => Carbon::now()
-        ]);
-
-        DB::table('company_profiles')->insert([
-            'name' => 'about_image2',
-            'description' => 'about_img2.jpg',
+            'description' => 'about_img.webp',
             'description_indo' => '',
             'created_at' => Carbon::now()
         ]);

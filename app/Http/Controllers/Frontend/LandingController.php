@@ -32,11 +32,18 @@ class LandingController extends Controller
     public function about()
     {
         $about = CompanyProfile::where('name', 'about')->first()->description;
-        $aboutImage = CompanyProfile::where('name', 'about_image2')->first()->description;
+        $aboutImage = CompanyProfile::where('name', 'about_image')->first()->description;
         $vision = CompanyProfile::where('name', 'vision')->first()->description;
         $mission = CompanyProfile::where('name', 'mission')->first()->description;
         $coreValues = CoreValue::all();
         $clients = Client::all();
+
+        // $coreValues = CoreValue::all()->map(function($coreValue) {
+        //     return [
+        //         'id' => $coreValue->id,
+        //         'value' => __('coreval_name' . $coreValue->id)
+        //     ];
+        // });
 
         return view('pages.frontend.about.index',
         [
