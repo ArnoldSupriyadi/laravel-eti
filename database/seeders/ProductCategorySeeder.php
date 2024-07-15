@@ -15,15 +15,19 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 1,
             'name' => 'Soldier Supplies',
             'description' => 'Explore our extensive catalog of soldier supplies, meticulously curated to meet the rigorous demands of military life. From durable combat uniforms and footwear engineered for performance to advanced tactical gear designed for optimal functionality, our products are crafted with precision and tested for reliability in the field.',
-            'image' => 'category1.jpg',
+            'nama' => 'Perlengkapan Prajurit',
+            'deskripsi' => '',
+            'image' => 'category1.png',
             // 'image' => 'perbekalan-prajurit.jpg',
             'created_at' => Carbon::now(),
         ]);
 
         DB::table('product_categories')->insert([
             'product_id' => 1,
-            'name' => 'Technology And Information',
+            'name' => 'Warfare Technology',
             'description' => '',
+            'nama' => 'Teknologi Peperangan',
+            'deskripsi' => '',
             'image' => 'category2.jpg',
             // 'image' => 'teknologi-informasi.jpg',
             'created_at' => Carbon::now(),
@@ -31,27 +35,33 @@ class ProductCategorySeeder extends Seeder
 
         DB::table('product_categories')->insert([
             'product_id' => 1,
-            'name' => 'Modified Vehichels',
+            'name' => 'Electro Optical',
             'description' => '',
-            'image' => 'category3.jpg',
+            'nama' => 'Elektro Optik',
+            'deskripsi' => '',
+            'image' => 'category3.png',
+            // 'image' => 'kendaraan-modifikasi.jpg',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_categories')->insert([
+            'product_id' => 1,
+            'name' => 'Digital Combat Systems',
+            'description' => '',
+            'nama' => 'Sistem Tempur Digital',
+            'deskripsi' => '',
+            'image' => 'category4.png',
             // 'image' => 'kendaraan-modifikasi.jpg',
             'created_at' => Carbon::now(),
         ]);
 
         DB::table('product_categories')->insert([
             'product_id' => 2,
-            'name' => 'Internet Of Things',
+            'name' => 'Hospitality Service',
             'description' => '',
-            'image' => 'category4.jpg',
-            // 'image' => 'iot.jpg',
-            'created_at' => Carbon::now(),
-        ]);
-
-        DB::table('product_categories')->insert([
-            'product_id' => 2,
-            'name' => 'Application And Program',
-            'description' => '',
-            'image' => 'category5.jpg',
+            'nama' => 'Layanan Perhotelan',
+            'deskripsi' => '',
+            'image' => 'category6.png',
             // 'image' => 'application-program.jpg',
             'created_at' => Carbon::now(),
         ]);
@@ -60,7 +70,9 @@ class ProductCategorySeeder extends Seeder
             'product_id' => 2,
             'name' => 'Fivto STB',
             'description' => '',
-            'image' => 'category6.jpg',
+            'nama' => 'Fivto STB',
+            'deskripsi' => '',
+            'image' => 'category6.png',
             // 'image' => 'fivto-stb.jpg',
             'created_at' => Carbon::now(),
         ]);
