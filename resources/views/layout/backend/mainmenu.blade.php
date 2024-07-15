@@ -6,10 +6,10 @@
             {{-- <li class=" navigation-header"><span data-i18n="Crypto">Crypto</span><i class="material-icons nav-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Crypto">more_horiz</i>
                 </li> --}}
 
-            <li class=" nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                <a href="{{ route('home') }}">
+            <li class=" nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                <a href="{{ route('dashboard') }}">
                     <i class="material-icons">home</i>
-                    <span class="menu-title" data-i18n="Currency Exchange">Home</span>
+                    <span class="menu-title" data-i18n="Currency Exchange">Dashboard</span>
                 </a>
             </li>
 
@@ -41,7 +41,7 @@
                 </a>
             </li>
 
-            
+
             <li class=" nav-item {{ request()->routeIs('news.index') ? 'active' : '' }}">
                 <a href="{{ route('news.index') }}">
                     <i class="material-icons">description</i>
@@ -60,14 +60,6 @@
                 <a href="{{ route('contact.index') }}">
                     <i class="material-icons">perm_contact_calendar</i>
                     <span class="menu-title" data-i18n="Wallet">Contact</span>
-                </a>
-            </li>
-
-            {{-- Setting NavbarHeader --}}
-            <li class=" nav-item {{ request()->routeIs('compro.index') ? 'active' : '' }}">
-                <a href="{{ route('compro.index') }}">
-                    <i class="material-icons">business</i>
-                    <span class="menu-title" data-i18n="User">Company Profile</span>
                 </a>
             </li>
 
