@@ -68,7 +68,7 @@ class ProductTypeController extends Controller
             $request->image->move(public_path($destinationPath), $fileName);
         }
 
-        return redirect()->route('productType.index', $request->category)->with(['success' => 'Product Type berhasil disimpan!']);
+        return redirect()->route('productType.index', $id)->with(['success' => 'Product Type berhasil disimpan!']);
     }
 
     public function show(string $id)
