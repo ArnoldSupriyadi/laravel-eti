@@ -14,6 +14,8 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name' => 'Defense',
             'description' => '',
+            'nama' => 'Pertahanan',
+            'deskripsi' => '',
             'image' => 'product1.png',
             // 'image' => 'defense-cover-img.jpg',
             'created_at' => Carbon::now(),
@@ -21,6 +23,8 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name' => 'Commercial',
             'description' => '',
+            'nama' => 'Komersial',
+            'deskripsi' => '',
             'image' => 'product2.png',
             // 'image' => 'commercial-cover-img.jpg',
             'created_at' => Carbon::now(),
