@@ -1,6 +1,6 @@
 @extends('layout.backend.main')
 
-@section('title', 'Add Product Gallery')
+@section('title', 'Add Product Type')
 
 @section('content')
     <section id="basic-form-layouts">
@@ -10,14 +10,14 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title" id="basic-layout-colored-form-control">
-                            Product Gallery Add
+                            Product Type Add
                         </h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('productGallery.store') }}" method="POST"
+                            <form class="form" action="{{ route('productType.store', $category->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
 
@@ -25,14 +25,12 @@
                                     <div class="form-group">
                                         <label for="name">Product Category Name</label>
                                         <input type="text" class="form-control" value="{{ $category->name }}" readonly />
-                                        <input type="hidden" name="category" id="category" value="{{ $category->id }}"
-                                            readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label for="name">Product Gallery Name
+                                        <label for="name">Product Type Name
                                             <span style="color: red">*</span>
                                         </label>
                                         <input type="text"
@@ -62,11 +60,11 @@
 
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label for="description">Description <span style="color: red">*</span></label>
+                                        <label for="description">Description</label>
                                         <input type="text"
                                             class="form-control border-primary @error('description') is-invalid @enderror"
                                             name="description" id="description" value="{{ old('description') }}"
-                                            placeholder="Description" required />
+                                            placeholder="Description" />
 
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -90,8 +88,35 @@
                                     </div>
                                 </div>
 
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label for="nama">Nama</label>
+                                        <input type="text"
+                                            class="form-control border-primary @error('nama') is-invalid @enderror"
+                                            name="nama" id="nama" value="{{ old('nama') }}"
+                                            placeholder="Nama" />
+
+                                        @error('nama')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <input type="text"
+                                            class="form-control border-primary @error('deskripsi') is-invalid @enderror"
+                                            name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}"
+                                            placeholder="Deskripsi" />
+
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('productGallery.index', $gallery->category_id) }}"
+                                    <a href="{{ route('productType.index', $category->id) }}"
                                         class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
 
                                     <button type="submit" class="btn btn-primary">

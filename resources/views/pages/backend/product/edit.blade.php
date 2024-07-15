@@ -42,14 +42,41 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="description">Description <span
-                                                        style="color: red">*</span></label>
+                                                <label for="description">Description</label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('description') is-invalid @enderror"
                                                     name="description" id="description" value="{{ $product->description }}"
-                                                    placeholder="Description" required />
+                                                    placeholder="Description" />
 
                                                 @error('description')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="nama">Nama</label>
+                                                <input type="text"
+                                                    class="form-control border-primary @error('nama') is-invalid @enderror"
+                                                    name="nama" id="nama" value="{{ $product->nama }}"
+                                                    placeholder="Nama"/>
+
+                                                @error('nama')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <input type="text"
+                                                    class="form-control border-primary @error('deskripsi') is-invalid @enderror"
+                                                    name="deskripsi" id="deskripsi" value="{{ $product->deskripsi }}"
+                                                    placeholder="Deskripsi"/>
+
+                                                @error('deskripsi')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
                                             </div>
