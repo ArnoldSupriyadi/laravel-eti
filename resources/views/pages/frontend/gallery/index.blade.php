@@ -20,7 +20,7 @@
               </div>
             </div>
           </div>
-    
+
           <div class="section padding-bottom over-hide background-dark-2">
             <div class="container">
               <div class="row">
@@ -36,8 +36,18 @@
                 </div>
               </div>
             </div>
-    
+
             <div id="projects-grid">
+                @foreach ($galleries as $gallery)
+                    <a href="{{ asset('frontend/img/galleries/'. $gallery->image ) }}" class="cursor-link" data-fancybox="gallery">
+                        <div class="portfolio-box photo">
+                            <img src="{{ asset('frontend/img/galleries/'. $gallery->image ) }}" alt="" />
+                            <div class="portfolio-mask"></div>
+                            <p>eti indonesia</p>
+                            <h4>{{ $gallery->name }}</h4>
+                        </div>
+                    </a>
+              @endforeach
               <!-- <a href="img/gallery/Condorz_1.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box photo">
                   <img src="img/gallery/Condorz_1.jpg" alt="" />
@@ -70,8 +80,8 @@
                   <h4>gallery</h4>
                 </div>
               </a> -->
-    
-              <a href="img/gallery/Condorz_4.jpg" class="cursor-link" data-fancybox="gallery">
+
+              {{-- <a href="img/gallery/Condorz_4.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/Condorz_4.jpg" alt="" />
                   <div class="portfolio-mask"></div>
@@ -79,7 +89,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0002.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0002.jpg" alt="" />
@@ -88,7 +98,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0003.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0003.jpg" alt="" />
@@ -97,7 +107,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0004.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0004.jpg" alt="" />
@@ -106,7 +116,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0005.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0005.jpg" alt="" />
@@ -115,7 +125,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0006.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0006.jpg" alt="" />
@@ -124,7 +134,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0007.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0007.jpg" alt="" />
@@ -133,7 +143,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0008.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0008.jpg" alt="" />
@@ -142,7 +152,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0009.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0009.jpg" alt="" />
@@ -151,7 +161,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0011.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0011.jpg" alt="" />
@@ -160,7 +170,7 @@
                   <h4>gallery</h4>
                 </div>
               </a>
-    
+
               <a href="img/gallery/IMG-20240606-WA0012.jpg" class="cursor-link" data-fancybox="gallery">
                 <div class="portfolio-box defense">
                   <img src="img/gallery/IMG-20240606-WA0012.jpg" alt="" />
@@ -168,7 +178,7 @@
                   <p>eti indonesia</p>
                   <h4>gallery</h4>
                 </div>
-              </a>
+              </a> --}}
             </div>
           </div>
 

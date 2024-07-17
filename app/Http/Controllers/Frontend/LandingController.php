@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\CoreValue;
 use App\Models\CompanyProfile;
+use App\Models\Gallery;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductCategoryGallery;
@@ -138,10 +139,12 @@ class LandingController extends Controller
     public function gallery()
     {
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $galleries = Gallery::all();
 
         return view('pages.frontend.gallery.index',
         [
             'logoSecondary' => $logoSecondary,
+            'galleries' => $galleries,
         ]);
     }
 
