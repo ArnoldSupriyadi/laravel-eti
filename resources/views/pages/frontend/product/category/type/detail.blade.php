@@ -1,6 +1,6 @@
 @extends('layout.frontend.main')
 
-@section('title', 'Product Category Detail')
+@section('title', 'Product Type Detail')
 
 @section('content')
     <div class="animsition">

@@ -77,7 +77,7 @@ class LandingController extends Controller
         ]);
     }
 
-    public function productCategory(string $id)
+    public function categories(string $id)
     {
         $product = Product::findOrFail($id);
         $categories = ProductCategory::where('product_id', $id)->get();
@@ -85,6 +85,23 @@ class LandingController extends Controller
 
         return view('pages.frontend.product.category.index',
             compact('product', 'categories', 'logoSecondary'));
+    }
+
+    public function productCategoryDetail(string $id)
+    {
+        $category = ProductCategory::findOrFail($id);
+        $types = ProductType::where('category_id', $id)->get();
+        $typeCount = ProductType::where('category_id', $id)->count();
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        if ($typeCount == 0) {
+            return view('pages.frontend.product.category.detail',
+                compact('category', 'types', 'logoSecondary'));
+
+        } else {
+            return view('pages.frontend.product.category.type.index',
+                compact('category', 'types', 'logoSecondary'));
+        }
     }
 
     // public function productsCategory()
@@ -107,33 +124,16 @@ class LandingController extends Controller
     //     ]);
     // }
 
-    public function productDetail(string $id)
-    {
-        $category = ProductCategory::findOrFail($id);
-        $types = ProductType::where('category_id', $id)->get();
-        $typeCount = ProductType::where('category_id', $id)->count();
-        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        if ($typeCount == 0) {
-            return view('pages.frontend.product.category.detail',
-                compact('category', 'types', 'logoSecondary'));
+    // public function detailProduct()
+    // {
+    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        } else {
-            return view('pages.frontend.product.category.type.index',
-                compact('category', 'types', 'logoSecondary'));
-        }
-
-    }
-
-    public function detailProduct()
-    {
-        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
-
-        return view('pages.frontend.product.detail',
-        [
-            'logoSecondary' => $logoSecondary,
-        ]);
-    }
+    //     return view('pages.frontend.product.detail',
+    //     [
+    //         'logoSecondary' => $logoSecondary,
+    //     ]);
+    // }
 
     public function gallery()
     {

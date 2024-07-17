@@ -28,8 +28,8 @@ Route::controller(LandingController::class)->group(function(){
     Route::get('/', 'index')->name('landing');
     Route::get('/about-us', 'about')->name('about');
     Route::get('/products', 'products')->name('products');
-    Route::get('/products/category/{id}', 'productCategory')->name('productCategory');
-    Route::get('/products/category/detail/{id}', 'productDetail')->name('productCategory.detail');
+    Route::get('/products/category/{id}', 'categories')->name('productCategory');
+    Route::get('/products/category/detail/{id}', 'productCategoryDetail')->name('productCategory.detail');
     Route::get('/products/category/type/{id}', 'productType')->name('product.type');
 
     // Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
