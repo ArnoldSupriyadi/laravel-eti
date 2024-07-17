@@ -20,13 +20,15 @@ class ClientController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'required',
+            'description' => 'nullable',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
+            'status' => 'required',
         ]);
 
         Client::create([
             'name' => $request->name,
             'description' => $request->description,
+            'status' => $request->status,
         ]);
 
         if($request->hasFile('logo')) {
@@ -63,7 +65,8 @@ class ClientController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'required',
+            'description' => 'nullable',
+            'status' => 'required',
         ]);
 
         $client = Client::findOrFail($id);
@@ -71,6 +74,7 @@ class ClientController extends Controller
         $client->update([
             'name' => $request->name,
             'description' => $request->description,
+            'status' => $request->status,
         ]);
 
         return redirect()->route('about.index')->with(['success' => 'Client berhasil diubah!']);

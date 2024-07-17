@@ -286,6 +286,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>Status</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -295,6 +296,13 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $client->name }}</td>
+                                            <td>
+                                                @if ($client->status == 0)
+                                                    Work Partner
+                                                @else
+                                                    Product Specialization
+                                                @endif
+                                            </td>
                                             <td>
                                                 <a href="{{ asset('frontend/img/clients/' . $client->logo) }}"
                                                     target="_blank">

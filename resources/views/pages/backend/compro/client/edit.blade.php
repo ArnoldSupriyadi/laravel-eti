@@ -58,7 +58,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="status">Status <span style="color: red">*</span></label>
-                                            <select class="form-select" name="status" id="status" required>
+                                            <select class="form-control" name="status" id="status" required>
                                                 <option selected disabled>Pilih status client</option>
                                                 @if ($client->status == 0)
                                                     <option value="0" selected>Work Partner</option>

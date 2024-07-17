@@ -68,7 +68,7 @@
                                 <div class="form-body">
                                     <div class="form-group">
                                         <label for="status">Status <span style="color: red">*</span></label>
-                                        <select class="form-select" name="status" id="status" required>
+                                        <select class="form-control" name="status" id="status" required>
                                             <option selected disabled>Pilih status client</option>
                                             <option value="0">Work Partner</option>
                                             <option value="1">Product Specialization</option>
