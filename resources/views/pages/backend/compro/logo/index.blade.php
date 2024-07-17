@@ -37,8 +37,10 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $logo->name }}</td>
                                             <td>
-                                                <img src="{{ asset('frontend/img/logo/' . $logo->description) }}"
-                                                    alt="" class="img-fluid" width="20%">
+                                                <a href="{{ asset('frontend/img/logo/' . $logo->description) }}" target="_blank">
+                                                    <img src="{{ asset('frontend/img/logo/' . $logo->description) }}"
+                                                        alt="" class="img-fluid" width="20%">
+                                                </a>
                                             </td>
                                             <td><a href="{{ route('logo.edit', $logo->id) }}"
                                                     class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Change

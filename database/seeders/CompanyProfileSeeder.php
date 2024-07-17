@@ -93,6 +93,13 @@ class CompanyProfileSeeder extends Seeder
         ]);
 
         DB::table('company_profiles')->insert([
+            'name' => 'logo-secondary',
+            'description' => 'logo_secondary.png',
+            'description_indo' => '',
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('company_profiles')->insert([
             'name' => 'about_image',
             'description' => 'about_img.webp',
             'description_indo' => '',

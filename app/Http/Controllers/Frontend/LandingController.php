@@ -21,11 +21,13 @@ class LandingController extends Controller
     {
         $aboutImage = CompanyProfile::where('name', 'about_image')->first()->description;
         $productImage = CompanyProfile::where('name', 'productservice_image')->first()->description;
+        $logo = CompanyProfile::where('name', 'logo')->first()->description;
 
         return view('pages.frontend.home.index',
         [
             'aboutImage' => $aboutImage,
             'productImage' => $productImage,
+            'logo' => $logo,
         ]);
     }
 
@@ -37,6 +39,7 @@ class LandingController extends Controller
         $mission = CompanyProfile::where('name', 'mission')->first()->description;
         $coreValues = CoreValue::all();
         $clients = Client::all();
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         // $coreValues = CoreValue::all()->map(function($coreValue) {
         //     return [
@@ -53,6 +56,7 @@ class LandingController extends Controller
             'mission' => $mission,
             'coreValues' => $coreValues,
             'clients' => $clients,
+            'logo_secondary' => $logo_secondary,
         ]);
     }
 
@@ -60,11 +64,13 @@ class LandingController extends Controller
     {
         $productDescription = CompanyProfile::where('name', 'product_description')->first()->description;
         $products = Product::all();
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.index',
         [
             'productDescription' => $productDescription,
-            'products' => $products
+            'products' => $products,
+            'logo_secondary' => $logo_secondary,
         ]);
     }
 
@@ -72,34 +78,58 @@ class LandingController extends Controller
     {
         $product = Product::findOrFail($id);
         $categories = ProductCategory::where('product_id', $id)->get();
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.productCategory', compact('product', 'categories'));
+        return view('pages.frontend.product.productCategory',
+            compact('product', 'categories', 'logo_secondary'));
     }
 
     public function productsCategory()
     {
-        return view('pages.frontend.product.category');
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        return view('pages.frontend.product.category',
+        [
+            'logo_secondary' => $logo_secondary,
+        ]);
     }
 
      public function productsCategory2()
     {
-        return view('pages.frontend.product.category2');
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        return view('pages.frontend.product.category2',
+        [
+            'logo_secondary' => $logo_secondary,
+        ]);
     }
 
     public function productDetail(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        return view('pages.frontend.product.productDetail', compact('category'));
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        return view('pages.frontend.product.productDetail', compact('category', 'logo_secondary'));
     }
 
     public function detailProduct()
     {
-        return view('pages.frontend.product.detail');
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        return view('pages.frontend.product.detail',
+        [
+            'logo_secondary' => $logo_secondary,
+        ]);
     }
 
     public function gallery()
     {
-        return view('pages.frontend.gallery.index');
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        return view('pages.frontend.gallery.index',
+        [
+            'logo_secondary' => $logo_secondary,
+        ]);
     }
 
     public function contact()
@@ -107,12 +137,14 @@ class LandingController extends Controller
         $email = CompanyProfile::where('name', 'email')->first()->description;
         $phone = CompanyProfile::where('name', 'phone')->first()->description;
         $address = CompanyProfile::where('name', 'address_one')->first()->description;
+        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.contact.index',
         [
             'email' => $email,
             'phone' => $phone,
             'address' => $address,
+            'logo_secondary' => $logo_secondary,
         ]);
     }
 }
