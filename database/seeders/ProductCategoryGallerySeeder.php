@@ -57,7 +57,7 @@ class ProductCategoryGallerySeeder extends Seeder
             'description' => '',
             'nama' => 'SISTEM MANAJEMEN KONTEN PERHOTELAN ANDROID',
             'deskripsi' => '',
-            'image' => 'ctgGallery4.png',
+            'image' => 'ctgGallery5.png',
             'created_at' => Carbon::now(),
         ]);
     }
