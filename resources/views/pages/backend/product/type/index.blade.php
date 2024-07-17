@@ -123,7 +123,7 @@
                                                 </a>
 
                                                 <a href="{{ route('productType.show', $type->id) }}"
-                                                    class="btn btn-secondary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a>
+                                                    class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a>
 
                                                 <button type="button"
                                                     class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light delete_confirm"
