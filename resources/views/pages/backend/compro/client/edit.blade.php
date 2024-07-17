@@ -42,17 +42,36 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="description">Description <span
-                                                        style="color: red">*</span></label>
+                                                <label for="description">Description</label>
                                                 <input type="text"
                                                     class="form-control border-primary @error('description') is-invalid @enderror"
                                                     name="description" id="description" value="{{ $client->description }}"
-                                                    placeholder="Description" required />
+                                                    placeholder="Description" />
 
                                                 @error('description')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="status">Status <span style="color: red">*</span></label>
+                                            <select class="form-select" name="status" id="status" required>
+                                                <option selected disabled>Pilih status client</option>
+                                                @if ($client->status == 0)
+                                                    <option value="0" selected>Work Partner</option>
+                                                    <option value="1">Product Specialization</option>
+                                                @else
+                                                    <option value="0">Work Partner</option>
+                                                    <option value="1" selected>Product Specialization</option>
+                                                @endif
+                                            </select>
+
+                                            @error('status')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>

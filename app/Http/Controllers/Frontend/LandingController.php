@@ -38,8 +38,9 @@ class LandingController extends Controller
         $vision = CompanyProfile::where('name', 'vision')->first()->description;
         $mission = CompanyProfile::where('name', 'mission')->first()->description;
         $coreValues = CoreValue::all();
-        $clients = Client::all();
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $clientWorkPartners = Client::where('status', 0)->get();
+        $clientProductSpecializations = Client::where('status', 1)->get();
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         // $coreValues = CoreValue::all()->map(function($coreValue) {
         //     return [
@@ -55,8 +56,9 @@ class LandingController extends Controller
             'vision' => $vision,
             'mission' => $mission,
             'coreValues' => $coreValues,
-            'clients' => $clients,
-            'logo_secondary' => $logo_secondary,
+            'clientWorkPartners' => $clientWorkPartners,
+            'clientProductSpecializations' => $clientProductSpecializations,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
@@ -64,13 +66,13 @@ class LandingController extends Controller
     {
         $productDescription = CompanyProfile::where('name', 'product_description')->first()->description;
         $products = Product::all();
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.index',
         [
             'productDescription' => $productDescription,
             'products' => $products,
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
@@ -78,57 +80,57 @@ class LandingController extends Controller
     {
         $product = Product::findOrFail($id);
         $categories = ProductCategory::where('product_id', $id)->get();
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.productCategory',
-            compact('product', 'categories', 'logo_secondary'));
+            compact('product', 'categories', 'logoSecondary'));
     }
 
     public function productsCategory()
     {
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.category',
         [
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
      public function productsCategory2()
     {
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.category2',
         [
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
     public function productDetail(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.productDetail', compact('category', 'logo_secondary'));
+        return view('pages.frontend.product.productDetail', compact('category', 'logoSecondary'));
     }
 
     public function detailProduct()
     {
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.product.detail',
         [
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
     public function gallery()
     {
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.gallery.index',
         [
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 
@@ -137,14 +139,14 @@ class LandingController extends Controller
         $email = CompanyProfile::where('name', 'email')->first()->description;
         $phone = CompanyProfile::where('name', 'phone')->first()->description;
         $address = CompanyProfile::where('name', 'address_one')->first()->description;
-        $logo_secondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         return view('pages.frontend.contact.index',
         [
             'email' => $email,
             'phone' => $phone,
             'address' => $address,
-            'logo_secondary' => $logo_secondary,
+            'logoSecondary' => $logoSecondary,
         ]);
     }
 }

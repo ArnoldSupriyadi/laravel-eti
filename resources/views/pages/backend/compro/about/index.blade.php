@@ -286,7 +286,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
-                                        <th>Description</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -296,7 +295,6 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $client->name }}</td>
-                                            <td>{{ $client->description }}</td>
                                             <td>
                                                 <a href="{{ asset('frontend/img/clients/' . $client->logo) }}"
                                                     target="_blank">

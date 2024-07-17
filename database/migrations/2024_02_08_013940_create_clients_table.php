@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('name');
             $table->text('description')->nullable();
             $table->text('logo')->nullable();
+            $table->integer('status')->default(0); // WP status=0 || PS status=1
             $table->timestamps();
             $table->softDeletes();
         });

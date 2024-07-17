@@ -12,6 +12,6 @@ class Client extends Model
     protected $table = 'clients';
 
     protected $fillable = [
-        'name', 'description', 'logo'
+        'name', 'description', 'logo', 'status'
     ];
 }

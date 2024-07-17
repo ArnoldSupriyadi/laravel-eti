@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Client;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class ClientController extends Controller
 {
@@ -80,14 +82,23 @@ class ClientController extends Controller
             'logo' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'client'.$id.'.'.$request->logo->extension();
         $client = Client::findOrFail($id);
+        $datime = date('Y-m-d_H-i-s');
+
+        $fileName = 'client'.$id.'-'.$datime.'.'.$request->logo->extension();
+
+        $destinationPath = 'frontend/img/clients/';
+        $existingFilePath = public_path($destinationPath.'/'.$client->logo);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $client->update([
             'logo' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/clients/';
         $request->logo->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('about.index')->with(['success' => 'Client Logo has been updated!']);

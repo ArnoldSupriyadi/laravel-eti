@@ -128,7 +128,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 text-center mt-5 mt-md-4"
+                @foreach($clientWorkPartners as $partner)
+                    <div class="col-md-4 text-center mt-5 mt-md-4"
+                        data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                        <img src="{{ asset('frontend/img/clients/' . $partner->logo) }}" alt="{{ $partner->name }}" class="img-fluid" />
+                    </div>
+                @endforeach
+                {{-- <div class="col-md-4 text-center mt-5 mt-md-4"
                     data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                     <img src="{{ asset('frontend/img/logo-tekno-white.png') }}" alt="teknosolusi" class="img-fluid" />
                 </div>
@@ -140,7 +146,7 @@
                     data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                     <img src="{{ asset('frontend/img/gtp-white.png') }}" alt="teknosolusi" class="img-fluid"
                         width="60%" />
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -154,7 +160,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 text-center mt-5 mt-md-4"
+                @foreach($clientProductSpecializations as $specialization)
+                    <div class="col-md-2 text-center mt-5 mt-md-4"
+                        data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
+                        <img src="{{ asset('frontend/img/clients/'. $specialization->logo) }}" alt="{{ $specialization->name }}"
+                            class="img-fluid" />
+                    </div>
+                @endforeach
+                {{-- <div class="col-md-2 text-center mt-5 mt-md-4"
                     data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                     <img src="{{ asset('frontend/img/product-specalization/image.png') }}" alt="teknosolusi"
                         class="img-fluid" />
@@ -183,7 +196,7 @@
                     data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                     <img src="{{ asset('frontend/img/product-specalization/image6.png') }}" alt="teknosolusi"
                         class="img-fluid" />
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
