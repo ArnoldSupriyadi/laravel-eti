@@ -8,7 +8,7 @@ use App\Models\ProductGallery;
 use App\Models\User;
 
 $about = CompanyProfile::where('name', 'about')->first()->description_indo;
-$aboutImage = CompanyProfile::where('name', 'about_image2')->first()->description_indo;
+$aboutImage = CompanyProfile::where('name', 'about_image')->first()->description_indo;
 $vision = CompanyProfile::where('name', 'vision')->first()->description_indo;
 $mission = CompanyProfile::where('name', 'mission')->first()->description_indo;
 $product = CompanyProfile::where('name', 'product_description')->first()->description_indo;
