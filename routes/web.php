@@ -28,12 +28,14 @@ Route::controller(LandingController::class)->group(function(){
     Route::get('/', 'index')->name('landing');
     Route::get('/about-us', 'about')->name('about');
     Route::get('/products', 'products')->name('products');
-    Route::get('/productCategory/{id}', 'productCategory')->name('productCategory');
-    Route::get('/productDetail/{id}', 'productDetail')->name('productDetail');
+    Route::get('/products/category/{id}', 'productCategory')->name('productCategory');
+    Route::get('/products/category/detail/{id}', 'productDetail')->name('productCategory.detail');
+    Route::get('/products/category/type/{id}', 'productType')->name('product.type');
 
-    Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
-    Route::get('/productsCategory2', 'productsCategory2')->name('productsCategory2');
-    Route::get('/productsDetail', 'detailProduct')->name('productsDetail');
+    // Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
+    // Route::get('/productsCategory2', 'productsCategory2')->name('productsCategory2');
+    // Route::get('/productsDetail', 'detailProduct')->name('productsDetail');
+
     Route::get('/galleries', 'gallery')->name('gallery');
     Route::get('/contacts', 'contact')->name('contact');
 });

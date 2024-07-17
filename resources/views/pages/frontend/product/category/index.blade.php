@@ -58,7 +58,7 @@
 
             <div id="projects-grid">
                 @foreach ($categories as $category)
-                    <a href="{{ route('productDetail', $category->id) }}" class="cursor-link animsition-link tipped"
+                    <a href="{{ route('productCategory.detail', $category->id) }}" class="cursor-link animsition-link tipped"
                         data-title="{{ $category->name }}"
                         data-tipper-options='{"direction":"top","follow":"true","margin":30}'>
                         <div class="portfolio-box photo">

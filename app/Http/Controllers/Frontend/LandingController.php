@@ -8,7 +8,8 @@ use App\Models\CoreValue;
 use App\Models\CompanyProfile;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use App\Models\ProductGallery;
+use App\Models\ProductCategoryGallery;
+use App\Models\ProductType;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -82,36 +83,46 @@ class LandingController extends Controller
         $categories = ProductCategory::where('product_id', $id)->get();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.productCategory',
+        return view('pages.frontend.product.category.index',
             compact('product', 'categories', 'logoSecondary'));
     }
 
-    public function productsCategory()
-    {
-        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+    // public function productsCategory()
+    // {
+    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.category',
-        [
-            'logoSecondary' => $logoSecondary,
-        ]);
-    }
+    //     return view('pages.frontend.product.category',
+    //     [
+    //         'logoSecondary' => $logoSecondary,
+    //     ]);
+    // }
 
-     public function productsCategory2()
-    {
-        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+    //  public function productsCategory2()
+    // {
+    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.category2',
-        [
-            'logoSecondary' => $logoSecondary,
-        ]);
-    }
+    //     return view('pages.frontend.product.category2',
+    //     [
+    //         'logoSecondary' => $logoSecondary,
+    //     ]);
+    // }
 
     public function productDetail(string $id)
     {
         $category = ProductCategory::findOrFail($id);
+        $types = ProductType::where('category_id', $id)->get();
+        $typeCount = ProductType::where('category_id', $id)->count();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        return view('pages.frontend.product.productDetail', compact('category', 'logoSecondary'));
+        if ($typeCount == 0) {
+            return view('pages.frontend.product.category.detail',
+                compact('category', 'types', 'logoSecondary'));
+
+        } else {
+            return view('pages.frontend.product.category.type.index',
+                compact('category', 'types', 'logoSecondary'));
+        }
+
     }
 
     public function detailProduct()
