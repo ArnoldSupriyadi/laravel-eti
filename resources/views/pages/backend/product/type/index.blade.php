@@ -61,6 +61,9 @@
                                                     class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                                     Edit Image
                                                 </a>
+
+                                                <a href="{{ route('productCategoryGallery.index', $category->id) }}"
+                                                    class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Detail</a>
                                             </td>
                                         </tr>
                                 </tbody>
