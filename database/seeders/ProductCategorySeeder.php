@@ -16,7 +16,7 @@ class ProductCategorySeeder extends Seeder
             'name' => 'Soldier Supplies',
             'description' => 'Explore our extensive catalog of soldier supplies, meticulously curated to meet the rigorous demands of military life. From durable combat uniforms and footwear engineered for performance to advanced tactical gear designed for optimal functionality, our products are crafted with precision and tested for reliability in the field.',
             'nama' => 'Perlengkapan Prajurit',
-            'deskripsi' => '',
+            'deskripsi' => 'Jelajahi katalog lengkap perlengkapan prajurit kami, yang dikuratori dengan cermat untuk memenuhi tuntutan kehidupan militer yang ketat. Dari seragam tempur tahan lama dan alas kaki yang dirancang untuk kinerja hingga perlengkapan taktis canggih yang dirancang untuk fungsionalitas optimal, produk kami dibuat dengan presisi dan diuji keandalannya di lapangan.',
             'image' => 'category1.png',
             // 'image' => 'perbekalan-prajurit.jpg',
             'created_at' => Carbon::now(),
