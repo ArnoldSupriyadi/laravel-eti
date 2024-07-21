@@ -17,8 +17,8 @@
                     <div class="card-content collapse show">
                         <div class="card-body">
 
-                            <form class="form" action="{{ route('productType.store', $category->id) }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form class="form" action="{{ route('productCategoryGallery.store', $category->id) }}"
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-body">
@@ -93,8 +93,7 @@
                                         <label for="nama">Nama</label>
                                         <input type="text"
                                             class="form-control border-primary @error('nama') is-invalid @enderror"
-                                            name="nama" id="nama" value="{{ old('nama') }}"
-                                            placeholder="Nama" />
+                                            name="nama" id="nama" value="{{ old('nama') }}" placeholder="Nama" />
 
                                         @error('nama')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -116,7 +115,7 @@
                                 </div>
 
                                 <div class="form-actions text-right">
-                                    <a href="{{ route('productType.index', $category->id) }}"
+                                    <a href="{{ route('productCategoryGallery.index', $category->id) }}"
                                         class="btn btn-warning mr-1"><i class="ft-x"></i>Cancel</a>
 
                                     <button type="submit" class="btn btn-primary">
