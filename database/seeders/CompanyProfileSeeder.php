@@ -119,5 +119,19 @@ class CompanyProfileSeeder extends Seeder
             'description_indo' => 'Kami bangga memperkenalkan rangkaian produk dan layanan unggulan kami yang dirancang untuk memenuhi kebutuhan Anda dengan kualitas terbaik. Dengan dedikasi kami terhadap inovasi dan keunggulan, kami berkomitmen untuk memberikan pengalaman yang memuaskan bagi setiap pelanggan.',
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'maps_one',
+            'description' => 'https://maps.app.goo.gl/HR1DCsjiupb4JjM46',
+            'description_indo' => '',
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'maps_two',
+            'description' => 'https://maps.app.goo.gl/uES3t16z9WNRPbcp6',
+            'description_indo' => '',
+            'created_at' => Carbon::now()
+        ]);
     }
 }

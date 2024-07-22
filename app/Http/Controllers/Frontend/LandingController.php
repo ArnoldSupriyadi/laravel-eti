@@ -152,14 +152,20 @@ class LandingController extends Controller
     {
         $email = CompanyProfile::where('name', 'email')->first()->description;
         $phone = CompanyProfile::where('name', 'phone')->first()->description;
-        $address = CompanyProfile::where('name', 'address_one')->first()->description;
+        $addressOne = CompanyProfile::where('name', 'address_one')->first()->description;
+        $addressTwo = CompanyProfile::where('name', 'address_two')->first()->description;
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $mapsOne = CompanyProfile::where('name', 'maps_one')->first()->description;
+        $mapsTwo = CompanyProfile::where('name', 'maps_two')->first()->description;
 
         return view('pages.frontend.contact.index',
         [
             'email' => $email,
             'phone' => $phone,
-            'address' => $address,
+            'addressOne' => $addressOne,
+            'addressTwo' => $addressTwo,
+            'mapsOne' => $mapsOne,
+            'mapsTwo' => $mapsTwo,
             'logoSecondary' => $logoSecondary,
         ]);
     }

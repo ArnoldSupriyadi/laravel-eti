@@ -24,15 +24,15 @@
               </div>
             </div>
         </div>
-    
+
         <div class="section padding-bottom-big over-hide background-dark-2">
             <div class="container">
                 <div class="row justify-content-center">
                 <div class="col-md-4 ajax-form">
-                    <a href="mailto:admin@etindonesia.id" class="btn btn-contact-custom cursor-link p-3">Email at admin@etindonesia.id</a>
+                    <a href="mailto:{{ $email }}" class="btn btn-contact-custom cursor-link p-3">Email at {{ $email }}</a>
                 </div>
                 <div class="col-md-4 mt-4 mt-md-0 ajax-form">
-                    <a href="https://wa.link/pti8jc" class="btn btn-contact-custom cursor-link p-3">Whatsapp at +6283898876509</a>
+                    <a href="https://wa.link/pti8jc" class="btn btn-contact-custom cursor-link p-3">Whatsapp at +{{ $phone }}</a>
                 </div>
                 <!-- <div class="section clearfix"></div>
                 <div class="col-md-8 mt-4 ajax-form">
@@ -50,18 +50,22 @@
                 <div class="container z-bigger">
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h5>Office 8 Building, Level 18<br />JI. Senopati No 18 Jakarta 12910 - Indonesia</h5>
+                    <h5>{{ $addressOne }}</h5>
+                    {{-- <h5>Office 8 Building, Level 18<br />JI. Senopati No 18 Jakarta 12910 - Indonesia</h5> --}}
                     </div>
                     <div class="section clearfix"></div>
                     <div class="col-md-7 mt-4 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <a href="https://maps.app.goo.gl/HR1DCsjiupb4JjM46" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    <a href="{{ $mapsOne }}" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    {{-- <a href="https://maps.app.goo.gl/HR1DCsjiupb4JjM46" class="contact-link cursor-link" target="_blank">find us on map</a> --}}
                     </div>
                     <div class="col-md-7 text-center pt-5" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h5>Jl. Pendidikan No. 17 <br />Cilandak, Jakarta 12320</h5>
+                    <h5>{{ $addressTwo }}</h5>
+                    {{-- <h5>Jl. Pendidikan No. 17 <br />Cilandak, Jakarta 12320</h5> --}}
                     </div>
                     <div class="section clearfix"></div>
                     <div class="col-md-7 mt-4 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <a href="https://maps.app.goo.gl/uES3t16z9WNRPbcp6" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    <a href="{{ $mapsTwo }}" class="contact-link cursor-link" target="_blank">find us on map</a>
+                    {{-- <a href="https://maps.app.goo.gl/uES3t16z9WNRPbcp6" class="contact-link cursor-link" target="_blank">find us on map</a> --}}
                     </div>
                 </div>
                 </div>
@@ -72,9 +76,9 @@
         <div class="container">
             <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-                <a href="mailto:admin@etindonesia.id" class="cursor-link">
+                <a href="mailto:{{ $email }}" class="cursor-link">
                 <div class="project-link-wrap on-contact">
-                    <p>admin@etindonesia.id</p>
+                    <p>{{ $email }}</p>
                 </div>
                 </a>
             </div>
@@ -87,7 +91,7 @@
         <div class="scroll-to-top cursor-link"></div>
         <div class="cursor cursor-shadow"></div>
         <div class="cursor cursor-dot"></div>
-        
+
     </div>
 
     <!-- Page cursor -->
