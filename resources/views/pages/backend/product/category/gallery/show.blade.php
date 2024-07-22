@@ -1,71 +1,64 @@
 @extends('layout.backend.main')
 
-@section('title', 'Product Type Gallery')
+@section('title', 'Product Category Gallery Detail')
 
 @section('content')
     @include('pages.backend.partials.notif')
 
     <div class="content-body">
+        {{-- Detail Product Category Gallery  --}}
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Product Type Gallery Page</h4>
+                <h4 class="card-title">Product Category Gallery Detail Page</h4>
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                <div class="heading-elements">
-                    <a href="{{ route('productTypeGallery.create', $type->id) }}"
-                        class="btn btn-warning btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
-                        create new</a>
-                </div>
+                {{-- <div class="heading-elements">
+                </div> --}}
             </div>
             <div class="card-content collapse show">
                 <div class="card-body card-dashboard">
-                    <h2>{{ $type->name }}</h2>
-                    {{-- <p class="card-text">{{ $type->description }}</p> --}}
+                    <h2>{{ $gallery->name }}</h2>
+                    {{-- <p class="card-text">{{ $gallery->description }}</p> --}}
                 </div>
                 <div class="table-responsive">
                     <table class="table mb-0">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Image</th>
-                                <th>Description</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
                         <tbody>
-                            @foreach ($galleries as $gallery)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $gallery->name }}</td>
-                                    <td>{{ $gallery->price }}</td>
+                                    <th>Image</th>
                                     <td>
-                                        <a href="{{ asset('frontend/img/products/types/type' . $gallery->type_id . '/' . $gallery->image) }}"
+                                        <a href="{{ asset('frontend/img/products/categories/category'.$gallery->category_id.'/' . $gallery->image) }}"
                                             target="_blank">
-                                            <img src="{{ asset('frontend/img/products/types/type' . $gallery->type_id . '/' . $gallery->image) }}"
-                                                alt="" class="img-fluid" height="20%">
+                                            <img src="{{ asset('frontend/img/products/categories/category'.$gallery->category_id.'/' . $gallery->image) }}"
+                                                alt="" class="img-fluid">
                                         </a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th>Price</th>
+                                    <td>{{ $gallery->price }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
                                     <td>{{ $gallery->description }}</td>
-                                    <td>
-                                        <a href="{{ route('productTypeGallery.edit', $gallery->id) }}"
+                                </tr>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>{{ $gallery->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Deskripsi</td>
+                                    <td>{{ $gallery->deskripsi }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <a href="{{ route('productCategoryGallery.edit', $gallery->id) }}"
                                             class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
 
-                                        <a href="{{ route('productTypeGallery.editImage', $gallery->id) }}"
+                                        <a href="{{ route('productCategoryGallery.editImage', $gallery->id) }}"
                                             class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">
                                             Edit Image
                                         </a>
-
-                                        <a href="{{ route('productTypeGallery.show', $gallery->id) }}"
-                                            class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a>
-
-                                        <button type="button"
-                                            class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light delete_confirm"
-                                            id="delete_confirm{{ $gallery->id }}" data-id="{{ $gallery->id }}">
-                                            Delete</button>
                                     </td>
                                 </tr>
-                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -93,7 +86,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             method: 'GET',
-                            url: "{{ route('productTypeGallery.destroy', ':id') }}"
+                            url: "{{ route('productCategoryGallery.destroy', ':id') }}"
                                 .replace(':id', idItem),
                             data: {
                                 _token: '{{ csrf_token() }}',

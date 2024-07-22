@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductCategoryGallery;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class ProductCategoryGalleryController extends Controller
 {
@@ -76,21 +78,21 @@ class ProductCategoryGalleryController extends Controller
     {
         $gallery = ProductCategoryGallery::findOrFail($id);
 
-        return view('pages.backend.product.category.gallery.show', compact('productType'));
+        return view('pages.backend.product.category.gallery.show', compact('gallery'));
     }
 
     public function edit(string $id)
     {
         $gallery = ProductCategoryGallery::findOrFail($id);
 
-        return view('pages.backend.product.category.gallery.edit', compact('productType'));
+        return view('pages.backend.product.category.gallery.edit', compact('gallery'));
     }
 
     public function editImage(string $id)
     {
         $gallery = ProductCategoryGallery::findOrFail($id);
 
-        return view('pages.backend.product.category.gallery.editImage', compact('productType'));
+        return view('pages.backend.product.category.gallery.editImage', compact('gallery'));
     }
 
     public function update(Request $request, string $id)
@@ -128,14 +130,21 @@ class ProductCategoryGalleryController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'ctgGallery'.$id.'.'.$request->image->extension();
+        $datime = date('Y-m-d_H-i-s');
+        $fileName = 'ctgGallery'.$id.'_'.$datime.'.'.$request->image->extension();
         $gallery = ProductCategoryGallery::findOrFail($id);
+
+        $destinationPath = 'frontend/img/products/categories/category'.$gallery->category_id.'/';
+        $existingFilePath = public_path($destinationPath.'/'.$gallery->image);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $gallery->update([
             'image' => $fileName,
         ]);
-
-        $destinationPath = 'frontend/img/products/categories/category'.$id.'/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('productCategoryGallery.index', $gallery->category_id)->with(['success' => 'Product Category Gallery Image has been updated!']);

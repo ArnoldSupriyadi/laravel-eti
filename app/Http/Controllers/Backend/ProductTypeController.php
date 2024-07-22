@@ -72,13 +72,6 @@ class ProductTypeController extends Controller
         return redirect()->route('productType.index', $id)->with(['success' => 'Product Type berhasil disimpan!']);
     }
 
-    public function show(string $id)
-    {
-        $productType = ProductType::findOrFail($id);
-
-        return view('pages.backend.product.type.show', compact('productType'));
-    }
-
     public function edit(string $id)
     {
         $productType = ProductType::findOrFail($id);

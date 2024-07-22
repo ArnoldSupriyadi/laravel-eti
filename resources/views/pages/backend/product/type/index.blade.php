@@ -125,7 +125,7 @@
                                                     Edit Image
                                                 </a>
 
-                                                <a href="{{ route('productType.show', $type->id) }}"
+                                                <a href="{{ route('productTypeGallery.index', $type->id) }}"
                                                     class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a>
 
                                                 <button type="button"

@@ -147,6 +147,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('{id}', [ProductCategoryGalleryController::class, 'index'])->name('productCategoryGallery.index');
         Route::get('create/{id}', [ProductCategoryGalleryController::class, 'create'])->name('productCategoryGallery.create');
         Route::post('store', [ProductCategoryGalleryController::class, 'store'])->name('productCategoryGallery.store');
+        Route::get('show/{id}', [ProductCategoryGalleryController::class, 'show'])->name('productCategoryGallery.show');
         Route::get('edit/{id}', [ProductCategoryGalleryController::class, 'edit'])->name('productCategoryGallery.edit');
         Route::get('editImage/{id}', [ProductCategoryGalleryController::class, 'editImage'])->name('productCategoryGallery.editImage');
         Route::put('update/{id}', [ProductCategoryGalleryController::class, 'update'])->name('productCategoryGallery.update');
@@ -173,6 +174,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('{id}', [ProductTypeGalleryController::class, 'index'])->name('productTypeGallery.index');
         Route::get('create/{id}', [ProductTypeGalleryController::class, 'create'])->name('productTypeGallery.create');
         Route::post('store', [ProductTypeGalleryController::class, 'store'])->name('productTypeGallery.store');
+        Route::get('show/{id}', [ProductTypeGalleryController::class, 'show'])->name('productTypeGallery.show');
         Route::get('edit/{id}', [ProductTypeGalleryController::class, 'edit'])->name('productTypeGallery.edit');
         Route::get('editImage/{id}', [ProductTypeGalleryController::class, 'editImage'])->name('productTypeGallery.editImage');
         Route::put('update/{id}', [ProductTypeGalleryController::class, 'update'])->name('productTypeGallery.update');

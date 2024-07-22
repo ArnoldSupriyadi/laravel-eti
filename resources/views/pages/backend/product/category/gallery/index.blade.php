@@ -56,8 +56,8 @@
                                             Edit Image
                                         </a>
 
-                                        {{-- <a href="{{ route('productCategoryGallery.show', $gallery->id) }}"
-                                            class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a> --}}
+                                        <a href="{{ route('productCategoryGallery.show', $gallery->id) }}"
+                                            class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show Detail</a>
 
                                         <button type="button"
                                             class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light delete_confirm"
