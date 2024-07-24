@@ -27,7 +27,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
-                                <th>Price</th>
                                 <th>Image</th>
                                 <th>Description</th>
                                 <th>Action</th>
@@ -38,7 +37,6 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $gallery->name }}</td>
-                                    <td>{{ $gallery->price }}</td>
                                     <td>
                                         <a href="{{ asset('frontend/img/products/types/type' . $gallery->type_id . '/' . $gallery->image) }}"
                                             target="_blank">

@@ -46,18 +46,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="price">Price <span style="color: red">*</span></label>
-                                        <input type="number"
-                                            class="form-control border-primary @error('price') is-invalid @enderror"
-                                            name="price" id="price" value="{{ $gallery->price }}" placeholder="0"
-                                            min="0" required />
-
-                                        @error('price')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="description">Description</label>
                                         <input type="text"
                                             class="form-control border-primary @error('description') is-invalid @enderror"

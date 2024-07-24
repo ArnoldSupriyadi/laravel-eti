@@ -36,23 +36,15 @@ class ProductCategoryGalleryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'price' => 'nullable',
             'description' => 'nullable',
             'nama' => 'nullable',
             'deskripsi' => 'nullable',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        if ($request->price == null) {
-            $price = 0;
-        } else {
-            $price = $request->price;
-        }
-
         ProductCategoryGallery::create([
             'category_id' => $id,
             'name' => $request->name,
-            'price' => $price,
             'description' => $request->description,
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
@@ -99,23 +91,15 @@ class ProductCategoryGalleryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'price' => 'nullable',
             'description' => 'nullable',
             'nama' => 'nullable',
             'deskripsi' => 'nullable',
         ]);
 
-        if ($request->price == null) {
-            $price = 0;
-        } else {
-            $price = $request->price;
-        }
-
         $gallery = ProductCategoryGallery::findOrFail($id);
 
         $gallery->update([
             'name' => $request->name,
-            'price' => $price,
             'description' => $request->description,
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,

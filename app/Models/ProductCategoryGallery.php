@@ -17,7 +17,6 @@ class ProductCategoryGallery extends Model
         'description',
         'nama',
         'deskripsi',
-        'price',
         'image'
     ];
 

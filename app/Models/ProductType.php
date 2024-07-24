@@ -17,7 +17,6 @@ class ProductType extends Model
         'description',
         'nama',
         'deskripsi',
-        'price',
         'image'
     ];
 

@@ -33,10 +33,6 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Price</th>
-                                    <td>{{ $gallery->price }}</td>
-                                </tr>
-                                <tr>
                                     <td>Description</td>
                                     <td>{{ $gallery->description }}</td>
                                 </tr>

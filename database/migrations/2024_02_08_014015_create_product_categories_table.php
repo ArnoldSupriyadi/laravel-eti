@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('nama', 200)->nullable();
             $table->text('deskripsi')->nullable();
-            $table->double('price')->default(0);
             $table->text('image')->nullable();
             $table->timestamps();
             $table->softDeletes();

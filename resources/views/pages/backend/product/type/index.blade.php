@@ -37,10 +37,6 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Price</th>
-                                            <td>{{ $category->price }}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Description</td>
                                             <td>{{ $category->description }}</td>
                                         </tr>
@@ -96,7 +92,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
-                                        <th>Price</th>
                                         <th>Image</th>
                                         <th>Description</th>
                                         <th>Action</th>
@@ -107,7 +102,6 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $type->name }}</td>
-                                            <td>{{ $type->price }}</td>
                                             <td>
                                                 <a href="{{ asset('frontend/img/products/types/' . $type->image) }}"
                                                     target="_blank">
