@@ -91,13 +91,14 @@ class LandingController extends Controller
     public function productCategoryDetail(string $id)
     {
         $category = ProductCategory::findOrFail($id);
+        $galleries = ProductCategoryGallery::where('category_id', $id)->get();
         $types = ProductType::where('category_id', $id)->get();
         $typeCount = ProductType::where('category_id', $id)->count();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         if ($typeCount == 0) {
-            return view('pages.frontend.product.category.detail',
-                compact('category', 'types', 'logoSecondary'));
+            return view('pages.frontend.product.category.show',
+                compact('category', 'galleries', 'logoSecondary'));
 
         } else {
             return view('pages.frontend.product.category.type.index',
