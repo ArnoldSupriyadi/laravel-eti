@@ -16,7 +16,7 @@ class ProductCategoryGalleryController extends Controller
     public function index(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $galleries = ProductCategoryGallery::where('category_id', $id)->orderBy('name', 'ASC')->get();
+        $galleries = ProductCategoryGallery::where('category_id', $id)->get();
 
         return view('pages.backend.product.category.gallery.index',
         [
