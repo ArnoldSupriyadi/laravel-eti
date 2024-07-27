@@ -93,7 +93,6 @@
                                         <th>No</th>
                                         <th>Name</th>
                                         <th>Image</th>
-                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -109,7 +108,6 @@
                                                         alt="" class="img-fluid" height="20%">
                                                 </a>
                                             </td>
-                                            <td>{{ $type->description }}</td>
                                             <td>
                                                 <a href="{{ route('productType.edit', $type->id) }}"
                                                     class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>
