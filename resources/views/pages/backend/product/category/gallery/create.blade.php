@@ -3,6 +3,12 @@
 @section('title', 'Add Product Category Gallery')
 
 @section('content')
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 200px;
+        }
+    </style>
+
     <section id="basic-form-layouts">
         <div class="row match-height">
 
@@ -47,10 +53,7 @@
                                 <div class="form-body">
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text"
-                                            class="form-control border-primary @error('description') is-invalid @enderror"
-                                            name="description" id="description" value="{{ old('description') }}"
-                                            placeholder="Description" />
+                                        <textarea name="description" id="description">{!! old('description') !!}</textarea>
 
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -86,13 +89,11 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-body">
                                     <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label>
-                                        <input type="text"
-                                            class="form-control border-primary @error('deskripsi') is-invalid @enderror"
-                                            name="deskripsi" id="deskripsi" value="{{ old('deskripsi') }}"
-                                            placeholder="Deskripsi" />
+                                        <textarea name="deskripsi" id="deskripsi">{!! old('deskripsi') !!}</textarea>
 
                                         @error('deskripsi')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -117,3 +118,25 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'), {
+                removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle',
+                    'ImageToolbar', 'ImageUpload', 'MediaEmbed'
+                ],
+            })
+            .catch(error => {});
+    </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#deskripsi'), {
+                removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle',
+                    'ImageToolbar', 'ImageUpload', 'MediaEmbed'
+                ],
+            })
+            .catch(error => {});
+    </script>
+@endpush

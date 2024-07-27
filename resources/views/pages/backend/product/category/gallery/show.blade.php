@@ -34,7 +34,7 @@
                                 </tr>
                                 <tr>
                                     <td>Description</td>
-                                    <td>{{ $gallery->description }}</td>
+                                    <td>{!! $gallery->description !!}</td>
                                 </tr>
                                 <tr>
                                     <td>Nama</td>
@@ -42,7 +42,7 @@
                                 </tr>
                                 <tr>
                                     <td>Deskripsi</td>
-                                    <td>{{ $gallery->deskripsi }}</td>
+                                    <td>{!! $gallery->deskripsi !!}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">

@@ -27,8 +27,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Nama</th>
                                 <th>Image</th>
-                                <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,6 +37,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $gallery->name }}</td>
+                                    <td>{{ $gallery->nama }}</td>
                                     <td>
                                         <a href="{{ asset('frontend/img/products/categories/category' . $gallery->category_id . '/'. $gallery->image) }}"
                                             target="_blank">
@@ -44,7 +45,6 @@
                                                 alt="" class="img-fluid" height="20%">
                                         </a>
                                     </td>
-                                    <td>{{ $gallery->description }}</td>
                                     <td>
                                         <a href="{{ route('productCategoryGallery.edit', $gallery->id) }}"
                                             class="btn btn-primary btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Edit</a>

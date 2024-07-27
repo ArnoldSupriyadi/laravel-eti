@@ -47,10 +47,7 @@
 
                                     <div class="form-group">
                                         <label for="description">Description</label>
-                                        <input type="text"
-                                            class="form-control border-primary @error('description') is-invalid @enderror"
-                                            name="description" id="description" value="{{ $gallery->description }}"
-                                            placeholder="Description" />
+                                        <textarea name="description" id="description">{!! $gallery->description !!}</textarea>
 
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -70,10 +67,7 @@
 
                                     <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label>
-                                        <input type="text"
-                                            class="form-control border-primary @error('deskripsi') is-invalid @enderror"
-                                            name="deskripsi" id="deskripsi" value="{{ $gallery->deskripsi }}"
-                                            placeholder="Deskripsi" />
+                                        <textarea name="deskripsi" id="deskripsi">{!! $gallery->deskripsi !!}</textarea>
 
                                         @error('deskripsi')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -98,3 +92,25 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'), {
+                removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle',
+                    'ImageToolbar', 'ImageUpload', 'MediaEmbed'
+                ],
+            })
+            .catch(error => {});
+    </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#deskripsi'), {
+                removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'Image', 'ImageCaption', 'ImageStyle',
+                    'ImageToolbar', 'ImageUpload', 'MediaEmbed'
+                ],
+            })
+            .catch(error => {});
+    </script>
+@endpush
