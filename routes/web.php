@@ -32,6 +32,7 @@ Route::controller(LandingController::class)->group(function(){
     Route::get('/products/category/{id}', 'categories')->name('productCategory');
     Route::get('/products/category/detail/{id}', 'productCategoryDetail')->name('productCategory.detail');
     Route::get('/products/category/type/{id}', 'productType')->name('product.type');
+    Route::get('/products/category/type/detail/{id}', 'productTypeDetail')->name('productType.detail');
 
     // Route::get('/productsCategory', 'productsCategory')->name('productsCategory');
     // Route::get('/productsCategory2', 'productsCategory2')->name('productsCategory2');

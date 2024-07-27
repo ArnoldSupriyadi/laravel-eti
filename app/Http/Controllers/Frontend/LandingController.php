@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductCategoryGallery;
 use App\Models\ProductType;
+use App\Models\ProductTypeGallery;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -103,6 +104,22 @@ class LandingController extends Controller
         } else {
             return view('pages.frontend.product.category.type.index',
                 compact('category', 'types', 'logoSecondary'));
+        }
+    }
+
+    public function productTypeDetail(string $id)
+    {
+        $type = ProductType::findOrFail($id);
+        $galleries = ProductTypeGallery::where('type_id', $id)->get();
+        $galleryCount = ProductTypeGallery::where('type_id', $id)->count();
+        $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+
+        if ($galleryCount == 0) {
+        //     // return view('pages.frontend.product.category.type.index',
+        //     //     compact('category', 'types', 'logoSecondary'));
+        } else {
+            return view('pages.frontend.product.category.type.show',
+                compact('type', 'galleries', 'logoSecondary'));
         }
     }
 
