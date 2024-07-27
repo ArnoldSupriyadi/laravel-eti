@@ -3,6 +3,12 @@
 @section('title', 'Edit Product Type Gallery')
 
 @section('content')
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 200px;
+        }
+    </style>
+
     <section id="basic-form-layouts">
         <div class="row match-height">
 
