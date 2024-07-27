@@ -61,7 +61,7 @@ class ProductCategorySeeder extends Seeder
             'description' => '',
             'nama' => 'Layanan Perhotelan',
             'deskripsi' => '',
-            'image' => 'category6.png',
+            'image' => 'category5.png',
             // 'image' => 'application-program.jpg',
             'created_at' => Carbon::now(),
         ]);
