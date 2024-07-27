@@ -14,7 +14,7 @@ class ProductTypeController extends Controller
     public function index(string $id)
     {
         $category = ProductCategory::findOrFail($id);
-        $productTypes = ProductType::where('category_id', $id)->orderBy('name', 'ASC')->get();
+        $productTypes = ProductType::where('category_id', $id)->get();
 
         return view('pages.backend.product.type.index',
         [
