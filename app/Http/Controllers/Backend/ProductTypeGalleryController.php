@@ -57,7 +57,7 @@ class ProductTypeGalleryController extends Controller
             $fileName = 'typeGallery'.$idImage.'.'.$request->image->extension();
             $destinationPath = 'frontend/img/products/types/type'.$id.'/';
 
-            DB::table('product_types')
+            DB::table('product_type_galleries')
                 ->where('id', $idImage)
                 ->update(['image' => $fileName]);
 
