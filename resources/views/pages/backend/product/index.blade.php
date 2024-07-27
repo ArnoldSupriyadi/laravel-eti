@@ -62,15 +62,15 @@
                                                         Edit Image
                                                     </a>
 
+                                                    <a href="{{ route('productType.index', $category->id) }}"
+                                                        class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show
+                                                        Detail</a>
+
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light delete_confirm"
                                                         id="delete_confirm{{ $category->id }}"
                                                         data-id="{{ $category->id }}">
                                                         Delete</button>
-
-                                                    <a href="{{ route('productType.index', $category->id) }}"
-                                                        class="btn btn-info btn-min-width box-shadow-1 mr-1 mb-1 waves-effect waves-light">Show
-                                                        Detail</a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -64,40 +64,40 @@ class ProductTypeGallerySeeder extends Seeder
         DB::table('product_type_galleries')->insert([
             'type_id' => 3,
             'name' => 'ACADEMY',
-            'description' => '',
-            'nama' => '',
-            'deskripsi' => '',
-            'image' => 'typeGallery.png',
+            'description' => '<ul><li>With a three-stage learning program, basic cybersecurity components are learned step-by-step and skills are gradually developed.</li><li>Guided and detailed information and explanations are provided, contributing to the experience and development process of experts.</li></ul>',
+            'nama' => 'AKADEMI',
+            'deskripsi' => '<ul><li>Dengan program pembelajaran tiga tahap, komponen keamanan siber dasar dipelajari selangkah demi selangkah dan keterampilan dikembangkan secara bertahap.</li><li>Informasi dan penjelasan yang dipandu dan terperinci disediakan, memberikan kontribusi pada pengalaman dan proses pengembangan para ahli.</li></ul>',
+            'image' => 'typeGallery6.png',
             'created_at' => Carbon::now(),
         ]);
 
         DB::table('product_type_galleries')->insert([
             'type_id' => 3,
             'name' => 'SCENARIO',
-            'description' => '',
-            'nama' => '',
-            'deskripsi' => '',
-            'image' => 'typeGallery.png',
+            'description' => '<ul><li>Realistic and immersive scenarios allow theoretical knowledge to be put into practice.</li><li>Various scenarios suitable for different skill levels appeal to cybersecurity experts of all levels.</li><li>Creating an environment to experience real-world security challenges, test competencies, and develop analytical thinking skills.</li></ul>',
+            'nama' => 'SKENARIO',
+            'deskripsi' => '<ul><li>Skenario yang realistis dan mendalam memungkinkan pengetahuan teoretis untuk dipraktikkan.</li><li>Berbagai skenario yang cocok untuk berbagai tingkat keahlian menarik bagi para ahli keamanan siber dari semua tingkatan.</li><li>Menciptakan lingkungan untuk merasakan tantangan keamanan dunia nyata, menguji kompetensi, dan mengembangkan keterampilan berpikir analitis.</li></ul>',
+            'image' => 'typeGallery7.png',
             'created_at' => Carbon::now(),
         ]);
 
         DB::table('product_type_galleries')->insert([
             'type_id' => 3,
             'name' => 'LABORATORY',
-            'description' => '',
-            'nama' => '',
-            'deskripsi' => '',
-            'image' => 'typeGallery.png',
+            'description' => '<ul><li>To specialize in certain cybersecurity fields, laboratories offer focused modules.</li><li>Knowledge and skills are tested in penetration testing, incident response, network security, and more.</li><li>Challenging and practical exercises reinforce theoretical knowledge and enhance cybersecurity readiness.</li></ul>',
+            'nama' => 'LABORATORIUM',
+            'deskripsi' => '<ul><li>Untuk mengkhususkan diri dalam bidang keamanan siber tertentu, laboratorium menawarkan modul-modul yang terfokus.</li><li>Pengetahuan dan keterampilan diuji dalam pengujian penetrasi, respons insiden, keamanan jaringan, dan banyak lagi.</li><li>Latihan yang menantang dan praktis memperkuat pengetahuan teoretis dan meningkatkan kesiapan keamanan siber.</li></ul>',
+            'image' => 'typeGallery8.png',
             'created_at' => Carbon::now(),
         ]);
 
         DB::table('product_type_galleries')->insert([
             'type_id' => 3,
             'name' => 'CYBER RANGE',
-            'description' => '',
-            'nama' => '',
-            'deskripsi' => '',
-            'image' => 'typeGallery.png',
+            'description' => '<ul><li>The Cyber Range area, which includes advanced technology, offers opportunities to test capabilities on dynamic platforms resembling real-world systems and networks.</li><li>Realistic scenarios and live exercises allow experts to experience real-world pressure and learn how to protect critical assets.</li><li>In an environment where vulnerabilities and malware specifically prepared for scenarios will be detected, experts cybersecurity knowledge is maximized.</li><li>Red and blue teams are given the opportunity to compete against each other in the same environment and real cyber-attack simulations are created.</li><li>With the Cyber Range area, the teamwork and communication skills of experts are enhanced.</li></ul>',
+            'nama' => 'JANGKAUAN SIBER',
+            'deskripsi' => '<ul><li>Area Cyber Range, yang mencakup teknologi canggih, menawarkan kesempatan untuk menguji kemampuan pada platform dinamis yang menyerupai sistem dan jaringan dunia nyata.</li><li>Skenario realistis dan latihan langsung memungkinkan para ahli untuk mengalami tekanan dunia nyata dan mempelajari cara melindungi aset penting.</li><li>Dalam lingkungan di mana kerentanan dan malware yang secara khusus dipersiapkan untuk skenario akan terdeteksi, pengetahuan keamanan siber para ahli akan dimaksimalkan.</li><li>Tim merah dan biru diberi kesempatan untuk bersaing satu sama lain di lingkungan yang sama dan simulasi serangan siber yang nyata dibuat.</li><li>Dengan area Cyber Range, kerja sama tim dan keterampilan komunikasi para ahli ditingkatkan.</li></ul>',
+            'image' => 'typeGallery9.png',
             'created_at' => Carbon::now(),
         ]);
 

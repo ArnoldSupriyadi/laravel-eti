@@ -17,7 +17,7 @@ class ProductTypeGalleryController extends Controller
     public function index(string $id)
     {
         $type = ProductType::findOrFail($id);
-        $galleries = ProductTypeGallery::where('type_id', $id)->orderBy('name', 'ASC')->get();
+        $galleries = ProductTypeGallery::where('type_id', $id)->get();
 
         return view('pages.backend.product.type.gallery.index',
         [
