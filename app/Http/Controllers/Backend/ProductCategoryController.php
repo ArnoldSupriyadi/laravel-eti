@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductType;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class ProductCategoryController extends Controller
 {
@@ -102,14 +104,22 @@ class ProductCategoryController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'category'.$id.'.'.$request->image->extension();
+        $datime = date('Y-m-d_H-i-s');
+        $fileName = 'category'.$id.'_'.$datime.'.'.$request->image->extension();
         $category = ProductCategory::findOrFail($id);
+
+        $destinationPath = 'frontend/img/products/categories/';
+        $existingFilePath = public_path($destinationPath.'/'.$category->image);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $category->update([
             'image' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/products/categories/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('product.index')->with(['success' => 'Product Category Image has been updated!']);

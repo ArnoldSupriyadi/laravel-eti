@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -95,14 +96,22 @@ class ProductController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'product'.$id.'.'.$request->image->extension();
+        $datime = date('Y-m-d_H-i-s');
+        $fileName = 'product'.$id.'_'.$datime.'.'.$request->image->extension();
         $product = Product::findOrFail($id);
+
+        $destinationPath = 'frontend/img/products/';
+        $existingFilePath = public_path($destinationPath.'/'.$product->image);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $product->update([
             'image' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/products/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('about.index')->with(['success' => 'Product Image has been updated!']);

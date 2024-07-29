@@ -8,8 +8,10 @@ use App\Models\CompanyProfile;
 use App\Models\CoreValue;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -97,14 +99,22 @@ class AboutController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'about_img'.'.'.$request->image->extension();
+        $datime = date('Y-m-d_H-i-s');
+        $fileName = 'about_img'.$datime.'.'.$request->image->extension();
         $about = CompanyProfile::findOrFail($id);
+
+        $destinationPath = 'frontend/img/abouts/';
+        $existingFilePath = public_path($destinationPath.'/'.$about->image);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $about->update([
             'description' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/abouts/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('about.index')->with(['success' => 'About Image has been updated!']);
@@ -116,14 +126,22 @@ class AboutController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:1024',
         ]);
 
-        $fileName = 'productservice_img'.'.'.$request->image->extension();
+        $datime = date('Y-m-d_H-i-s');
+        $fileName = 'productservice_img'.$datime.'.'.$request->image->extension();
         $about = CompanyProfile::findOrFail($id);
+
+        $destinationPath = 'frontend/img/abouts/';
+        $existingFilePath = public_path($destinationPath.'/'.$about->image);
+
+        if (File::exists($existingFilePath)) {
+            // Delete the existing file
+            File::delete($existingFilePath);
+        }
 
         $about->update([
             'description' => $fileName,
         ]);
 
-        $destinationPath = 'frontend/img/abouts/';
         $request->image->move(public_path($destinationPath), $fileName);
 
         return redirect()->route('about.index')->with(['success' => 'Product & Service Image has been updated!']);
