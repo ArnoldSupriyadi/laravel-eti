@@ -28,23 +28,31 @@
 
         <div class="section padding-top-bottom-big over-hide background-dark-2">
             <div class="container">
-                @foreach ($galleries as $gallery)
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                        <img src="{{ asset('frontend/img/products/categories/category'.$gallery->category_id.'/'.$gallery->image) }}" class="img-fluid" alt="" />
+                @if ($galleryCount != 0)
+                    @foreach ($galleries as $gallery)
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                            <img src="{{ asset('frontend/img/products/categories/category'.$gallery->category_id.'/'.$gallery->image) }}" class="img-fluid" alt="" />
+                            </div>
+                            <div class="col-md-8 pt-4">
+                            <div class="flex-grow-1 ms-1">
+                                <h6 id="soldier-supplies-title">
+                                    {{ App::getLocale() === 'en' ? $gallery->name : $gallery->nama }}
+                                </h6>
+                                <p id="soldier-supplies-content">
+                                    {!! App::getLocale() === 'en' ? $gallery->description : $gallery->deskripsi !!}
+                                </p>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col-md-8 pt-4">
-                        <div class="flex-grow-1 ms-1">
-                            <h6 id="soldier-supplies-title">
-                                {{ App::getLocale() === 'en' ? $gallery->name : $gallery->nama }}
-                            </h6>
-                            <p id="soldier-supplies-content">
-                                {!! App::getLocale() === 'en' ? $gallery->description : $gallery->deskripsi !!}
-                            </p>
-                        </div>
+                    @endforeach
+                @else
+                    <div class="row py-3">
+                        <div class="col-md-12 text-center">
+                            <h1>COMING SOON</h1>
                         </div>
                     </div>
-                @endforeach
+                @endif
             </div>
           </div>
 

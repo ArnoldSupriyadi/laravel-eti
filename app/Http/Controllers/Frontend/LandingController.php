@@ -94,17 +94,18 @@ class LandingController extends Controller
     {
         $category = ProductCategory::findOrFail($id);
         $galleries = ProductCategoryGallery::where('category_id', $id)->get();
+        $galleryCount = ProductCategoryGallery::where('category_id', $id)->count();
         $types = ProductType::where('category_id', $id)->get();
         $typeCount = ProductType::where('category_id', $id)->count();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
         if ($typeCount == 0) {
             return view('pages.frontend.product.category.show',
-                compact('category', 'galleries', 'logoSecondary'));
+                compact('category', 'galleries', 'galleryCount', 'logoSecondary'));
 
         } else {
             return view('pages.frontend.product.category.type.index',
-                compact('category', 'types', 'logoSecondary'));
+                compact('category', 'types', 'galleryCount', 'logoSecondary'));
         }
     }
 
@@ -115,13 +116,8 @@ class LandingController extends Controller
         $galleryCount = ProductTypeGallery::where('type_id', $id)->count();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
 
-        if ($galleryCount == 0) {
-        //     // return view('pages.frontend.product.category.type.index',
-        //     //     compact('category', 'types', 'logoSecondary'));
-        } else {
-            return view('pages.frontend.product.category.type.show',
-                compact('type', 'galleries', 'logoSecondary'));
-        }
+        return view('pages.frontend.product.category.type.show',
+            compact('type', 'galleries', 'galleryCount', 'logoSecondary'));
     }
 
     public function gallery()
