@@ -101,14 +101,304 @@ class ProductTypeGallerySeeder extends Seeder
             'created_at' => Carbon::now(),
         ]);
 
-        // DB::table('product_type_galleries')->insert([
-        //     'type_id' => 3,
-        //     'name' => '',
-        //     'description' => '',
-        //     'nama' => '',
-        //     'deskripsi' => '',
-        //     'image' => 'typeGallery.png',
-        //     'created_at' => Carbon::now(),
-        // ]);
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 4,
+            'name' => 'Rectangular Pool Frame',
+            'description' => '',
+            'nama' => 'Bingkai Kolam Renang Persegi Panjang',
+            'deskripsi' => '',
+            'image' => 'typeGallery10.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 4,
+            'name' => 'Robotic Pool Cleaner',
+            'description' => '',
+            'nama' => 'Pembersih Kolam Renang Robotik',
+            'deskripsi' => '',
+            'image' => 'typeGallery11.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 4,
+            'name' => 'Filters',
+            'description' => '',
+            'nama' => 'Filter',
+            'deskripsi' => '',
+            'image' => 'typeGallery12.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 4,
+            'name' => 'Pumps',
+            'description' => '',
+            'nama' => 'Pompa',
+            'deskripsi' => '',
+            'image' => 'typeGallery13.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 4,
+            'name' => 'Smart Pool Analyzer',
+            'description' => '',
+            'nama' => 'Penganalisis Kolam Renang Cerdas',
+            'deskripsi' => '',
+            'image' => 'typeGallery14.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 5,
+            'name' => 'Interactive Digital Board',
+            'description' => '',
+            'nama' => 'Papan Digital Interaktif',
+            'deskripsi' => '',
+            'image' => 'typeGallery15.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 5,
+            'name' => 'Video Wall',
+            'description' => '',
+            'nama' => 'Dinding Video',
+            'deskripsi' => '',
+            'image' => 'typeGallery16.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 5,
+            'name' => 'Digital Signage',
+            'description' => '',
+            'nama' => 'Papan Tanda Digital',
+            'deskripsi' => '',
+            'image' => 'typeGallery17.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 5,
+            'name' => 'All in one LED Display',
+            'description' => '',
+            'nama' => 'Semua dalam satu Tampilan LED',
+            'deskripsi' => '',
+            'image' => 'typeGallery18.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 5,
+            'name' => 'Hospitality TV',
+            'description' => '',
+            'nama' => 'TV Perhotelan',
+            'deskripsi' => '',
+            'image' => 'typeGallery19.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 6,
+            'name' => 'AC Products',
+            'description' => '',
+            'nama' => 'Produk AC',
+            'deskripsi' => '',
+            'image' => 'typeGallery20.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 6,
+            'name' => 'Washing Machine',
+            'description' => '',
+            'nama' => 'Mesin Cuci',
+            'deskripsi' => '',
+            'image' => 'typeGallery21.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 6,
+            'name' => 'Home Kitchen Appliances',
+            'description' => '',
+            'nama' => 'Peralatan Dapur Rumah Tangga',
+            'deskripsi' => '',
+            'image' => 'typeGallery22.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 6,
+            'name' => 'Home Entertainment System',
+            'description' => '',
+            'nama' => 'Sistem Hiburan Rumah',
+            'deskripsi' => '',
+            'image' => 'typeGallery23.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 6,
+            'name' => 'Vacuum Cleaners',
+            'description' => '',
+            'nama' => 'Penyedot Debu',
+            'deskripsi' => '',
+            'image' => 'typeGallery24.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Chinese Cooking Equipment',
+            'description' => '',
+            'nama' => 'Peralatan Memasak Cina',
+            'deskripsi' => '',
+            'image' => 'typeGallery25.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Pizza Oven',
+            'description' => '',
+            'nama' => 'Oven Pizza',
+            'deskripsi' => '',
+            'image' => 'typeGallery26.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Griddle',
+            'description' => '',
+            'nama' => 'Wajan',
+            'deskripsi' => '',
+            'image' => 'typeGallery27.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Commercial Stove',
+            'description' => '',
+            'nama' => 'Kompor Komersial',
+            'deskripsi' => '',
+            'image' => 'typeGallery28.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Chiller & Freezer',
+            'description' => '',
+            'nama' => 'Pendingin & Pembeku',
+            'deskripsi' => '',
+            'image' => 'typeGallery29.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Portable Induction Cooker',
+            'description' => '',
+            'nama' => 'Kompor Induksi Portabel',
+            'deskripsi' => '',
+            'image' => 'typeGallery30.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Electric Deck Ovens',
+            'description' => '',
+            'nama' => 'Oven Dek Listrik',
+            'deskripsi' => '',
+            'image' => 'typeGallery31.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Display & Showcase',
+            'description' => '',
+            'nama' => 'Pajangan & Etalase',
+            'deskripsi' => '',
+            'image' => 'typeGallery32.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Slush Machine',
+            'description' => '',
+            'nama' => 'Mesin Lumpur',
+            'deskripsi' => '',
+            'image' => 'typeGallery33.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Electric Proofer Cabinet',
+            'description' => '',
+            'nama' => 'Lemari Proofer Listrik',
+            'deskripsi' => '',
+            'image' => 'typeGallery34.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Juice Dispenser',
+            'description' => '',
+            'nama' => 'Dispenser Jus',
+            'deskripsi' => '',
+            'image' => 'typeGallery35.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Commercial Blender',
+            'description' => '',
+            'nama' => 'Blender Komersial',
+            'deskripsi' => '',
+            'image' => 'typeGallery36.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Pastry Equipment',
+            'description' => '',
+            'nama' => 'Peralatan Kue',
+            'deskripsi' => '',
+            'image' => 'typeGallery37.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Deep Fryer',
+            'description' => '',
+            'nama' => 'Penggorengan',
+            'deskripsi' => '',
+            'image' => 'typeGallery38.png',
+            'created_at' => Carbon::now(),
+        ]);
+
+        DB::table('product_type_galleries')->insert([
+            'type_id' => 7,
+            'name' => 'Wine Cooler',
+            'description' => '',
+            'nama' => 'Pendingin Anggur',
+            'deskripsi' => '',
+            'image' => 'typeGallery39.png',
+            'created_at' => Carbon::now(),
+        ]);
     }
 }
