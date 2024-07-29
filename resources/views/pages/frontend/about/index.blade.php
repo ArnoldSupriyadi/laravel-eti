@@ -78,9 +78,9 @@
                 @foreach ($coreValues as $core)
                     <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
                         <h6 class="mb-0 pb-0 lead-q">
-                            <em>{{ $core->name }}</em>
+                            <em>{{ App::getLocale() === 'en' ? $core->name : $core->nama }}</em>
                         </h6>
-                        <p class="mt-2">{{ $core->description }}</p>
+                        <p class="mt-2">{{ App::getLocale() === 'en' ? $core->description : $core->deskripsi }}</p>
                     </div>
                 @endforeach
                 {{-- <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
