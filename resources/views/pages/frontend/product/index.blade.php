@@ -34,7 +34,9 @@
                                 alt="" />
                             <a href="{{ route('productCategory', $product->id) }}"
                                 class="btn btn-contact-custom cursor-link p-3 mt-2 btn-block">
-                                {{ __('messages.more') }} {{ $product->name }}</a>
+                                {{ __('messages.more') }}
+                                {{ App::getLocale() === 'en' ? $product->name : $product->nama }}
+                            </a>
                         </div>
                     @endforeach
 

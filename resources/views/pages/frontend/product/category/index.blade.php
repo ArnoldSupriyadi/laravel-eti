@@ -13,7 +13,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 section-title-wrap text-center parallax-fade-top">
-                        <h3 class="mb-5">{{ $product->name }}</h3>
+                        <h3 class="mb-5">
+                            {{ App::getLocale() === 'en' ? $product->name : $product->nama }}
+                        </h3>
                         <!-- <h1>chase your<br />defense</h1> -->
                         @if ($product->id == 1)
                             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
@@ -59,12 +61,12 @@
             <div id="projects-grid">
                 @foreach ($categories as $category)
                     <a href="{{ route('productCategory.detail', $category->id) }}" class="cursor-link animsition-link tipped"
-                        data-title="{{ $category->name }}"
+                        data-title="{{ App::getLocale() === 'en' ? $category->name : $category->nama }}"
                         data-tipper-options='{"direction":"top","follow":"true","margin":30}'>
                         <div class="portfolio-box photo">
                             <img src="{{ asset('frontend/img/products/categories/' . $category->image) }}" alt="" />
                             <div class="portfolio-mask"></div>
-                            <h5 class="mt-2">{{ $category->name }}</h5>
+                            <h5 class="mt-2">{{ App::getLocale() === 'en' ? $category->name : $category->nama }}</h5>
                         </div>
                     </a>
                 @endforeach

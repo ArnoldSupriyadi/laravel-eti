@@ -67,6 +67,7 @@ class LandingController extends Controller
 
     public function products()
     {
+        $locale = App::getLocale(); // Get the current locale
         $productDescription = CompanyProfile::where('name', 'product_description')->first()->description;
         $products = Product::all();
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;

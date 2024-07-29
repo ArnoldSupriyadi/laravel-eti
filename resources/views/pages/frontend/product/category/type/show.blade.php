@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-12 section-title-wrap text-center parallax-fade-top-pages">
                             <p>eti indonesia</p>
-                            <h1>{{ $type->name }}</h1>
+                            <h1>{{ App::getLocale() === 'en' ? $type->name : $type->nama }}</h1>
                         </div>
                     </div>
                 </div>
@@ -36,10 +36,10 @@
                         <div class="col-md-8 pt-4">
                         <div class="flex-grow-1 ms-1">
                             <h6 id="soldier-supplies-title">
-                                {{ $gallery->name }}
+                                {{ App::getLocale() === 'en' ? $gallery->name : $gallery->nama }}
                             </h6>
                             <p id="soldier-supplies-content">
-                                {!! $gallery->description !!}
+                                {!! App::getLocale() === 'en' ? $gallery->description : $gallery->deskripsi !!}
                             </p>
                         </div>
                         </div>
