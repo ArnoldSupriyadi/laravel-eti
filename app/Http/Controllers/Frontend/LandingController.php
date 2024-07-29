@@ -124,45 +124,22 @@ class LandingController extends Controller
         }
     }
 
-    // public function productsCategory()
-    // {
-    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
-
-    //     return view('pages.frontend.product.category',
-    //     [
-    //         'logoSecondary' => $logoSecondary,
-    //     ]);
-    // }
-
-    //  public function productsCategory2()
-    // {
-    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
-
-    //     return view('pages.frontend.product.category2',
-    //     [
-    //         'logoSecondary' => $logoSecondary,
-    //     ]);
-    // }
-
-
-    // public function detailProduct()
-    // {
-    //     $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
-
-    //     return view('pages.frontend.product.detail',
-    //     [
-    //         'logoSecondary' => $logoSecondary,
-    //     ]);
-    // }
-
     public function gallery()
     {
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
+        $gallerySubtitle = CompanyProfile::where('name', 'gallery_subtitle')->first()->description;
+        $galleryHeader = CompanyProfile::where('name', 'gallery_header')->first()->description;
+        $gallerySubtitleIndo = CompanyProfile::where('name', 'gallery_subtitle')->first()->description_indo;
+        $galleryHeaderIndo = CompanyProfile::where('name', 'gallery_header')->first()->description_indo;
         $galleries = Gallery::all();
 
         return view('pages.frontend.gallery.index',
         [
             'logoSecondary' => $logoSecondary,
+            'gallerySubtitle' => $gallerySubtitle,
+            'galleryHeader' => $galleryHeader,
+            'gallerySubtitleIndo' => $gallerySubtitleIndo,
+            'galleryHeaderIndo' => $galleryHeaderIndo,
             'galleries' => $galleries,
         ]);
     }

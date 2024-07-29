@@ -14,8 +14,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-12 section-title-wrap text-center parallax-fade-top">
-                  <p>we do magic</p>
-                  <h1>CHASE YOUR<br />PASSION</h1>
+                    <p>{{ App::getLocale() === 'en' ? $gallerySubtitle : $gallerySubtitleIndo }}</p>
+                    <h1>{{ App::getLocale() === 'en' ? $galleryHeader : $galleryHeaderIndo }}</h1>
                 </div>
               </div>
             </div>
@@ -27,7 +27,10 @@
                 <div class="col-md-12">
                   <div id="portfolio-filter" class="portfolio-filter">
                     <ul id="filter">
-                      <li><a href="#" class="current cursor-link" data-filter="*" title="" id="gallery">gallery</a></li>
+                        <li>
+                            <a href="#" class="current cursor-link" data-filter="*" title="" id="gallery">
+                                {{ __('messages.mainmenu_gallery') }}</a>
+                        </li>
                       <!-- <li><a href="#" class="cursor-link" data-filter=".commercial" title="">commercial</a></li>
                       <li><a href="#" class="cursor-link" data-filter=".defense" title="">defense</a></li> -->
                       <!-- <li><a href="#" class="cursor-link" data-filter=".motion" title="">motion</a></li> -->
@@ -44,7 +47,7 @@
                             <img src="{{ asset('frontend/img/galleries/'. $gallery->image ) }}" alt="" />
                             <div class="portfolio-mask"></div>
                             <p>eti indonesia</p>
-                            <h4>{{ $gallery->name }}</h4>
+                            <h4>{{ App::getLocale() === 'en' ? $gallery->name : $gallery->nama }}</h4>
                         </div>
                     </a>
               @endforeach

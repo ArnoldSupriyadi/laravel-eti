@@ -133,5 +133,19 @@ class CompanyProfileSeeder extends Seeder
             'description_indo' => '',
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'gallery_subtitle',
+            'description' => 'we do magic',
+            'description_indo' => 'kami melakukan sulap',
+            'created_at' => Carbon::now()
+        ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'gallery_header',
+            'description' => 'CHASE YOUR PASSION',
+            'description_indo' => 'KEJAR HASRAT ANDA',
+            'created_at' => Carbon::now()
+        ]);
     }
 }

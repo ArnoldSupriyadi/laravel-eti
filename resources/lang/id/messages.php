@@ -51,7 +51,8 @@ return [
     'product_service_val' => $product,
     // ==========================
     //contact page
-    'head_contact' => 'hubungi kami',
+    'contact_title' => 'HUBUNGI KAMI',
+    'head_contact' => 'hubungi',
     'sub_contact' => 'selalu siap bekerja',
     'at' => 'di',
     'find_map' => 'temukan kami di peta',

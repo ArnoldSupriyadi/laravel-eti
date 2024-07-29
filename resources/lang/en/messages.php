@@ -51,6 +51,7 @@ return [
     'product_service_val' => $product,
     // ==========================
     //contact page
+    'contact_title' => 'CONTACT US',
     'head_contact' => 'get in touch',
     'sub_contact' => 'always ready to work',
     'at' => 'at',
