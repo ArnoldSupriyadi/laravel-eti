@@ -83,37 +83,6 @@
                         <p class="mt-2">{{ App::getLocale() === 'en' ? $core->description : $core->deskripsi }}</p>
                     </div>
                 @endforeach
-                {{-- <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Customer focused</em></h6>
-                    <p class="mt-2">We adapt to our customers' needs and respond to them with affordable,
-                        operationally proven, comprehensive solutions that offer qualitative performance advantages.</p>
-                </div>
-                <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Employee Excellence</em></h6>
-                    <p class="mt-2">
-                        Great people are key to achieving our vision. We employ a workforce that is motivated,
-                        team-minded, and create a dynamic atmosphere where employees can thrive and reach their highest
-                        potential. their highest potential.
-                    </p>
-                </div>
-                <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Innovation and Creativity</em></h6>
-                    <p class="mt-2">We foster an environment that nurtures innovation, creativity and leardership.</p>
-                </div>
-                <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Teamwork and Synergy</em></h6>
-                    <p class="mt-2">Personal interactions and mutual trust form the basis for achieving our goals. In
-                        our complex world, cooperation and teamwork lead to synergy.</p>
-                </div>
-                <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Responsibility and Accountability</em></h6>
-                    <p class="mt-2">We are committed to the success of our company through personal responsibility and
-                        leadership.</p>
-                </div>
-                <div class="col-md-6 text-center" data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <h6 class="mb-0 pb-0 lead-q"><em>Honesty and ethics</em></h6>
-                    <p class="mt-2">Honesty, respect and integrity are the key principles that guide us.</p>
-                </div> --}}
             </div>
         </div>
     </div>
@@ -134,19 +103,6 @@
                         <img src="{{ asset('frontend/img/clients/' . $partner->logo) }}" alt="{{ $partner->name }}" class="img-fluid" />
                     </div>
                 @endforeach
-                {{-- <div class="col-md-4 text-center mt-5 mt-md-4"
-                    data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <img src="{{ asset('frontend/img/logo-tekno-white.png') }}" alt="teknosolusi" class="img-fluid" />
-                </div>
-                <div class="col-md-4 text-center mt-5 mt-md-4"
-                    data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <img src="{{ asset('frontend/img/suneast-white.png') }}" alt="teknosolusi" class="img-fluid" />
-                </div>
-                <div class="col-md-4 text-center mt-5 mt-md-4"
-                    data-scroll-reveal="enter bottom move 30px over 0.5s after 0.2s">
-                    <img src="{{ asset('frontend/img/gtp-white.png') }}" alt="teknosolusi" class="img-fluid"
-                        width="60%" />
-                </div> --}}
             </div>
         </div>
     </div>
