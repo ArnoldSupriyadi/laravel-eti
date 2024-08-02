@@ -39,10 +39,7 @@
                     <a href="https://wa.link/pti8jc" class="btn btn-contact-custom cursor-link p-3">
                         Whatsapp {{ __('messages.at') }} +{{ $phone }}</a>
                 </div>
-                <!-- <div class="section clearfix"></div>
-                <div class="col-md-8 mt-4 ajax-form">
-                    <textarea class="cursor-link" name="message" placeholder="Tell Us Everything"></textarea>
-                </div> -->
+
                 </div>
             </div>
         </div>

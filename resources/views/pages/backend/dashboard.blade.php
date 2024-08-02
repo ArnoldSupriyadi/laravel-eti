@@ -12,7 +12,7 @@
                     <div class="card-body pb-0">
                         <div class="row">
                             <div class="col-2">
-                                <i class="cc BTC warning font-large-2" title="BTC"></i>
+                                <i class="cc XRP info font-large-2" title="BTC"></i>
                             </div>
                             <div class="col-5 pl-2">
                                 <h4>Work Partners</h4>
@@ -24,9 +24,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12"><canvas id="btc-chartjs" class="height-75"></canvas></div>
-                    </div>
+    
                 </div>
             </div>
         </div>
@@ -36,7 +34,7 @@
                     <div class="card-body pb-0">
                         <div class="row">
                             <div class="col-2">
-                                <i class="cc ETH blue-grey lighten-1 font-large-2" title="ETH"></i>
+                                <i class="cc XRP info font-large-2" title="ETH"></i>
                             </div>
                             <div class="col-5 pl-2">
                                 <h4>Product</h4>
@@ -48,9 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12"><canvas id="eth-chartjs" class="height-75"></canvas></div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -72,9 +68,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12"><canvas id="xrp-chartjs" class="height-75"></canvas></div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -96,9 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12"><canvas id="xrp-chartjs" class="height-75"></canvas></div>
-                    </div>
+
                 </div>
             </div>
         </div>
