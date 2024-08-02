@@ -77,61 +77,12 @@
                 </a>
             </li>
 
-            <li class=" nav-item {{ request()->routeIs('role.index') ? 'active' : '' }}">
+            {{-- <li class=" nav-item {{ request()->routeIs('role.index') ? 'active' : '' }}">
                 <a href="{{ route('role.index') }}"><i class="material-icons">supervisor_account</i>
                     <span class="menu-title" data-i18n="User">Role</span>
                 </a>
-            </li>
+            </li> --}}
 
-            {{-- <li class=" nav-item"><a href="#"><i class="material-icons">straighten</i><span class="menu-title" data-i18n="Material Components">Material Components</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="material-component-buttons.html"><i class="material-icons"></i><span data-i18n="Buttons">Buttons</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-cards.html"><i class="material-icons"></i><span data-i18n="Cards">Cards</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-chips.html"><i class="material-icons"></i><span data-i18n="Chips">Chips</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-datatables.html"><i class="material-icons"></i><span data-i18n="Data tables">Data tables</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-dialogs.html"><i class="material-icons"></i><span data-i18n="Dialogs">Dialogs</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-elevation-shadows.html"><i class="material-icons"></i><span data-i18n="Elevation Shadows">Elevation Shadows</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-expansion-panels.html"><i class="material-icons"></i><span data-i18n="Expansion Panels">Expansion Panels</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-icons.html"><i class="material-icons"></i><span data-i18n="Icons">Icons</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-menu.html"><i class="material-icons"></i><span data-i18n="Menu">Menu</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-navigation.html"><i class="material-icons"></i><span data-i18n="Navigation Drawer">Navigation Drawer</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-pickers.html"><i class="material-icons"></i><span data-i18n="Pickers">Pickers</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-progress.html"><i class="material-icons"></i><span data-i18n="Progress">Progress</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-selection-controls.html"><i class="material-icons"></i><span data-i18n="Selection Controls">Selection Controls</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-snackbars.html"><i class="material-icons"></i><span data-i18n="Snackbars">Snackbars</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-steppers.html"><i class="material-icons"></i><span data-i18n="Steppers">Steppers</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-tabs.html"><i class="material-icons"></i><span data-i18n="Tabs">Tabs</span></a>
-                        </li>
-                        <li><a class="menu-item" href="material-component-textfields.html"><i class="material-icons"> </i><span data-i18n="Text fields">Text fields</span></a>
-                        </li>
-                    </ul>
-                </li> --}}
-
-            {{-- <li class=" nav-item"><a href="#"><i class="material-icons">lock_outline</i><span class="menu-title" data-i18n="Authentication">Authentication</span></a>
-                    <ul class="menu-content">
-                        <li><a class="menu-item" href="login-with-bg-image.html" target="_blank"><i class="material-icons"></i><span>Login</span></a>
-                        </li>
-                        <li><a class="menu-item" href="register-with-bg-image.html" target="_blank"><i class="material-icons"></i><span>SignIn</span></a>
-                        </li>
-                        <li><a class="menu-item" href="recover-password.html" target="_blank"><i class="material-icons"></i><span>Forgot Password</span></a>
-                        </li>
-                    </ul>
-                </li> --}}
         </ul>
     </div>
 </div>
