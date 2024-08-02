@@ -42,12 +42,12 @@
             </li>
 
 
-            <li class=" nav-item {{ request()->routeIs('news.index') ? 'active' : '' }}">
+            {{-- <li class=" nav-item {{ request()->routeIs('news.index') ? 'active' : '' }}">
                 <a href="{{ route('news.index') }}">
                     <i class="material-icons">description</i>
                     <span class="menu-title" data-i18n="Wallet">News</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- <li class=" nav-item {{ request()->routeIs('portfolio.index') ? 'active' : '' }}">
                 <a href="{{ route('portfolio.index') }}">
