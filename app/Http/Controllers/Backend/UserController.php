@@ -53,12 +53,26 @@ class UserController extends Controller
         return redirect()->route('user.index')->with(['success' => 'Data berhasil disimpan!']);
     }
 
+    public function profile($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('pages.backend.user.profile', compact('user'));
+    }
+
     public function edit(string $id)
     {
         $roles = Role::all();
         $user = User::findOrFail($id);
 
         return view('pages.backend.user.edit', compact('roles', 'user'));
+    }
+
+    public function editPassword(string $id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('pages.backend.user.editPassword', compact('user'));
     }
 
     public function update(Request $request, string $id)
@@ -87,7 +101,6 @@ class UserController extends Controller
     public function updatePassword(Request $request, string $id)
     {
         $this->validate($request, [
-            'email' => 'required|email:dns',
             'password' => 'required',
             'password_confirm' => 'required',
         ]);
@@ -99,10 +112,10 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            return redirect()->route('user.index')->with(['success' => 'Password berhasil diubah!']);
+            return redirect()->route('user.profile', Auth::user()->id)->with(['success' => 'Password berhasil diubah!']);
 
         } else {
-            return redirect()->route('user.index')->with(['error' => 'Password gagal diubah!']);
+            return redirect()->route('user.profile', Auth::user()->id)->with(['error' => 'Password gagal diubah!']);
         }
     }
 
