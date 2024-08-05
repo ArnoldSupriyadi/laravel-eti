@@ -194,10 +194,13 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::group(['prefix' => 'backend/user'], function () {
         Route::get('', [UserController::class, 'index'])->name('user.index');
+        Route::get('{id}', [UserController::class, 'profile'])->name('user.profile');
         Route::get('create', [UserController::class, 'create'])->name('user.create');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::get('editPassword/{id}', [UserController::class, 'editPassword'])->name('user.editPassword');
         Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::put('updatePassword/{id}', [UserController::class, 'updatePassword'])->name('user.updatePassword');
         Route::delete('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
     });
 
