@@ -36,7 +36,7 @@
                         Email {{ __('messages.at') }} {{ $email }}</a>
                 </div>
                 <div class="col-md-4 mt-4 mt-md-0 ajax-form">
-                    <a href="https://wa.link/pti8jc" class="btn btn-contact-custom cursor-link p-3">
+                    <a href="{{ $waLink }}" class="btn btn-contact-custom cursor-link p-3">
                         Whatsapp {{ __('messages.at') }} +{{ $phone }}</a>
                 </div>
 

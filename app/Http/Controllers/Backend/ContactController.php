@@ -18,6 +18,7 @@ class ContactController extends Controller
         ->orWhere('name', 'address_two')
         ->orWhere('name', 'maps_one')
         ->orWhere('name', 'maps_two')
+        ->orWhere('name', 'wa_link')
         ->get();
 
         return view('pages.backend.compro.contact.index',

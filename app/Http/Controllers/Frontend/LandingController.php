@@ -149,6 +149,7 @@ class LandingController extends Controller
         $logoSecondary = CompanyProfile::where('name', 'logo-secondary')->first()->description;
         $mapsOne = CompanyProfile::where('name', 'maps_one')->first()->description;
         $mapsTwo = CompanyProfile::where('name', 'maps_two')->first()->description;
+        $waLink = CompanyProfile::where('name', 'wa_link')->first()->description;
 
         return view('pages.frontend.contact.index',
         [
@@ -158,6 +159,7 @@ class LandingController extends Controller
             'addressTwo' => $addressTwo,
             'mapsOne' => $mapsOne,
             'mapsTwo' => $mapsTwo,
+            'waLink' => $waLink,
             'logoSecondary' => $logoSecondary,
         ]);
     }
