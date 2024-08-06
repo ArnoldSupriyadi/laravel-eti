@@ -147,5 +147,12 @@ class CompanyProfileSeeder extends Seeder
             'description_indo' => 'KEJAR HASRAT ANDA',
             'created_at' => Carbon::now()
         ]);
+
+        DB::table('company_profiles')->insert([
+            'name' => 'wa_link',
+            'description' => 'https://wa.link/pti8jc',
+            'description_indo' => '',
+            'created_at' => Carbon::now()
+        ]);
     }
 }
